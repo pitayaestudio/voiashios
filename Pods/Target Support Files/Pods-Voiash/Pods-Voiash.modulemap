@@ -1,0 +1,6 @@
+framework module Pods_Voiash {
+  umbrella header "Pods-Voiash-umbrella.h"
+
+  export *
+  module * { export * }
+}
