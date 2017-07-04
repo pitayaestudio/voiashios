@@ -16,5 +16,5 @@ target 'Voiash' do
   pod 'SwiftyJSON'
   pod 'Alamofire'  
   pod 'KeychainSwift', '~> 8.0'
-  pod 'FBSDKLoginKit'
+  pod 'FBSDKLoginKit', '~> 4.24'
 end
