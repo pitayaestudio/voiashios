@@ -9,12 +9,12 @@
 import UIKit
 import FBSDKLoginKit
 import Firebase
+import TextFieldEffects
 
 class VOSignInVC: UIViewController,UITextFieldDelegate {
     
-    @IBOutlet weak var emailField: UITextField!
-    
-    @IBOutlet weak var passField: UITextField!
+    @IBOutlet weak var tfEmail: TextFieldEffects!
+    @IBOutlet weak var tfPassword: TextFieldEffects!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,31 +27,6 @@ class VOSignInVC: UIViewController,UITextFieldDelegate {
         } */
     }
     
-    //MARK: Keyboard
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        moveTextfield(textField, moveDistance: -100, up: true)
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        moveTextfield(textField, moveDistance: -100, up: false)
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
-    func moveTextfield(_ textfield:UITextField, moveDistance: Int, up: Bool){
-        let moveDuration = 0.3
-        let movement:CGFloat = CGFloat(up ? moveDistance : -moveDistance)
-        
-        UIView.beginAnimations("animateTextField",context:nil)
-        UIView.setAnimationBeginsFromCurrentState(true)
-        UIView.setAnimationDuration(moveDuration)
-        self.view.frame = self.view.frame.offsetBy(dx:0,dy:movement)
-        UIView.commitAnimations()
-        
-    }
     
     //MARK: IBAction
     @IBAction func facebookBtnPressed(_ sender: AnyObject) {
@@ -94,6 +69,10 @@ class VOSignInVC: UIViewController,UITextFieldDelegate {
             alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             present(alert, animated: true, completion: nil)
         }
+    }
+    
+    @IBAction func googleBtnPressed(_ sender: AnyObject) {
+        
     }
     
 }

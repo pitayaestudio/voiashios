@@ -18,6 +18,12 @@ class VOFBAuthService: NSObject {
         return _shared
     }
     
+    /**
+     Make a login with facebook credentials.
+     
+     - Parameter credential: The auth credential
+     - Returns: Error, User.
+     */
     func loginWithCredential(_ credential: AuthCredential, onComplete:Completion?){
         Auth.auth().signIn(with: credential, completion: { (user, error) in
             if error != nil {
@@ -31,6 +37,12 @@ class VOFBAuthService: NSObject {
         })
     }
     
+    /**
+     Make a login with email and password.
+     
+     - Parameter email: The email of the user
+     - Returns password: The password of the user
+     */
     func loginWithEmail(_ email:String, password:String, onComplete:Completion?){
         Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
             if error != nil {
@@ -60,13 +72,25 @@ class VOFBAuthService: NSObject {
         })
     }
     
+    /**
+     Save the user in the keychain.
+     
+     - Parameter email: The email of the user
+     - Returns password: The password of the user
+     */
     func saveUserInKeychain(_ userID: String, isLoginWithFB: Bool){
         VODataService.shared.saveUser(uid: userID, isLoginWithFB: isLoginWithFB)
         keychain.set(userID, forKey: K.FB.user.userId)
         
     }
     
-    func handleFirebaseError(_ error:NSError, onComplete:Completion?){
+    /**
+     Handle the firebase error in the login and create user
+     
+     - Parameter error: Send the error
+     - Returns onComplete: Return the description of the error
+     */
+    private func handleFirebaseError(_ error:NSError, onComplete:Completion?){
         print(error.debugDescription)
         if let errorCode = AuthErrorCode(rawValue: error.code){
             switch errorCode {

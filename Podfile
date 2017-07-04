@@ -18,4 +18,5 @@ target 'Voiash' do
   pod 'KeychainSwift', '~> 8.0'
   pod 'FBSDKLoginKit', '~> 4.24'
   pod 'IQKeyboardManagerSwift'
+  pod 'TextFieldEffects'
 end

@@ -26,6 +26,9 @@ struct K {
             static let provider = "provider"
         }
     }
+    struct color {
+        static let shadowGray = UIColor(red: 255, green: 255, blue: 255, alpha: 0.5)
+    }
     
 }
 

@@ -16,6 +16,10 @@
 		C4AC16D91F0AE054007ECB38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4AC16D81F0AE054007ECB38 /* Assets.xcassets */; };
 		C4AC16DC1F0AE054007ECB38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4AC16DA1F0AE054007ECB38 /* LaunchScreen.storyboard */; };
 		C4CFCFF91F0AE5F10086D498 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4CFCFF81F0AE5F10086D498 /* GoogleService-Info.plist */; };
+		C4CFCFFD1F0BC9E50086D498 /* VORoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CFCFFC1F0BC9E50086D498 /* VORoundButton.swift */; };
+		C4CFD0001F0BFA8A0086D498 /* VOInitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CFCFFF1F0BFA8A0086D498 /* VOInitialVC.swift */; };
+		C4CFD0041F0C0EE40086D498 /* VOForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CFD0031F0C0EE40086D498 /* VOForgotPasswordVC.swift */; };
+		C4CFD0071F0C12F30086D498 /* VOConfirmEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CFD0061F0C12F30086D498 /* VOConfirmEmailVC.swift */; };
 		D32767518FF72FAD249443CB /* Pods_Voiash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6117376A61DC3EE56084EA46 /* Pods_Voiash.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +37,11 @@
 		C4AC16DB1F0AE054007ECB38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4AC16DD1F0AE054007ECB38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4CFCFF81F0AE5F10086D498 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C4CFCFFC1F0BC9E50086D498 /* VORoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VORoundButton.swift; path = View/VORoundButton.swift; sourceTree = "<group>"; };
+		C4CFCFFF1F0BFA8A0086D498 /* VOInitialVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOInitialVC.swift; path = Controller/VOInitialVC.swift; sourceTree = "<group>"; };
+		C4CFD0021F0BFAAC0086D498 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		C4CFD0031F0C0EE40086D498 /* VOForgotPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOForgotPasswordVC.swift; path = Controller/VOForgotPasswordVC.swift; sourceTree = "<group>"; };
+		C4CFD0061F0C12F30086D498 /* VOConfirmEmailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOConfirmEmailVC.swift; path = Controller/VOConfirmEmailVC.swift; sourceTree = "<group>"; };
 		E7B3FF1D15D74988D54DE0A5 /* Pods-Voiash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voiash.release.xcconfig"; path = "Pods/Target Support Files/Pods-Voiash/Pods-Voiash.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,7 +94,7 @@
 		4B93049E1F0B425F00721977 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				4B93049C1F0B425A00721977 /* VOSignInVC.swift */,
+				C4CFD0051F0C0EF20086D498 /* Welcome SignIn */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -114,6 +123,7 @@
 				4B9304991F0B39CC00721977 /* Utils */,
 				4B9304961F0B14B200721977 /* Firebase */,
 				4B93049E1F0B425F00721977 /* Controller */,
+				C4CFCFFE1F0BC9E90086D498 /* View */,
 				C4AC16D11F0AE054007ECB38 /* AppDelegate.swift */,
 				C4AC16D51F0AE054007ECB38 /* Main.storyboard */,
 				C4AC16D81F0AE054007ECB38 /* Assets.xcassets */,
@@ -122,6 +132,25 @@
 				C4AC16DD1F0AE054007ECB38 /* Info.plist */,
 			);
 			path = Voiash;
+			sourceTree = "<group>";
+		};
+		C4CFCFFE1F0BC9E90086D498 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C4CFCFFC1F0BC9E50086D498 /* VORoundButton.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		C4CFD0051F0C0EF20086D498 /* Welcome SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				4B93049C1F0B425A00721977 /* VOSignInVC.swift */,
+				C4CFCFFF1F0BFA8A0086D498 /* VOInitialVC.swift */,
+				C4CFD0031F0C0EE40086D498 /* VOForgotPasswordVC.swift */,
+				C4CFD0061F0C12F30086D498 /* VOConfirmEmailVC.swift */,
+			);
+			name = "Welcome SignIn";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,10 +280,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B9304951F0B14AE00721977 /* VOFBAuthService.swift in Sources */,
+				C4CFCFFD1F0BC9E50086D498 /* VORoundButton.swift in Sources */,
+				C4CFD0071F0C12F30086D498 /* VOConfirmEmailVC.swift in Sources */,
 				4B93049D1F0B425A00721977 /* VOSignInVC.swift in Sources */,
 				C4AC16D21F0AE054007ECB38 /* AppDelegate.swift in Sources */,
 				4B9304981F0B39C800721977 /* Constants.swift in Sources */,
+				C4CFD0041F0C0EE40086D498 /* VOForgotPasswordVC.swift in Sources */,
 				4B93049B1F0B3CB200721977 /* VODataService.swift in Sources */,
+				C4CFD0001F0BFA8A0086D498 /* VOInitialVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +298,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				C4AC16D61F0AE054007ECB38 /* Base */,
+				C4CFD0021F0BFAAC0086D498 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
