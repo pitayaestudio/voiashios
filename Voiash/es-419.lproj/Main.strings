@@ -1,0 +1,81 @@
+
+/* Class = "UIButton"; normalTitle = "Entrar"; ObjectID = "5x2-bL-ZjP"; */
+"5x2-bL-ZjP.normalTitle" = "Entrar";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "7xh-ox-9Wn"; */
+"7xh-ox-9Wn.placeholder" = "Email";
+
+/* Class = "UIButton"; normalTitle = "REGÍSTRATE Y DISFRUTA"; ObjectID = "8Na-yG-G76"; */
+"8Na-yG-G76.normalTitle" = "REGÍSTRATE Y DISFRUTA";
+
+/* Class = "UITextField"; placeholder = "Confirmar Contraseña"; ObjectID = "95z-lO-rhZ"; */
+"95z-lO-rhZ.placeholder" = "Confirmar Contraseña";
+
+/* Class = "UITextField"; placeholder = "Contraseña"; ObjectID = "Adl-dF-iLh"; */
+"Adl-dF-iLh.placeholder" = "Contraseña";
+
+/* Class = "UIButton"; normalTitle = "Resetear Password"; ObjectID = "Axb-ax-gR9"; */
+"Axb-ax-gR9.normalTitle" = "Resetear Password";
+
+/* Class = "UIViewController"; title = "Recordar Password"; ObjectID = "GnE-Sy-CZD"; */
+"GnE-Sy-CZD.title" = "Recordar Password";
+
+/* Class = "UITextField"; placeholder = "Nombre"; ObjectID = "HNu-Ys-4BW"; */
+"HNu-Ys-4BW.placeholder" = "Nombre";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "J1e-nI-lo9"; */
+"J1e-nI-lo9.title" = "Item";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "MHL-cW-dRD"; */
+"MHL-cW-dRD.title" = " ";
+
+/* Class = "UIButton"; normalTitle = "Registro"; ObjectID = "NKG-Gc-FtE"; */
+"NKG-Gc-FtE.normalTitle" = "Registro";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "TMk-mD-t1g"; */
+"TMk-mD-t1g.placeholder" = "Password";
+
+/* Class = "UIButton"; normalTitle = "INGRESAR SIN REGISTRAR"; ObjectID = "VSa-hA-JMj"; */
+"VSa-hA-JMj.normalTitle" = "INGRESAR SIN REGISTRAR";
+
+/* Class = "UIButton"; normalTitle = "FB"; ObjectID = "XDg-u9-TGc"; */
+"XDg-u9-TGc.normalTitle" = "FB";
+
+/* Class = "UIButton"; normalTitle = "GM"; ObjectID = "Y7D-zF-jbb"; */
+"Y7D-zF-jbb.normalTitle" = "GM";
+
+/* Class = "UIButton"; normalTitle = "EM"; ObjectID = "aV4-Kc-fRa"; */
+"aV4-Kc-fRa.normalTitle" = "EM";
+
+/* Class = "UILabel"; text = "Explicacion"; ObjectID = "bLS-DO-Zeh"; */
+"bLS-DO-Zeh.text" = "Explicacion";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "boL-MV-g9B"; */
+"boL-MV-g9B.title" = "Item";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "bze-sj-UAw"; */
+"bze-sj-UAw.title" = "Item";
+
+/* Class = "UITextField"; placeholder = "Apellido"; ObjectID = "eY7-Un-7wz"; */
+"eY7-Un-7wz.placeholder" = "Apellido";
+
+/* Class = "UIViewController"; title = "Crear cuenta"; ObjectID = "fGi-18-7Kb"; */
+"fGi-18-7Kb.title" = "Crear cuenta";
+
+/* Class = "UILabel"; text = "Registrandote aceptas los términos y condiciones"; ObjectID = "hnl-j4-FfZ"; */
+"hnl-j4-FfZ.text" = "Registrandote aceptas los términos y condiciones";
+
+/* Class = "UIButton"; normalTitle = "¿Olvidaste tu password?"; ObjectID = "ksN-w3-Ne4"; */
+"ksN-w3-Ne4.normalTitle" = "¿Olvidaste tu password?";
+
+/* Class = "UITabBarItem"; title = "Item 2"; ObjectID = "vWu-R1-lWm"; */
+"vWu-R1-lWm.title" = "Item 2";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "wkH-qG-VBx"; */
+"wkH-qG-VBx.placeholder" = "Email";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "yvA-m9-vxG"; */
+"yvA-m9-vxG.placeholder" = "Email";
+
+/* Class = "UITabBarItem"; title = "Item 1"; ObjectID = "z8f-vG-auq"; */
+"z8f-vG-auq.title" = "Item 1";

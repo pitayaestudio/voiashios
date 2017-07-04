@@ -12,7 +12,8 @@ class VORoundButton: UIButton {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        layer.borderColor = UIColor.white.cgColor
+        layer.borderWidth = 1.5
         layer.shadowColor = K.color.shadowGray.cgColor
         layer.shadowRadius = 5.0
         layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
@@ -23,7 +24,7 @@ class VORoundButton: UIButton {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        layer.cornerRadius = self.frame.width / 2
+        layer.cornerRadius = self.frame.height / 2
     }
 
 }

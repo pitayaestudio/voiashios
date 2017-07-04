@@ -20,6 +20,9 @@
 		C4CFD0001F0BFA8A0086D498 /* VOInitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CFCFFF1F0BFA8A0086D498 /* VOInitialVC.swift */; };
 		C4CFD0041F0C0EE40086D498 /* VOForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CFD0031F0C0EE40086D498 /* VOForgotPasswordVC.swift */; };
 		C4CFD0071F0C12F30086D498 /* VOConfirmEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CFD0061F0C12F30086D498 /* VOConfirmEmailVC.swift */; };
+		C4EEE17E1F0C1BDC00B1177B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EEE17D1F0C1BDC00B1177B /* Extensions.swift */; };
+		C4EEE1801F0C1F1300B1177B /* VOSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EEE17F1F0C1F1300B1177B /* VOSignUpVC.swift */; };
+		C4EEE1851F0C248800B1177B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4EEE1831F0C248800B1177B /* Localizable.strings */; };
 		D32767518FF72FAD249443CB /* Pods_Voiash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6117376A61DC3EE56084EA46 /* Pods_Voiash.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +45,12 @@
 		C4CFD0021F0BFAAC0086D498 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		C4CFD0031F0C0EE40086D498 /* VOForgotPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOForgotPasswordVC.swift; path = Controller/VOForgotPasswordVC.swift; sourceTree = "<group>"; };
 		C4CFD0061F0C12F30086D498 /* VOConfirmEmailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOConfirmEmailVC.swift; path = Controller/VOConfirmEmailVC.swift; sourceTree = "<group>"; };
+		C4EEE17D1F0C1BDC00B1177B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Utils/Extensions.swift; sourceTree = "<group>"; };
+		C4EEE17F1F0C1F1300B1177B /* VOSignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOSignUpVC.swift; path = Controller/VOSignUpVC.swift; sourceTree = "<group>"; };
+		C4EEE1811F0C23D800B1177B /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Main.strings"; sourceTree = "<group>"; };
+		C4EEE1821F0C23D800B1177B /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		C4EEE1861F0C249100B1177B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C4EEE1881F0C24A800B1177B /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		E7B3FF1D15D74988D54DE0A5 /* Pods-Voiash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voiash.release.xcconfig"; path = "Pods/Target Support Files/Pods-Voiash/Pods-Voiash.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				4B9304971F0B39C800721977 /* Constants.swift */,
+				C4EEE17D1F0C1BDC00B1177B /* Extensions.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -130,6 +140,7 @@
 				C4AC16DA1F0AE054007ECB38 /* LaunchScreen.storyboard */,
 				C4CFCFF81F0AE5F10086D498 /* GoogleService-Info.plist */,
 				C4AC16DD1F0AE054007ECB38 /* Info.plist */,
+				C4EEE1831F0C248800B1177B /* Localizable.strings */,
 			);
 			path = Voiash;
 			sourceTree = "<group>";
@@ -149,6 +160,7 @@
 				C4CFCFFF1F0BFA8A0086D498 /* VOInitialVC.swift */,
 				C4CFD0031F0C0EE40086D498 /* VOForgotPasswordVC.swift */,
 				C4CFD0061F0C12F30086D498 /* VOConfirmEmailVC.swift */,
+				C4EEE17F1F0C1F1300B1177B /* VOSignUpVC.swift */,
 			);
 			name = "Welcome SignIn";
 			sourceTree = "<group>";
@@ -201,6 +213,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"es-419",
 			);
 			mainGroup = C4AC16C51F0AE054007ECB38;
 			productRefGroup = C4AC16CF1F0AE054007ECB38 /* Products */;
@@ -217,6 +230,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4EEE1851F0C248800B1177B /* Localizable.strings in Resources */,
 				C4CFCFF91F0AE5F10086D498 /* GoogleService-Info.plist in Resources */,
 				C4AC16DC1F0AE054007ECB38 /* LaunchScreen.storyboard in Resources */,
 				C4AC16D91F0AE054007ECB38 /* Assets.xcassets in Resources */,
@@ -284,7 +298,9 @@
 				C4CFD0071F0C12F30086D498 /* VOConfirmEmailVC.swift in Sources */,
 				4B93049D1F0B425A00721977 /* VOSignInVC.swift in Sources */,
 				C4AC16D21F0AE054007ECB38 /* AppDelegate.swift in Sources */,
+				C4EEE17E1F0C1BDC00B1177B /* Extensions.swift in Sources */,
 				4B9304981F0B39C800721977 /* Constants.swift in Sources */,
+				C4EEE1801F0C1F1300B1177B /* VOSignUpVC.swift in Sources */,
 				C4CFD0041F0C0EE40086D498 /* VOForgotPasswordVC.swift in Sources */,
 				4B93049B1F0B3CB200721977 /* VODataService.swift in Sources */,
 				C4CFD0001F0BFA8A0086D498 /* VOInitialVC.swift in Sources */,
@@ -299,6 +315,7 @@
 			children = (
 				C4AC16D61F0AE054007ECB38 /* Base */,
 				C4CFD0021F0BFAAC0086D498 /* en */,
+				C4EEE1811F0C23D800B1177B /* es-419 */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -307,8 +324,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				C4AC16DB1F0AE054007ECB38 /* Base */,
+				C4EEE1821F0C23D800B1177B /* es-419 */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C4EEE1831F0C248800B1177B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C4EEE1861F0C249100B1177B /* en */,
+				C4EEE1881F0C24A800B1177B /* es-419 */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -318,6 +345,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -368,6 +396,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

@@ -1,5 +1,5 @@
 //
-//  VOForgotPasswordVC.swift
+//  VOSignUpVC.swift
 //  Voiash
 //
 //  Created by Brenda Saavedra on 7/4/17.
@@ -9,9 +9,13 @@
 import UIKit
 import TextFieldEffects
 
-class VOForgotPasswordVC: UIViewController {
+class VOSignUpVC: UIViewController {
 
+    @IBOutlet weak var tfName: TextFieldEffects!
+    @IBOutlet weak var tfLastName: TextFieldEffects!
     @IBOutlet weak var tfEmail: TextFieldEffects!
+    @IBOutlet weak var tfPassword: TextFieldEffects!
+    @IBOutlet weak var tfPassword2: TextFieldEffects!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +29,12 @@ class VOForgotPasswordVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - IBOutlet
-    @IBAction func resetPassBtnPressed(_ sender: AnyObject) {
+
+    
+    // MARK: - IBAction
+    @IBAction func signUpBtnPressed(_ sender: AnyObject) {
         
     }
+    
 
 }

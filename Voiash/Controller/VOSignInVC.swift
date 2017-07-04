@@ -11,25 +11,21 @@ import FBSDKLoginKit
 import Firebase
 import TextFieldEffects
 
-class VOSignInVC: UIViewController,UITextFieldDelegate {
+class VOSignInVC: UIViewController {
     
     @IBOutlet weak var tfEmail: TextFieldEffects!
     @IBOutlet weak var tfPassword: TextFieldEffects!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideBack()
+        self.hideKeyboardWhenTappedAround()
+        self.navigationController?.presentTransparentNavigationBar()
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-     /*   if let _ = KeychainWrapper.standard.string(forKey: KEY_UID){
-            performSegue(withIdentifier: SEGUE_FEEDVC, sender: nil)
-        } */
-    }
-    
     
     //MARK: IBAction
     @IBAction func facebookBtnPressed(_ sender: AnyObject) {
+        return
         
         let facebookLogin = FBSDKLoginManager()
         facebookLogin.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
@@ -54,7 +50,7 @@ class VOSignInVC: UIViewController,UITextFieldDelegate {
     }
     
     @IBAction func signInBtnPressed(_ sender: AnyObject) {
-        if let email = emailField.text, let pass = passField.text , (email.characters.count > 0 && pass.characters.count > 0){
+        if let email = tfEmail.text, let pass = tfPassword.text , (email.characters.count > 0 && pass.characters.count > 0){
             VOFBAuthService.shared.loginWithEmail(email, password: pass, onComplete: { (errMsg, data) in
                 if errMsg == nil {
                  //   self.performSegue(withIdentifier: SEGUE_FEEDVC, sender: nil)
