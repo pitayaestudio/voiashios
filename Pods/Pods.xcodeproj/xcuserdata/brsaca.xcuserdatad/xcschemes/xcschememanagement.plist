@@ -9,6 +9,21 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Bolts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FBSDKCoreKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FBSDKLoginKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>GTMSessionFetcher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,6 +62,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>2733E0B014DA1C1B9AAE9988CB745A22</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2F0C0F810568D3E82219429D9D870F04</key>
 		<dict>
 			<key>primary</key>
@@ -57,17 +77,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>48AC25235678BC88B6F3AE623CD5B26F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>57CD4816B9DAA602801770DF9F02EFD4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>64CC69BA837D3BA1A37C5F48EAE673F8</key>
+		<key>44CAD6CE523055ED339E87154473A254</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,7 +92,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>BC5000D645EEAF961C85907CDC796FE1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BEF7E6E85DB5CDE5D7A18F4F2EB8494B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>C052BEBFBD0AB5218CC64BA3450F6547</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C3C392AB034183FDE5C2DBC248A48285</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FBDEE8ED17DA53A9CCC9CF1AC56BCCDF</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -10,8 +10,8 @@
 		4B9304951F0B14AE00721977 /* VOFBAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9304941F0B14AE00721977 /* VOFBAuthService.swift */; };
 		4B9304981F0B39C800721977 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9304971F0B39C800721977 /* Constants.swift */; };
 		4B93049B1F0B3CB200721977 /* VODataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B93049A1F0B3CB200721977 /* VODataService.swift */; };
+		4B93049D1F0B425A00721977 /* VOSignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B93049C1F0B425A00721977 /* VOSignInVC.swift */; };
 		C4AC16D21F0AE054007ECB38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AC16D11F0AE054007ECB38 /* AppDelegate.swift */; };
-		C4AC16D41F0AE054007ECB38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AC16D31F0AE054007ECB38 /* ViewController.swift */; };
 		C4AC16D71F0AE054007ECB38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4AC16D51F0AE054007ECB38 /* Main.storyboard */; };
 		C4AC16D91F0AE054007ECB38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4AC16D81F0AE054007ECB38 /* Assets.xcassets */; };
 		C4AC16DC1F0AE054007ECB38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4AC16DA1F0AE054007ECB38 /* LaunchScreen.storyboard */; };
@@ -23,11 +23,11 @@
 		4B9304941F0B14AE00721977 /* VOFBAuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOFBAuthService.swift; path = Firebase/VOFBAuthService.swift; sourceTree = "<group>"; };
 		4B9304971F0B39C800721977 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Utils/Constants.swift; sourceTree = "<group>"; };
 		4B93049A1F0B3CB200721977 /* VODataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VODataService.swift; path = Firebase/VODataService.swift; sourceTree = "<group>"; };
+		4B93049C1F0B425A00721977 /* VOSignInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOSignInVC.swift; path = Controller/VOSignInVC.swift; sourceTree = "<group>"; };
 		6117376A61DC3EE56084EA46 /* Pods_Voiash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Voiash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C341E08A4A594C5BF0E74433 /* Pods-Voiash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voiash.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Voiash/Pods-Voiash.debug.xcconfig"; sourceTree = "<group>"; };
 		C4AC16CE1F0AE054007ECB38 /* Voiash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Voiash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4AC16D11F0AE054007ECB38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C4AC16D31F0AE054007ECB38 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C4AC16D61F0AE054007ECB38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C4AC16D81F0AE054007ECB38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4AC16DB1F0AE054007ECB38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -82,6 +82,14 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
+		4B93049E1F0B425F00721977 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4B93049C1F0B425A00721977 /* VOSignInVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		C4AC16C51F0AE054007ECB38 = {
 			isa = PBXGroup;
 			children = (
@@ -105,8 +113,8 @@
 			children = (
 				4B9304991F0B39CC00721977 /* Utils */,
 				4B9304961F0B14B200721977 /* Firebase */,
+				4B93049E1F0B425F00721977 /* Controller */,
 				C4AC16D11F0AE054007ECB38 /* AppDelegate.swift */,
-				C4AC16D31F0AE054007ECB38 /* ViewController.swift */,
 				C4AC16D51F0AE054007ECB38 /* Main.storyboard */,
 				C4AC16D81F0AE054007ECB38 /* Assets.xcassets */,
 				C4AC16DA1F0AE054007ECB38 /* LaunchScreen.storyboard */,
@@ -243,7 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B9304951F0B14AE00721977 /* VOFBAuthService.swift in Sources */,
-				C4AC16D41F0AE054007ECB38 /* ViewController.swift in Sources */,
+				4B93049D1F0B425A00721977 /* VOSignInVC.swift in Sources */,
 				C4AC16D21F0AE054007ECB38 /* AppDelegate.swift in Sources */,
 				4B9304981F0B39C800721977 /* Constants.swift in Sources */,
 				4B93049B1F0B3CB200721977 /* VODataService.swift in Sources */,

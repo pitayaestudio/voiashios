@@ -10,11 +10,10 @@ import Foundation
 import Firebase
 
 class VODataService {
+    fileprivate static let _shared = VODataService()
     
-    private static let _instance = VODataService()
-    
-    static var instance: VODataService {
-        return _instance
+    static var shared:VODataService{
+        return _shared
     }
 
     var mainRef:DatabaseReference {

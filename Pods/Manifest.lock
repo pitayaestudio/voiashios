@@ -1,5 +1,15 @@
 PODS:
   - Alamofire (4.5.0)
+  - Bolts (1.8.4):
+    - Bolts/AppLinks (= 1.8.4)
+    - Bolts/Tasks (= 1.8.4)
+  - Bolts/AppLinks (1.8.4):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.8.4)
+  - FBSDKCoreKit (4.23.0):
+    - Bolts (~> 1.7)
+  - FBSDKLoginKit (4.23.0):
+    - FBSDKCoreKit
   - Firebase (4.0.2):
     - Firebase/Core (= 4.0.2)
   - Firebase/Auth (4.0.2):
@@ -70,6 +80,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - FBSDKLoginKit
   - Firebase
   - Firebase/Auth
   - Firebase/Core
@@ -83,6 +94,9 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  FBSDKCoreKit: d7829f5a69901cd7296105328e4c3c3fc7da6518
+  FBSDKLoginKit: 6b92bd65f319d669d2b0730e49db495ef1660566
   Firebase: c7ad0731eab26d18a3fc547dd048b0f7cd9c63ae
   FirebaseAnalytics: 4d7040fefc3cd8b291cde35f12cf063d7963f15d
   FirebaseAuth: ebb6abcbabae00fc47446d690c19ce68d8484fde
@@ -99,6 +113,6 @@ SPEC CHECKSUMS:
   Protobuf: d582fecf68201eac3d79ed61369ef45734394b9c
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: e519c0dcb92323c7358bbc24c3bc99883ce7a013
+PODFILE CHECKSUM: a2e23f05b03d7249bda294245e2534bf6a87770a
 
 COCOAPODS: 1.2.0

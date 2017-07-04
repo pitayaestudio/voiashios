@@ -22,8 +22,7 @@ class VOFBAuthService: NSObject {
         Auth.auth().signIn(with: credential, completion: { (user, error) in
             if error != nil {
                 print ("loginWithCredential Error:: " + error.debugDescription)
-                let strError = self.handleFirebaseError(error! as NSError)
-                onComplete?(strError,nil)
+                self.handleFirebaseError(error! as NSError, onComplete: onComplete)
             } else {
                 print ("BSC:: successfully auth Firebase")
                 self.saveUserInKeychain((user?.uid)!, isLoginWithFB: true)
@@ -32,59 +31,64 @@ class VOFBAuthService: NSObject {
         })
     }
     
-    func loginWithEmail(_ phone:String, onComplete:Completion?){
-        let email = "email_\(phone)@gmail.com"
-        let pass  = "pass_\(phone)"
-        Auth.auth().createUser(withEmail: email, password: pass, completion: { (user, error) in
+    func loginWithEmail(_ email:String, password:String, onComplete:Completion?){
+        Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
             if error != nil {
-                self.signInWithEmail(phone, onComplete: onComplete)
-            }else{
-                if user?.uid != nil {
-                    self.signInWithEmail(phone, onComplete: onComplete)
+                if let errorCode = AuthErrorCode(rawValue:error!._code){
+                    if errorCode == AuthErrorCode.userNotFound {
+                        Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
+                            if error != nil {
+                                self.handleFirebaseError(error! as NSError, onComplete: onComplete)
+                            }else if user?.uid != nil {
+                                Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
+                                    if error != nil{
+                                        self.handleFirebaseError(error! as NSError, onComplete: onComplete)
+                                    }else{
+                                        self.saveUserInKeychain((user?.uid)!, isLoginWithFB: false)
+                                        onComplete?(nil,user)
+                                    }
+                                })
+                            }
+                        })
+                    }
+                }else{
+                    self.handleFirebaseError(error! as NSError, onComplete: onComplete)
                 }
-            }
-        })
-    }
-    
-    func signInWithEmail(_ phone:String, onComplete:Completion?){
-        let email = "email_\(phone)@gmail.com"
-        let pass  = "pass_\(phone)"
-        Auth.auth().signIn(withEmail: email, password: pass, completion: { (user, error) in
-            if error != nil{
-                onComplete?(self.handleFirebaseError(error! as NSError),nil)
             }else{
-                self.saveUserInKeychain((user?.uid)!, isLoginWithFB: false)
                 onComplete?(nil,user)
             }
         })
     }
     
     func saveUserInKeychain(_ userID: String, isLoginWithFB: Bool){
-        //DataService.instance.saveUser(uid: userID, isLoginWithFB: isLoginWithFB)
+        VODataService.shared.saveUser(uid: userID, isLoginWithFB: isLoginWithFB)
         keychain.set(userID, forKey: K.FB.user.userId)
         
     }
     
-    func handleFirebaseError(_ error:NSError)->String{
+    func handleFirebaseError(_ error:NSError, onComplete:Completion?){
         print(error.debugDescription)
         if let errorCode = AuthErrorCode(rawValue: error.code){
             switch errorCode {
                 
             case .emailAlreadyInUse, .accountExistsWithDifferentCredential:
-                return "Could not create account. Email already in use"
+                onComplete?( "Could not create account. Email already in use", nil)
+                break
                 
             case .invalidEmail:
-                return "Invalid email address"
+                onComplete?( "Invalid email address", nil)
+                break
                 
             case .wrongPassword:
-                return "Invalid password"
+                onComplete?( "Invalid password", nil)
+                break
                 
             default:
-                return "There was a problem, try again"
+                onComplete?( "There was a problem, try again", nil)
+                break
                 
             }
         }
-        return ""
     }
     
     func signOut(){
