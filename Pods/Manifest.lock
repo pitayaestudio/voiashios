@@ -73,6 +73,7 @@ PODS:
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
   - GTMSessionFetcher/Core (1.1.10)
+  - IQKeyboardManagerSwift (4.0.10)
   - KeychainSwift (8.0.2)
   - Kingfisher (3.10.2)
   - Protobuf (3.3.0)
@@ -88,6 +89,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Messaging
   - Firebase/Storage
+  - IQKeyboardManagerSwift
   - KeychainSwift (~> 8.0)
   - Kingfisher
   - SwiftyJSON
@@ -108,11 +110,12 @@ SPEC CHECKSUMS:
   FirebaseStorage: 8110a1ed2034c8fbfd83890d2acc9cdbbd99afec
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 30d874b96d0d76028f61fbd122801e3f030d47db
+  IQKeyboardManagerSwift: 75ba21a23794a1e6b6fe6d9a267ea17f80e06771
   KeychainSwift: 213db04dfe7244988e61f77c72a2afb2f775954a
   Kingfisher: 7297492bf8cec9b2e2dee3519f2219948580d98e
   Protobuf: d582fecf68201eac3d79ed61369ef45734394b9c
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 3f7d2030ee17f32c9d8f753f0fdb803b5fc7b6b6
+PODFILE CHECKSUM: d520accb7307476759d7d58c0276a606241e22fc
 
 COCOAPODS: 1.2.0
