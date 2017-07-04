@@ -27,7 +27,21 @@ class VOForgotPasswordVC: UIViewController {
     
     // MARK: - IBOutlet
     @IBAction func resetPassBtnPressed(_ sender: AnyObject) {
-        
+      /* showSpinner {
+            // [START send_verification_email]
+            Auth.auth().currentUser?.sendEmailVerification { (error) in
+                // [START_EXCLUDE]
+                self.hideSpinner {
+                    if let error = error {
+                        self.showMessagePrompt(error.localizedDescription)
+                        return
+                    }
+                    self.showMessagePrompt("Sent")
+                }
+                // [END_EXCLUDE]
+            }
+            // [END send_verification_email]
+        }*/
     }
 
 }

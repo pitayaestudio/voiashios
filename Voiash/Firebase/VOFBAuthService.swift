@@ -31,7 +31,8 @@ class VOFBAuthService: NSObject {
                 self.handleFirebaseError(error! as NSError, onComplete: onComplete)
             } else {
                 print ("BSC:: successfully auth Firebase")
-                self.saveUserInKeychain((user?.uid)!, isLoginWithFB: true)
+                let userData: JSONStandard = [K.FB.user.provider:K.provider.fb]
+                self.saveUserInKeychain((user?.uid)!, userData: userData)
                 onComplete?(nil,user)
             }
         })
@@ -41,31 +42,13 @@ class VOFBAuthService: NSObject {
      Make a login with email and password.
      
      - Parameter email: The email of the user
-     - Returns password: The password of the user
+     - Parameter password: The password of the user
+     - Return: (error, user)
      */
     func loginWithEmail(_ email:String, password:String, onComplete:Completion?){
         Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
-            if error != nil {
-                if let errorCode = AuthErrorCode(rawValue:error!._code){
-                    if errorCode == AuthErrorCode.userNotFound {
-                        Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
-                            if error != nil {
-                                self.handleFirebaseError(error! as NSError, onComplete: onComplete)
-                            }else if user?.uid != nil {
-                                Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
-                                    if error != nil{
-                                        self.handleFirebaseError(error! as NSError, onComplete: onComplete)
-                                    }else{
-                                        self.saveUserInKeychain((user?.uid)!, isLoginWithFB: false)
-                                        onComplete?(nil,user)
-                                    }
-                                })
-                            }
-                        })
-                    }
-                }else{
-                    self.handleFirebaseError(error! as NSError, onComplete: onComplete)
-                }
+            if let error = error {
+                self.handleFirebaseError(error as NSError, onComplete: onComplete)
             }else{
                 onComplete?(nil,user)
             }
@@ -73,15 +56,48 @@ class VOFBAuthService: NSObject {
     }
     
     /**
-     Save the user in the keychain.
+    Create an user with email, password and extra data (name, lastname)
      
-     - Parameter email: The email of the user
-     - Returns password: The password of the user
+    - Parameter email: The user's email
+    - Parameter password: The user's password
+    - Parameter name: The user's name
+    - Parameter password: The user's lastname
+    - Return: (error, user)
+    */
+    func createUserWithEmail(email:String, password:String, name:String, lastName:String, onComplete:Completion?){
+        Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
+            if let error = error {
+                self.handleFirebaseError(error as NSError, onComplete: onComplete)
+            }else{
+                let userData: JSONStandard = [K.FB.user.provider:K.provider.email, K.FB.user.email:email, K.FB.user.name:name, K.FB.user.lastName:lastName, K.FB.user.email:email]
+                self.saveUserInKeychain((user?.uid)!, userData: userData)
+                onComplete?(nil,user)
+            }
+        }
+    }
+    
+    /**
+     Save the user in the keychain.
+     - Parameter userID: Save the userID
+     - Parameter userData: Dictionary with (email,provider)
      */
-    func saveUserInKeychain(_ userID: String, isLoginWithFB: Bool){
-        VODataService.shared.saveUser(uid: userID, isLoginWithFB: isLoginWithFB)
+    func saveUserInKeychain(_ userID: String, userData:JSONStandard){
+        VODataService.shared.saveUser(uid: userID, userData: userData)
         keychain.set(userID, forKey: K.FB.user.userId)
-        
+    }
+    
+    /**
+     Reset password
+     - Parameter email: User's email
+     - Return error
+     */
+    func resetPasswordForEmail(_ email:String, onComplete:(_ errMsg: String?)-> Void){
+        Auth.auth().sendPasswordReset(withEmail: email) { (error) in
+            if let error = error {
+                self.handleFirebaseError(error as NSError, onComplete: onComplete)
+            }
+            onComplete(nil)
+        }
     }
     
     /**
@@ -95,20 +111,24 @@ class VOFBAuthService: NSObject {
         if let errorCode = AuthErrorCode(rawValue: error.code){
             switch errorCode {
                 
+            case .userNotFound:
+                onComplete?(NSLocalizedString("errorUserNotFound", comment: ""), nil)
+                break
+                
             case .emailAlreadyInUse, .accountExistsWithDifferentCredential:
-                onComplete?( "Could not create account. Email already in use", nil)
+                onComplete?(NSLocalizedString("errorEmailAlreadyInUse", comment: ""), nil)
                 break
                 
             case .invalidEmail:
-                onComplete?( "Invalid email address", nil)
+                onComplete?(NSLocalizedString("errorInvalidEmail", comment: ""), nil)
                 break
                 
             case .wrongPassword:
-                onComplete?( "Invalid password", nil)
+                onComplete?(NSLocalizedString("errorWrongPassword", comment: ""), nil)
                 break
                 
             default:
-                onComplete?( "There was a problem, try again", nil)
+                onComplete?(NSLocalizedString("errorGeneral", comment: ""), nil)
                 break
                 
             }
@@ -117,5 +137,6 @@ class VOFBAuthService: NSObject {
     
     func signOut(){
         try! Auth.auth().signOut()
+        keychain.clear()
     }
 }

@@ -24,10 +24,12 @@ class VODataService {
         return mainRef.child(K.FB.user.ref)
     }
     
-    func saveUser(uid: String, isLoginWithFB:Bool){
-        let provider = isLoginWithFB ? "facebook.com" : "firebase"
+   /* func saveUser(uid: String, provider:String){
         let userData: Dictionary<String, AnyObject> = [K.FB.user.provider: provider as AnyObject]
         usersRef.child(uid).updateChildValues(userData)
-    }
+    } **/
     
+    func saveUser(uid: String, userData:JSONStandard){
+        usersRef.child(uid).updateChildValues(userData)
+    }
 }

@@ -19,4 +19,5 @@ target 'Voiash' do
   pod 'FBSDKLoginKit', '~> 4.24'
   pod 'IQKeyboardManagerSwift'
   pod 'TextFieldEffects'
+  pod 'GoogleSignIn'
 end

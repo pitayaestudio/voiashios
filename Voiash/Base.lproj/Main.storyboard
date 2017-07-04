@@ -226,6 +226,7 @@
                     <connections>
                         <outlet property="tfEmail" destination="7xh-ox-9Wn" id="5Jv-AU-hX6"/>
                         <outlet property="tfPassword" destination="TMk-mD-t1g" id="E33-yv-W41"/>
+                        <segue destination="PRD-q7-25o" kind="show" identifier="segueTabBar" id="vmX-cy-3b9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t7b-OK-8Fv" userLabel="First Responder" sceneMemberID="firstResponder"/>

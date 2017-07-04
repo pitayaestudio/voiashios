@@ -5,3 +5,18 @@
   Created by Brenda Saavedra on 7/4/17.
   Copyright © 2017 Pitaya Estudio. All rights reserved.
 */
+
+//ERRORS
+"errorUserNotFound" = "Usuario no encontrado"
+"errorEmailAlreadyInUse" = "No se pudo crear la cuenta. Ese email ya existe."
+"errorInvalidEmail" = "Email inválido"
+"errorWrongPassword" = "Password incorrecto"
+"errorGeneral" = "Ups, existió un problema. Inténtelo más tade"
+
+//SIGNUP
+"nameRequired" = "Nombre es requerido"
+"lastNameRequired" = "Apellido es requerido"
+"emailRequired" = "Email es requerido"
+"passRequired" = "Password es requerido"
+"pass2Required" = "Password2 es requerido"
+"passwordDifferent" = "La confirmación de password no es igual"

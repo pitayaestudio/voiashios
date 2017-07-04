@@ -36,5 +36,30 @@ class VOSignUpVC: UIViewController {
         
     }
     
+    // MARK: - Validations
+    func validateData()->JSONStandard? {
+        guard let name = tfName.text && !name.isBlank  else {
+            self.showMessagePrompt(NSLocalizedString("nameRequired", comment: ""))
+            return nil
+        }
+        
+        guard let lastName = tfLastName.text && !lastName.isBlank  else {
+            self.showMessagePrompt(NSLocalizedString("lastNameRequired", comment: ""))
+            return nil
+        }
+        
+        guard var email = tfEmail.text && !email.isBlank  else {
+            self.showMessagePrompt(NSLocalizedString("emailRequired", comment: ""))
+            return nil
+        }
+        
+        guard email = tfEmail.text!.isEmail else{
+            self.showMessagePrompt(NSLocalizedString("errorInvalidEmail", comment: ""))
+            return nil
+        }
+        
+        
+    }
+    
 
 }
