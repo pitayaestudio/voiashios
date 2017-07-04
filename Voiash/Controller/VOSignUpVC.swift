@@ -38,27 +38,45 @@ class VOSignUpVC: UIViewController {
     
     // MARK: - Validations
     func validateData()->JSONStandard? {
-        guard let name = tfName.text && !name.isBlank  else {
+        guard let name = tfName.text && !tfName.text?.isBlank  else {
             self.showMessagePrompt(NSLocalizedString("nameRequired", comment: ""))
             return nil
         }
         
-        guard let lastName = tfLastName.text && !lastName.isBlank  else {
+        guard let lastName = tfLastName.text && !tfLastName.text?.isBlank  else {
             self.showMessagePrompt(NSLocalizedString("lastNameRequired", comment: ""))
             return nil
         }
         
-        guard var email = tfEmail.text && !email.isBlank  else {
+        guard let email = tfEmail.text && !tfEmail.text?.isBlank  else {
             self.showMessagePrompt(NSLocalizedString("emailRequired", comment: ""))
             return nil
         }
         
-        guard email = tfEmail.text!.isEmail else{
+        if !email.isEmail {
             self.showMessagePrompt(NSLocalizedString("errorInvalidEmail", comment: ""))
             return nil
         }
         
+        guard let pass1 = tfPassword.text && !tfPassword.text?.isBlank else{
+            self.showMessagePrompt(NSLocalizedString("passRequired", comment: ""))
+            return nil
+        }
         
+        if !pass1.isValidPassword {
+            self.showMessagePrompt(NSLocalizedString("errorWrongPassword", comment: ""))
+            return nil
+        }
+        
+        guard let pass2 = tfPassword2.text && !tfPassword2.text?.isBlank else{
+            self.showMessagePrompt(NSLocalizedString("pass2Required", comment: ""))
+            return nil
+        }
+        
+        if pass1 != pass2 {
+            self.showMessagePrompt(NSLocalizedString("passwordDifferent", comment: ""))
+            return nil
+        }
     }
     
 

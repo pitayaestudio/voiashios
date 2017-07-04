@@ -31,7 +31,7 @@ class VOFBAuthService: NSObject {
                 self.handleFirebaseError(error! as NSError, onComplete: onComplete)
             } else {
                 print ("BSC:: successfully auth Firebase")
-                let userData: JSONStandard = [K.FB.user.provider:K.provider.fb]
+                let userData: JSONStandard = [K.FB.user.provider:K.provider.fb as AnyObject]
                 self.saveUserInKeychain((user?.uid)!, userData: userData)
                 onComplete?(nil,user)
             }
@@ -91,10 +91,10 @@ class VOFBAuthService: NSObject {
      - Parameter email: User's email
      - Return error
      */
-    func resetPasswordForEmail(_ email:String, onComplete:(_ errMsg: String?)-> Void){
+    func resetPasswordForEmail(_ email:String, onComplete:@escaping (_ errMsg: String?)-> Void){
         Auth.auth().sendPasswordReset(withEmail: email) { (error) in
             if let error = error {
-                self.handleFirebaseError(error as NSError, onComplete: onComplete)
+             //   self.handleFirebaseError(error as NSError, onComplete:
             }
             onComplete(nil)
         }

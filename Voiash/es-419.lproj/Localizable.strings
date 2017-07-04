@@ -10,7 +10,7 @@
 "errorUserNotFound" = "Usuario no encontrado"
 "errorEmailAlreadyInUse" = "No se pudo crear la cuenta. Ese email ya existe."
 "errorInvalidEmail" = "Email inválido"
-"errorWrongPassword" = "Password incorrecto"
+"errorWrongPassword" = "Password incorrecto, debe de tener al menos 6 caracteres"
 "errorGeneral" = "Ups, existió un problema. Inténtelo más tade"
 
 //SIGNUP
