@@ -44,6 +44,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         return true
     }
+    
+    func reloadRootVC() {
+        var instiateVC = "InitNavBar"
+        
+        if keychain.getBool(K.FB.user.userId) != nil {
+            instiateVC = "TabBar"
+        }
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let initialViewController = storyboard.instantiateViewController(withIdentifier: instiateVC)
+        
+        self.window?.rootViewController = initialViewController
+        self.window?.makeKeyAndVisible()
+    }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         

@@ -532,7 +532,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="ySQ-hm-hKf">
             <objects>
-                <tabBarController id="PRD-q7-25o" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBar" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PRD-q7-25o" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="huk-R8-bhM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -553,7 +553,7 @@
         <!--Navigation Controller-->
         <scene sceneID="2HE-OO-HIG">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cgy-Hk-RZr" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="InitNavBar" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cgy-Hk-RZr" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NAB-dU-Gkr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
