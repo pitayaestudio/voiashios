@@ -37,6 +37,7 @@ struct K {
     }
     struct color {
         static let shadowGray = UIColor(red: 255, green: 255, blue: 255, alpha: 0.5)
+        static let colorRed = UIColor(red: 255, green: 72, blue: 71, alpha: 1)
     }
     struct segue {
         static let segueTabBar = "segueTabBar"

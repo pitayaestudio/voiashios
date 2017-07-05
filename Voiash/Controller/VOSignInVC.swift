@@ -23,14 +23,24 @@ class VOSignInVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
         
         self.hideBack()
         self.hideKeyboardWhenTappedAround()
-        self.navigationController?.presentTransparentNavigationBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         GIDSignIn.sharedInstance().uiDelegate = self
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBar.isHidden = false
     }
     
     //MARK: IBAction
+    @IBAction func backBtnPressed(_ sender: AnyObject) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func facebookBtnPressed(_ sender: AnyObject) {
         return
         

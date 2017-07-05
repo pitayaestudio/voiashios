@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import GoogleSignIn
 import FBSDKCoreKit
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
@@ -30,8 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         UINavigationBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
-
-       // UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Andes Rounded", size: 17)!], forState: .Normal) // your textattributes here
         
         FirebaseApp.configure()
         
@@ -42,22 +41,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         FBSDKApplicationDelegate.sharedInstance().application(application,
                                                               didFinishLaunchingWithOptions:launchOptions)
         
+        IQKeyboardManager.sharedManager().enable = true
+        
+        try! Auth.auth().signOut()
+        
+        reloadRootVC()
+        
         return true
     }
     
     func reloadRootVC() {
-        var instiateVC = "InitNavBar"
-        
-        if keychain.getBool(K.FB.user.userId) != nil {
-            instiateVC = "TabBar"
+        //if keychain.getBool(K.FB.user.userId) != nil {
+        if (Auth.auth().currentUser != nil) {
+            
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "TabBar")
+            
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
         }
-        
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let initialViewController = storyboard.instantiateViewController(withIdentifier: instiateVC)
-        
-        self.window?.rootViewController = initialViewController
-        self.window?.makeKeyAndVisible()
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {

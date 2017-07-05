@@ -27,6 +27,19 @@ extension UIViewController {
 
 extension UINavigationController {
     
+    public func presentWhiteNavigationBar() {
+        navigationBar.isTranslucent = false
+        navigationBar.barTintColor = .white
+        navigationBar.tintColor = K.color.colorRed
+        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:K.color.colorRed]
+
+        setNavigationBarHidden(false, animated:true)
+    }
+    
+    public func hideWhiteNavigationBar() {
+        setNavigationBarHidden(true, animated:false)
+    }
+    
     public func presentTransparentNavigationBar() {
         navigationBar.setBackgroundImage(UIImage(), for:UIBarMetrics.default)
         navigationBar.isTranslucent = true

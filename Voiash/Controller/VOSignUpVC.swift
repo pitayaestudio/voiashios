@@ -8,6 +8,7 @@
 
 import UIKit
 import TextFieldEffects
+import Firebase
 
 class VOSignUpVC: UIViewController {
 
@@ -19,14 +20,25 @@ class VOSignUpVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.hideBack()
         self.hideKeyboardWhenTappedAround()
-        self.navigationController?.presentTransparentNavigationBar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBar.isHidden = false
+    }
     
     // MARK: - IBAction
+    @IBAction func backBtnPressed(_ sender: AnyObject) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func signUpBtnPressed(_ sender: AnyObject) {
         guard let data = validateData() else{
             return
@@ -37,6 +49,19 @@ class VOSignUpVC: UIViewController {
                     if user != nil {
                         self.performSegue(withIdentifier: K.segue.segueTabBar, sender: nil)
                     }else{
+                        if !Auth.auth().currentUser!.isEmailVerified {
+                            let alertVC = UIAlertController(title: "Error", message: "Sorry. Your email address has not yet been verified. Do you want us to send another verification email to \(self.tfEmail.text!).", preferredStyle: .alert)
+                            let alertActionOkay = UIAlertAction(title: "Okay", style: .default) {
+                                (_) in
+                                Auth.auth().currentUser!.sendEmailVerification(completion: nil)
+                            }
+                            let alertActionCancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+                            
+                            alertVC.addAction(alertActionOkay)
+                            alertVC.addAction(alertActionCancel)
+                        } else {
+                            self.performSegue(withIdentifier: K.segue.segueTabBar, sender: nil)
+                        }
                         self.showMessagePrompt(error!)
                     }
                 })

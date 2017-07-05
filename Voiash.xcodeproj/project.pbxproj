@@ -24,6 +24,13 @@
 		C4EEE1801F0C1F1300B1177B /* VOSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EEE17F1F0C1F1300B1177B /* VOSignUpVC.swift */; };
 		C4EEE1851F0C248800B1177B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4EEE1831F0C248800B1177B /* Localizable.strings */; };
 		C4EEE18C1F0C3B7600B1177B /* UIViewController+Alerts.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EEE18B1F0C3B7600B1177B /* UIViewController+Alerts.m */; };
+		C4EEE1941F0D681D00B1177B /* Gotham-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = C4EEE18F1F0D681D00B1177B /* Gotham-Black.otf */; };
+		C4EEE1951F0D681D00B1177B /* Gotham-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C4EEE1901F0D681D00B1177B /* Gotham-Bold.otf */; };
+		C4EEE1961F0D681D00B1177B /* Gotham-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = C4EEE1911F0D681D00B1177B /* Gotham-Light.otf */; };
+		C4EEE1971F0D681D00B1177B /* Gotham-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = C4EEE1921F0D681D00B1177B /* Gotham-Medium.otf */; };
+		C4EEE1981F0D681D00B1177B /* Gotham-Ultra.otf in Resources */ = {isa = PBXBuildFile; fileRef = C4EEE1931F0D681D00B1177B /* Gotham-Ultra.otf */; };
+		C4EEE19B1F0D71DC00B1177B /* VODiscoverListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EEE19A1F0D71DC00B1177B /* VODiscoverListVC.swift */; };
+		C4EEE19D1F0D726000B1177B /* VODiscoverTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EEE19C1F0D726000B1177B /* VODiscoverTypeCell.swift */; };
 		D32767518FF72FAD249443CB /* Pods_Voiash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6117376A61DC3EE56084EA46 /* Pods_Voiash.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +62,13 @@
 		C4EEE1891F0C3B7500B1177B /* Voiash-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Voiash-Bridging-Header.h"; sourceTree = "<group>"; };
 		C4EEE18A1F0C3B7600B1177B /* UIViewController+Alerts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Alerts.h"; path = "View/UIViewController+Alerts.h"; sourceTree = "<group>"; };
 		C4EEE18B1F0C3B7600B1177B /* UIViewController+Alerts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Alerts.m"; path = "View/UIViewController+Alerts.m"; sourceTree = "<group>"; };
+		C4EEE18F1F0D681D00B1177B /* Gotham-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Black.otf"; sourceTree = "<group>"; };
+		C4EEE1901F0D681D00B1177B /* Gotham-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Bold.otf"; sourceTree = "<group>"; };
+		C4EEE1911F0D681D00B1177B /* Gotham-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Light.otf"; sourceTree = "<group>"; };
+		C4EEE1921F0D681D00B1177B /* Gotham-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Medium.otf"; sourceTree = "<group>"; };
+		C4EEE1931F0D681D00B1177B /* Gotham-Ultra.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Ultra.otf"; sourceTree = "<group>"; };
+		C4EEE19A1F0D71DC00B1177B /* VODiscoverListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VODiscoverListVC.swift; path = Controller/VODiscoverListVC.swift; sourceTree = "<group>"; };
+		C4EEE19C1F0D726000B1177B /* VODiscoverTypeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VODiscoverTypeCell.swift; path = View/VODiscoverTypeCell.swift; sourceTree = "<group>"; };
 		E7B3FF1D15D74988D54DE0A5 /* Pods-Voiash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voiash.release.xcconfig"; path = "Pods/Target Support Files/Pods-Voiash/Pods-Voiash.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,6 +122,7 @@
 		4B93049E1F0B425F00721977 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C4EEE1991F0D6E8300B1177B /* Discover */,
 				C4CFD0051F0C0EF20086D498 /* Welcome SignIn */,
 			);
 			name = Controller;
@@ -139,13 +154,11 @@
 				4B93049E1F0B425F00721977 /* Controller */,
 				C4CFCFFE1F0BC9E90086D498 /* View */,
 				C4AC16D11F0AE054007ECB38 /* AppDelegate.swift */,
-				C4AC16D51F0AE054007ECB38 /* Main.storyboard */,
+				C4EEE18D1F0D67E800B1177B /* Resources */,
 				C4AC16D81F0AE054007ECB38 /* Assets.xcassets */,
-				C4AC16DA1F0AE054007ECB38 /* LaunchScreen.storyboard */,
 				C4CFCFF81F0AE5F10086D498 /* GoogleService-Info.plist */,
 				C4AC16DD1F0AE054007ECB38 /* Info.plist */,
 				C4EEE1891F0C3B7500B1177B /* Voiash-Bridging-Header.h */,
-				C4EEE1831F0C248800B1177B /* Localizable.strings */,
 			);
 			path = Voiash;
 			sourceTree = "<group>";
@@ -156,6 +169,7 @@
 				C4CFCFFC1F0BC9E50086D498 /* VORoundButton.swift */,
 				C4EEE18A1F0C3B7600B1177B /* UIViewController+Alerts.h */,
 				C4EEE18B1F0C3B7600B1177B /* UIViewController+Alerts.m */,
+				C4EEE19E1F0D726D00B1177B /* Discover Cells */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -170,6 +184,45 @@
 				C4EEE17F1F0C1F1300B1177B /* VOSignUpVC.swift */,
 			);
 			name = "Welcome SignIn";
+			sourceTree = "<group>";
+		};
+		C4EEE18D1F0D67E800B1177B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C4EEE18E1F0D681D00B1177B /* gotham */,
+				C4AC16D51F0AE054007ECB38 /* Main.storyboard */,
+				C4AC16DA1F0AE054007ECB38 /* LaunchScreen.storyboard */,
+				C4EEE1831F0C248800B1177B /* Localizable.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		C4EEE18E1F0D681D00B1177B /* gotham */ = {
+			isa = PBXGroup;
+			children = (
+				C4EEE18F1F0D681D00B1177B /* Gotham-Black.otf */,
+				C4EEE1901F0D681D00B1177B /* Gotham-Bold.otf */,
+				C4EEE1911F0D681D00B1177B /* Gotham-Light.otf */,
+				C4EEE1921F0D681D00B1177B /* Gotham-Medium.otf */,
+				C4EEE1931F0D681D00B1177B /* Gotham-Ultra.otf */,
+			);
+			path = gotham;
+			sourceTree = "<group>";
+		};
+		C4EEE1991F0D6E8300B1177B /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				C4EEE19A1F0D71DC00B1177B /* VODiscoverListVC.swift */,
+			);
+			name = Discover;
+			sourceTree = "<group>";
+		};
+		C4EEE19E1F0D726D00B1177B /* Discover Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C4EEE19C1F0D726000B1177B /* VODiscoverTypeCell.swift */,
+			);
+			name = "Discover Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,8 +291,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4EEE1981F0D681D00B1177B /* Gotham-Ultra.otf in Resources */,
+				C4EEE1971F0D681D00B1177B /* Gotham-Medium.otf in Resources */,
 				C4EEE1851F0C248800B1177B /* Localizable.strings in Resources */,
+				C4EEE1951F0D681D00B1177B /* Gotham-Bold.otf in Resources */,
+				C4EEE1941F0D681D00B1177B /* Gotham-Black.otf in Resources */,
 				C4CFCFF91F0AE5F10086D498 /* GoogleService-Info.plist in Resources */,
+				C4EEE1961F0D681D00B1177B /* Gotham-Light.otf in Resources */,
 				C4AC16DC1F0AE054007ECB38 /* LaunchScreen.storyboard in Resources */,
 				C4AC16D91F0AE054007ECB38 /* Assets.xcassets in Resources */,
 				C4AC16D71F0AE054007ECB38 /* Main.storyboard in Resources */,
@@ -302,8 +360,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B9304951F0B14AE00721977 /* VOFBAuthService.swift in Sources */,
+				C4EEE19D1F0D726000B1177B /* VODiscoverTypeCell.swift in Sources */,
 				C4CFCFFD1F0BC9E50086D498 /* VORoundButton.swift in Sources */,
 				C4CFD0071F0C12F30086D498 /* VOConfirmEmailVC.swift in Sources */,
+				C4EEE19B1F0D71DC00B1177B /* VODiscoverListVC.swift in Sources */,
 				C4EEE18C1F0C3B7600B1177B /* UIViewController+Alerts.m in Sources */,
 				4B93049D1F0B425A00721977 /* VOSignInVC.swift in Sources */,
 				C4AC16D21F0AE054007ECB38 /* AppDelegate.swift in Sources */,

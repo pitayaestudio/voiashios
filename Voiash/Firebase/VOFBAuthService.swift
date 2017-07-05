@@ -18,6 +18,21 @@ class VOFBAuthService: NSObject {
         return _shared
     }
     
+    
+    
+    /**
+     Make a login anonymous.
+     */
+    func loginAnonymous(){
+        Auth.auth().signInAnonymously { (user, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            }else{
+                print("=======> loginAnonymous")
+            }
+        }
+    }
+    
     /**
      Make a login with facebook credentials.
      
@@ -65,7 +80,9 @@ class VOFBAuthService: NSObject {
         let email = userData[K.FB.user.email] as! String
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
             if let error = error {
-                self.handleFirebaseError(error as NSError, onComplete: onComplete)
+                self.handleFirebaseError(error as NSError, onComplete: { (err, user) in
+                    onComplete?(err, nil)
+                })
             }else{
                 self.saveUserInKeychain((user?.uid)!, userData: userData)
                 onComplete?(nil,user)
