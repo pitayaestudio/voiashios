@@ -19,64 +19,77 @@ class VOSignUpVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.hideBack()
         self.hideKeyboardWhenTappedAround()
         self.navigationController?.presentTransparentNavigationBar()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
     
     // MARK: - IBAction
     @IBAction func signUpBtnPressed(_ sender: AnyObject) {
+        guard let data = validateData() else{
+            return
+        }
+        showSpinner { 
+            VOFBAuthService.shared.createUserWithEmail(userData: data, password: self.tfPassword.text!) { (error, user) in
+                self.hideSpinner({
+                    if user != nil {
+                        self.performSegue(withIdentifier: K.segue.segueTabBar, sender: nil)
+                    }else{
+                        self.showMessagePrompt(error!)
+                    }
+                })
+            }
+        }
         
     }
     
     // MARK: - Validations
     func validateData()->JSONStandard? {
-        guard let name = tfName.text && !tfName.text?.isBlank  else {
+        guard  (tfName.text != nil)  && !(tfName.text?.isBlank)! else {
             self.showMessagePrompt(NSLocalizedString("nameRequired", comment: ""))
             return nil
         }
         
-        guard let lastName = tfLastName.text && !tfLastName.text?.isBlank  else {
+        guard (tfLastName.text != nil) && !(tfLastName.text?.isBlank)!  else {
             self.showMessagePrompt(NSLocalizedString("lastNameRequired", comment: ""))
             return nil
         }
         
-        guard let email = tfEmail.text && !tfEmail.text?.isBlank  else {
+        guard (tfEmail.text != nil) && !(tfEmail.text?.isBlank)!  else {
             self.showMessagePrompt(NSLocalizedString("emailRequired", comment: ""))
             return nil
         }
         
-        if !email.isEmail {
+        if !tfEmail.text!.isEmail {
             self.showMessagePrompt(NSLocalizedString("errorInvalidEmail", comment: ""))
             return nil
         }
         
-        guard let pass1 = tfPassword.text && !tfPassword.text?.isBlank else{
+        guard (tfPassword.text != nil) && !(tfPassword.text?.isBlank)! else{
             self.showMessagePrompt(NSLocalizedString("passRequired", comment: ""))
             return nil
         }
         
-        if !pass1.isValidPassword {
+        if !tfPassword.text!.isValidPassword {
             self.showMessagePrompt(NSLocalizedString("errorWrongPassword", comment: ""))
             return nil
         }
         
-        guard let pass2 = tfPassword2.text && !tfPassword2.text?.isBlank else{
+        guard (tfPassword2.text != nil) && !(tfPassword2.text?.isBlank)! else{
             self.showMessagePrompt(NSLocalizedString("pass2Required", comment: ""))
             return nil
         }
         
-        if pass1 != pass2 {
+        if tfPassword2.text != tfPassword.text {
             self.showMessagePrompt(NSLocalizedString("passwordDifferent", comment: ""))
             return nil
         }
+        
+        let userData:JSONStandard = [K.FB.user.name:tfName.text! as AnyObject, K.FB.user.lastName:tfLastName.text! as AnyObject, K.FB.user.provider: K.provider.email as AnyObject, K.FB.user.email: tfEmail.text! as AnyObject]
+        
+        return userData
     }
     
 

@@ -15,7 +15,7 @@ import FBSDKCoreKit
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
     var window: UIWindow?
-
+    var currentVC: UIViewController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -45,17 +45,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         return true
     }
 
-    // [START new_delegate]
-    @available(iOS 9.0, *)
-    func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any])
-        -> Bool {
-            // [END new_delegate]
-            return self.application(application,
-                                    open: url,
-                                    // [START new_options]
-                sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
-                annotation: [:])
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        return GIDSignIn.sharedInstance().handle(url,
+                                                 sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
+                                                 annotation: options[UIApplicationOpenURLOptionsKey.annotation])
     }
+    
     // [END new_options]
     // [START old_delegate]
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
@@ -75,11 +71,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     // [START headless_google_auth]
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
         // [START_EXCLUDE]
-    /*    guard let controller = GIDSignIn.sharedInstance().uiDelegate as? MainViewController else { return }
+        guard let controller = self.currentVC else { return }
         // [END_EXCLUDE]
         if let error = error {
             // [START_EXCLUDE]
-            controller.showMessagePrompt(error.localizedDescription)
+            self.currentVC!.showMessagePrompt(error.localizedDescription)
             // [END_EXCLUDE]
             return
         }
@@ -90,10 +86,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                                                        accessToken: authentication.accessToken)
         // [END google_credential]
         // [START_EXCLUDE]
-        controller.firebaseLogin(credential)*/
+        controller.showSpinner {
+            let userData: JSONStandard = [K.FB.user.provider:K.provider.google as AnyObject]
+            VOFBAuthService.shared.loginWithCredential(credential, userData:userData) { (error, user) in
+                controller.hideSpinner({ 
+                    if let error = error {
+                        controller.showMessagePrompt(error)
+                    }else{
+                        controller.performSegue(withIdentifier: K.segue.segueTabBar, sender: nil)
+                    }
+                })
+            }
+        }
+        
         // [END_EXCLUDE]
     }
     // [END headless_google_auth]
-
+    
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        
+    }
 }
 

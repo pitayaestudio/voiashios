@@ -30,6 +30,6 @@ class VODataService {
     } **/
     
     func saveUser(uid: String, userData:JSONStandard){
-        usersRef.child(uid).updateChildValues(userData)
+        usersRef.child(uid).setValue(userData)
     }
 }

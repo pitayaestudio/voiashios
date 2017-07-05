@@ -19,29 +19,32 @@ class VOForgotPasswordVC: UIViewController {
         self.hideKeyboardWhenTappedAround()
         self.navigationController?.presentTransparentNavigationBar()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     // MARK: - IBOutlet
     @IBAction func resetPassBtnPressed(_ sender: AnyObject) {
-      /* showSpinner {
-            // [START send_verification_email]
-            Auth.auth().currentUser?.sendEmailVerification { (error) in
-                // [START_EXCLUDE]
-                self.hideSpinner {
+       
+        guard let email = self.tfEmail.text else{
+            self.showMessagePrompt(NSLocalizedString("emailRequired", comment: ""))
+            return
+        }
+        
+        if !email.isEmail {
+            self.showMessagePrompt(NSLocalizedString("errorInvalidEmail", comment: ""))
+            return
+        }
+    
+       showSpinner {
+            VOFBAuthService.shared.resetPasswordForEmail(email, onComplete: { (error) in
+                self.hideSpinner({ 
                     if let error = error {
-                        self.showMessagePrompt(error.localizedDescription)
-                        return
+                        self.showMessagePrompt(error)
+                    }else{
+                        self.showMessagePrompt(NSLocalizedString("resetPassOK", comment: ""))
+                        self.navigationController?.popToRootViewController(animated: true)
                     }
-                    self.showMessagePrompt("Sent")
-                }
-                // [END_EXCLUDE]
-            }
-            // [END send_verification_email]
-        }*/
+                })
+            })
+       }
     }
 
 }

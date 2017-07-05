@@ -11,16 +11,23 @@ import FBSDKLoginKit
 import Firebase
 import TextFieldEffects
 
-class VOSignInVC: UIViewController {
+class VOSignInVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
     
     @IBOutlet weak var tfEmail: TextFieldEffects!
     @IBOutlet weak var tfPassword: TextFieldEffects!
+    @IBOutlet weak var signInButton: GIDSignInButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        appDel.currentVC = self
+        
         self.hideBack()
         self.hideKeyboardWhenTappedAround()
         self.navigationController?.presentTransparentNavigationBar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        GIDSignIn.sharedInstance().uiDelegate = self
     }
     
     //MARK: IBAction
@@ -36,7 +43,9 @@ class VOSignInVC: UIViewController {
             } else {
                 print("BSC:: Successfully auth FaceBook")
                 let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-                VOFBAuthService.shared.loginWithCredential(credential, onComplete: { (errMsg, data) in
+                
+                let userData: JSONStandard = [K.FB.user.provider:K.provider.fb as AnyObject]
+                VOFBAuthService.shared.loginWithCredential(credential, userData: userData, onComplete: { (errMsg, data) in
                     if errMsg == nil {
                         self.performSegue(withIdentifier: K.segue.segueTabBar, sender: nil)
                     } else {
@@ -68,9 +77,25 @@ class VOSignInVC: UIViewController {
         }
     }
     
-    @IBAction func googleBtnPressed(_ sender: AnyObject) {
+    func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {
         
+        guard error == nil else {
+            
+            print("Error while trying to redirect : \(error)")
+            return
+        }
+        
+        print("Successful Redirection")
     }
     
+    
+    //MARK: GIDSignIn Delegate
+
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!)
+    {}
+    
+    // Finished disconnecting |user| from the app successfully if |error| is |nil|.
+    public func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!)
+    {}
 }
 

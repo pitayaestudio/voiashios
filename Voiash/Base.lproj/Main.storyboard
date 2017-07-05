@@ -177,15 +177,10 @@
                                             <action selector="facebookBtnPressed:" destination="yEV-DP-WTA" eventType="touchUpInside" id="56t-z1-OdG"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y7D-zF-jbb">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MeW-4N-IuO" customClass="GIDSignInButton">
                                         <rect key="frame" x="84.5" y="0.0" width="75" height="48"/>
-                                        <state key="normal" title="GM">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="googleBtnPressed:" destination="yEV-DP-WTA" eventType="touchUpInside" id="Duo-Nq-raT"/>
-                                        </connections>
-                                    </button>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aV4-Kc-fRa">
                                         <rect key="frame" x="169.5" y="0.0" width="74.5" height="48"/>
                                         <state key="normal" title="EM">
@@ -224,6 +219,7 @@
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="signInButton" destination="MeW-4N-IuO" id="lYE-MY-Wf7"/>
                         <outlet property="tfEmail" destination="7xh-ox-9Wn" id="5Jv-AU-hX6"/>
                         <outlet property="tfPassword" destination="TMk-mD-t1g" id="E33-yv-W41"/>
                         <segue destination="PRD-q7-25o" kind="show" identifier="segueTabBar" id="vmX-cy-3b9"/>
@@ -288,7 +284,6 @@
                                 </state>
                                 <connections>
                                     <action selector="resetPassBtnPressed:" destination="GnE-Sy-CZD" eventType="touchUpInside" id="62F-oZ-wh5"/>
-                                    <action selector="signInBtnPressed:" destination="yEV-DP-WTA" eventType="touchUpInside" id="tZ1-f0-XRY"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -470,6 +465,7 @@
                         <outlet property="tfName" destination="HNu-Ys-4BW" id="oaW-jB-gIo"/>
                         <outlet property="tfPassword" destination="Adl-dF-iLh" id="5Dj-Yx-Kyo"/>
                         <outlet property="tfPassword2" destination="95z-lO-rhZ" id="xEJ-97-Rcu"/>
+                        <segue destination="PRD-q7-25o" kind="show" identifier="segueTabBar" id="o8z-Sl-N3N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iuD-3w-3yG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -615,4 +611,7 @@
         <image name="bg" width="375" height="667"/>
         <image name="logo_Voiash_sin_fondo_baja" width="224" height="74"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="vmX-cy-3b9"/>
+    </inferredMetricsTieBreakers>
 </document>

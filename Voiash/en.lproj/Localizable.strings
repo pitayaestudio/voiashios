@@ -7,16 +7,19 @@
 */
 
 //ERRORS
-"errorUserNotFound" = "User not found"
-"errorEmailAlreadyInUse" = "Could not create account. Email already in use"
-"errorInvalidEmail" = "Invalid email address"
-"errorWrongPassword" = "Invalid password, must have at least 6 characters"
-"errorGeneral" = "There was a problem, try again"
+"errorUserNotFound" = "User not found";
+"errorEmailAlreadyInUse" = "Could not create account. Email already in use";
+"errorInvalidEmail" = "Invalid email address";
+"errorWrongPassword" = "Invalid password, must have at least 6 characters";
+"errorGeneral" = "There was a problem, try again";
 
 //SIGNUP
-"nameRequired" = "Name is required"
-"lastNameRequired" = "Last name is required"
-"emailRequired" = "Email is required"
-"passRequired" = "Password is required"
-"pass2Required" = "Password2 is required"
-"passwordDifferent" = "The confirmation password is not the same"
+"nameRequired" = "Name is required";
+"lastNameRequired" = "Last name is required";
+"emailRequired" = "Email is required";
+"passRequired" = "Password is required";
+"pass2Required" = "Password2 is required";
+"passwordDifferent" = "The confirmation password is not the same";
+
+//RESET PASS
+"resetPassOK" = "Password reset email sent.";
