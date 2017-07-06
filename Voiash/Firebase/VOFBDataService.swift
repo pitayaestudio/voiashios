@@ -1,5 +1,5 @@
 //
-//  VODataService.swift
+//  VOFBDataService.swift
 //  Voiash
 //
 //  Created by Brenda Saavedra on 03/07/17.
@@ -9,17 +9,17 @@
 import Foundation
 import Firebase
 
-class VODataService {
-    fileprivate static let _shared = VODataService()
+class VOFBDataService {
+    fileprivate static let _shared = VOFBDataService()
     
     var myUser: VOFBUser!
     
-    static var shared:VODataService{
+    static var shared:VOFBDataService{
         return _shared
     }
 
     var mainRef:DatabaseReference {
-        return Database.database().reference()
+        return Database.database().reference().child(K.FB.kindDB)
     }
     
     var usersRef:DatabaseReference {

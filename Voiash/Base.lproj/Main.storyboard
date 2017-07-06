@@ -51,6 +51,11 @@
                                         <state key="normal" title="INGRESAR SIN REGISTRAR">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="PRD-q7-25o" kind="show" id="faK-Ob-Fqt"/>
                                         </connections>
@@ -109,7 +114,6 @@
                                         </constraints>
                                         <state key="normal" image="ic_arrow_back"/>
                                         <connections>
-                                            <action selector="backBtnPressed:" destination="fGi-18-7Kb" eventType="touchUpInside" id="aVO-cL-cSY"/>
                                             <action selector="backBtnPressed:" destination="yEV-DP-WTA" eventType="touchUpInside" id="tiz-OO-HHs"/>
                                         </connections>
                                     </button>
@@ -274,6 +278,7 @@
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="btnLogin" destination="5x2-bL-ZjP" id="oCR-eh-DEr"/>
                         <outlet property="signInButton" destination="MeW-4N-IuO" id="lYE-MY-Wf7"/>
                         <outlet property="tfEmail" destination="7xh-ox-9Wn" id="5Jv-AU-hX6"/>
                         <outlet property="tfPassword" destination="TMk-mD-t1g" id="E33-yv-W41"/>
@@ -335,7 +340,6 @@
                                 <state key="normal" image="ic_arrow_back"/>
                                 <connections>
                                     <action selector="backBtnPressed" destination="GnE-Sy-CZD" eventType="touchUpInside" id="TVw-I1-v2l"/>
-                                    <action selector="backBtnPressed:" destination="fGi-18-7Kb" eventType="touchUpInside" id="q4O-N5-CxJ"/>
                                     <action selector="backBtnPressed:" destination="yEV-DP-WTA" eventType="touchUpInside" id="vT4-bV-uh3"/>
                                 </connections>
                             </button>
@@ -438,7 +442,7 @@
                                         </constraints>
                                         <state key="normal" image="ic_arrow_back"/>
                                         <connections>
-                                            <action selector="backBtnPressed:" destination="fGi-18-7Kb" eventType="touchUpInside" id="Gnf-1B-d80"/>
+                                            <action selector="backBtnPressed:" destination="fGi-18-7Kb" eventType="touchUpInside" id="oD4-dl-A78"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crea tu cuenta y vive un mundo de viajes y aventuras con Voiash" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyC-cl-r7r">
@@ -472,7 +476,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="212" height="40"/>
                                         <color key="textColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="namePhonePad"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                 <color key="value" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -489,7 +493,7 @@
                                         <rect key="frame" x="0.0" y="50" width="212" height="40"/>
                                         <color key="textColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="namePhonePad"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                 <color key="value" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -600,22 +604,24 @@
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="btnSingIn" destination="NKG-Gc-FtE" id="0hn-Cs-N3h"/>
                         <outlet property="tfEmail" destination="wkH-qG-VBx" id="Yxi-Dt-RQA"/>
                         <outlet property="tfLastName" destination="eY7-Un-7wz" id="5Zc-3A-jFW"/>
                         <outlet property="tfName" destination="HNu-Ys-4BW" id="oaW-jB-gIo"/>
                         <outlet property="tfPassword" destination="Adl-dF-iLh" id="5Dj-Yx-Kyo"/>
                         <outlet property="tfPassword2" destination="95z-lO-rhZ" id="xEJ-97-Rcu"/>
                         <segue destination="PRD-q7-25o" kind="show" identifier="segueTabBar" id="o8z-Sl-N3N"/>
+                        <segue destination="u2z-uv-9Mv" kind="show" identifier="segueEmailConfirmation" id="s8T-M3-1hd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iuD-3w-3yG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2763.75" y="-545.07042253521126"/>
         </scene>
-        <!--View Controller-->
+        <!--Confirm EmailVC-->
         <scene sceneID="t08-26-KyS">
             <objects>
-                <viewController id="u2z-uv-9Mv" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VOConfirmEmailVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="u2z-uv-9Mv" customClass="VOConfirmEmailVC" customModule="Voiash" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qr6-ly-blL"/>
                         <viewControllerLayoutGuide type="bottom" id="eFm-Da-KVn"/>
@@ -624,25 +630,87 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tno-c9-WRA">
-                                <rect key="frame" x="90" y="120" width="140" height="140"/>
+                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_sobre" translatesAutoresizingMaskIntoConstraints="NO" id="Tno-c9-WRA">
+                                <rect key="frame" x="90" y="50" width="140" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="140" id="9Zn-YU-9Qp"/>
                                     <constraint firstAttribute="height" constant="140" id="rJ3-Uj-a4a"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U72-RP-mhf">
-                                <rect key="frame" x="40" y="282" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ZNy-l5-wnU">
+                                <rect key="frame" x="54" y="210" width="212" height="140"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s7k-V4-wsr">
+                                        <rect key="frame" x="0.0" y="0.0" width="212" height="50.5"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
+                                        <color key="textColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZnN-x5-GWp">
+                                        <rect key="frame" x="0.0" y="70.5" width="212" height="69.5"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                        <color key="textColor" red="0.45098039215686275" green="0.45098039215686275" blue="0.45098039215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="UtX-ir-Na7"/>
+                                </constraints>
+                            </stackView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BnP-Lp-ezN" customClass="VORoundButton" customModule="Voiash" customModuleProvider="target">
+                                <rect key="frame" x="40" y="420" width="240" height="48"/>
+                                <color key="backgroundColor" red="0.078431372550000003" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="7pA-Kj-wWf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="12"/>
+                                <state key="normal" title="CONTINUAR">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="PRD-q7-25o" kind="show" id="7Rt-Cw-DNc"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EuY-eR-aj9" customClass="VORoundButton" customModule="Voiash" customModuleProvider="target">
+                                <rect key="frame" x="40" y="420" width="240" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="yZ9-yL-fME"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="12"/>
+                                <state key="normal" title="VOLVER A ENVIAR EMAIL">
+                                    <color key="titleColor" red="0.078431372550000003" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.078431372550000003" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="resendEmailBtnPressed" destination="u2z-uv-9Mv" eventType="touchUpInside" id="zNl-GR-PCq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Tno-c9-WRA" firstAttribute="top" secondItem="qr6-ly-blL" secondAttribute="bottom" constant="100" id="XfF-Cv-3d6"/>
+                            <constraint firstItem="ZNy-l5-wnU" firstAttribute="leading" secondItem="vfU-Ft-lIJ" secondAttribute="leadingMargin" constant="38" id="B7i-Gc-DLg"/>
+                            <constraint firstAttribute="trailing" secondItem="BnP-Lp-ezN" secondAttribute="trailing" constant="40" id="I1t-rx-IoP"/>
+                            <constraint firstItem="eFm-Da-KVn" firstAttribute="top" secondItem="BnP-Lp-ezN" secondAttribute="bottom" constant="100" id="LIA-BU-6QQ"/>
+                            <constraint firstItem="ZNy-l5-wnU" firstAttribute="top" secondItem="Tno-c9-WRA" secondAttribute="bottom" constant="20" id="W7x-df-TYI"/>
+                            <constraint firstItem="Tno-c9-WRA" firstAttribute="top" secondItem="qr6-ly-blL" secondAttribute="bottom" constant="30" id="XfF-Cv-3d6"/>
+                            <constraint firstAttribute="trailing" secondItem="EuY-eR-aj9" secondAttribute="trailing" constant="40" id="cLL-WR-kPM"/>
+                            <constraint firstItem="EuY-eR-aj9" firstAttribute="leading" secondItem="vfU-Ft-lIJ" secondAttribute="leading" constant="40" id="eON-OE-Vl3"/>
                             <constraint firstItem="Tno-c9-WRA" firstAttribute="centerX" secondItem="vfU-Ft-lIJ" secondAttribute="centerX" id="kMb-lu-dPe"/>
+                            <constraint firstItem="BnP-Lp-ezN" firstAttribute="leading" secondItem="vfU-Ft-lIJ" secondAttribute="leading" constant="40" id="m15-4U-fKP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZNy-l5-wnU" secondAttribute="trailing" constant="38" id="qhe-Qz-Iid"/>
+                            <constraint firstItem="eFm-Da-KVn" firstAttribute="top" secondItem="EuY-eR-aj9" secondAttribute="bottom" constant="100" id="yAK-qa-kko"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnContinue" destination="BnP-Lp-ezN" id="wW8-9v-0ko"/>
+                        <outlet property="btnResend" destination="EuY-eR-aj9" id="yFH-in-WDZ"/>
+                        <outlet property="lblMessage" destination="ZnN-x5-GWp" id="Cnv-fO-sgA"/>
+                        <outlet property="lblTitle" destination="s7k-V4-wsr" id="C3a-XO-9EZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OFH-Cs-GEs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -971,11 +1039,12 @@
         <image name="ic_person" width="12" height="12"/>
         <image name="ic_search_active" width="18" height="18"/>
         <image name="ic_voiash" width="12" height="16"/>
+        <image name="img_sobre" width="100" height="76"/>
         <image name="logo_Voiash_sin_fondo_baja" width="224" height="74"/>
         <image name="logo_voiash_color" width="80" height="26"/>
         <image name="logo_voiash_color_signIn" width="208" height="68"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vmX-cy-3b9"/>
+        <segue reference="7Rt-Cw-DNc"/>
     </inferredMetricsTieBreakers>
 </document>

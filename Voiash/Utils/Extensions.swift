@@ -113,3 +113,27 @@ extension String {
         }
     }
 }
+
+extension AppDelegate {
+    func findCurrentViewController() -> UIViewController{
+        let rootVC = UIApplication.shared.keyWindow?.rootViewController
+        
+        return findCurrentViewController(byTempTopVC: rootVC!)
+    }
+    
+    func findCurrentViewController(byTempTopVC vc: UIViewController) -> UIViewController {
+        let presentedVC = vc.presentedViewController
+        
+        guard presentedVC != nil else {
+            return vc
+        }
+        
+        if presentedVC!.isKind(of:UINavigationController.self) {
+            let theNav =  presentedVC
+            let theTopVC = theNav!.childViewControllers.last
+            return findCurrentViewController(byTempTopVC: theTopVC!)
+        }
+        
+        return findCurrentViewController(byTempTopVC: presentedVC!)
+    }
+}

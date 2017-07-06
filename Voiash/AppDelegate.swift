@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
     var window: UIWindow?
     var currentVC: UIViewController?
+    var reloadUser = false
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -48,6 +49,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         reloadRootVC()
         
         return true
+    }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        if self.reloadUser {
+            VOFBAuthService.shared.reloadUser()
+        }
     }
     
     func reloadRootVC() {

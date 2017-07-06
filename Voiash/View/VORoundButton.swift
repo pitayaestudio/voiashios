@@ -7,24 +7,109 @@
 //
 
 import UIKit
+import QuartzCore
 
-class VORoundButton: UIButton {
-
+@IBDesignable class VORoundButton: UIButton {
+    
+    var originalButtonText: String?
+    var activityIndicator: UIActivityIndicatorView!
+    
+    //MARK: PROPERTIES
+    @IBInspectable var borderColor: UIColor = UIColor.clear {
+        didSet {
+            layer.borderColor = borderColor.cgColor
+        }
+    }
+    
+    @IBInspectable var borderWidth: CGFloat = 1.5 {
+        didSet {
+            layer.borderWidth = borderWidth
+        }
+    }
+    
+    //MARK: Initializers
+    override init(frame : CGRect) {
+        super.init(frame : frame)
+        setup()
+        configure()
+    }
+    
+    convenience init() {
+        self.init(frame:CGRect.zero)
+        setup()
+        configure()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+        configure()
+    }
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        setup()
+        configure()
+    }
+    
+    override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        setup()
+        configure()
+    }
+    
+    func setup() {
         layer.borderColor = UIColor.white.cgColor
         layer.borderWidth = 1.5
-        layer.shadowColor = K.color.shadowGray.cgColor
-        layer.shadowRadius = 5.0
-        layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
-        
-        imageView?.contentMode = .scaleAspectFit
+    }
+    
+    func configure() {
+        layer.borderColor = borderColor.cgColor
+        layer.borderWidth = borderWidth
+        layer.cornerRadius = self.frame.height / 2
+        clipsToBounds = true
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        layer.cornerRadius = self.frame.height / 2
     }
-
+    
+    func showLoading() {
+        originalButtonText = self.titleLabel?.text
+        self.setTitle("", for: UIControlState.normal)
+        
+        if (activityIndicator == nil) {
+            activityIndicator = createActivityIndicator()
+        }
+        
+        showSpinning()
+    }
+    
+    func hideLoading() {
+        self.setTitle(originalButtonText, for: UIControlState.normal)
+        activityIndicator.stopAnimating()
+    }
+    
+    private func createActivityIndicator() -> UIActivityIndicatorView {
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.color = UIColor.white
+        return activityIndicator
+    }
+    
+    private func showSpinning() {
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(activityIndicator)
+        centerActivityIndicatorInButton()
+        activityIndicator.startAnimating()
+    }
+    
+    private func centerActivityIndicatorInButton() {
+        let xCenterConstraint = NSLayoutConstraint(item: self, attribute: .centerX, relatedBy: .equal, toItem: activityIndicator, attribute: .centerX, multiplier: 1, constant: 0)
+        self.addConstraint(xCenterConstraint)
+        
+        let yCenterConstraint = NSLayoutConstraint(item: self, attribute: .centerY, relatedBy: .equal, toItem: activityIndicator, attribute: .centerY, multiplier: 1, constant: 0)
+        self.addConstraint(yCenterConstraint)
+    }
 }

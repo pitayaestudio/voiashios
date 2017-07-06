@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		4B9304951F0B14AE00721977 /* VOFBAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9304941F0B14AE00721977 /* VOFBAuthService.swift */; };
 		4B9304981F0B39C800721977 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9304971F0B39C800721977 /* Constants.swift */; };
-		4B93049B1F0B3CB200721977 /* VODataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B93049A1F0B3CB200721977 /* VODataService.swift */; };
+		4B93049B1F0B3CB200721977 /* VOFBDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B93049A1F0B3CB200721977 /* VOFBDataService.swift */; };
 		4B93049D1F0B425A00721977 /* VOSignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B93049C1F0B425A00721977 /* VOSignInVC.swift */; };
 		C4AC16D21F0AE054007ECB38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AC16D11F0AE054007ECB38 /* AppDelegate.swift */; };
 		C4AC16D71F0AE054007ECB38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4AC16D51F0AE054007ECB38 /* Main.storyboard */; };
@@ -39,7 +39,7 @@
 /* Begin PBXFileReference section */
 		4B9304941F0B14AE00721977 /* VOFBAuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOFBAuthService.swift; path = Firebase/VOFBAuthService.swift; sourceTree = "<group>"; };
 		4B9304971F0B39C800721977 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Utils/Constants.swift; sourceTree = "<group>"; };
-		4B93049A1F0B3CB200721977 /* VODataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VODataService.swift; path = Firebase/VODataService.swift; sourceTree = "<group>"; };
+		4B93049A1F0B3CB200721977 /* VOFBDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOFBDataService.swift; path = Firebase/VOFBDataService.swift; sourceTree = "<group>"; };
 		4B93049C1F0B425A00721977 /* VOSignInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOSignInVC.swift; path = Controller/VOSignInVC.swift; sourceTree = "<group>"; };
 		6117376A61DC3EE56084EA46 /* Pods_Voiash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Voiash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C341E08A4A594C5BF0E74433 /* Pods-Voiash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voiash.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Voiash/Pods-Voiash.debug.xcconfig"; sourceTree = "<group>"; };
@@ -107,7 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				4B9304941F0B14AE00721977 /* VOFBAuthService.swift */,
-				4B93049A1F0B3CB200721977 /* VODataService.swift */,
+				4B93049A1F0B3CB200721977 /* VOFBDataService.swift */,
 			);
 			name = Firebase;
 			sourceTree = "<group>";
@@ -385,7 +385,7 @@
 				4B9304981F0B39C800721977 /* Constants.swift in Sources */,
 				C4EEE1801F0C1F1300B1177B /* VOSignUpVC.swift in Sources */,
 				C4CFD0041F0C0EE40086D498 /* VOForgotPasswordVC.swift in Sources */,
-				4B93049B1F0B3CB200721977 /* VODataService.swift in Sources */,
+				4B93049B1F0B3CB200721977 /* VOFBDataService.swift in Sources */,
 				C4CFD0001F0BFA8A0086D498 /* VOInitialVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

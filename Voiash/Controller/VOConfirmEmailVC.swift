@@ -7,29 +7,73 @@
 //
 
 import UIKit
+import Firebase
 
 class VOConfirmEmailVC: UIViewController {
 
+    @IBOutlet weak var lblTitle:UILabel!
+    @IBOutlet weak var lblMessage:UILabel!
+    @IBOutlet weak var btnContinue:VORoundButton!
+    @IBOutlet weak var btnResend:VORoundButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        NotificationCenter.default.addObserver(self, selector: #selector(VOConfirmEmailVC.reloadScreen), name: NSNotification.Name(rawValue:K.notifications.reloadEmail), object: nil)
+        appDel.reloadUser = true
+        reloadScreen()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    deinit {
+        appDel.reloadUser = false
+        NotificationCenter.default.removeObserver(self)
     }
-    */
-
+    
+    func reloadScreen(){
+        if Auth.auth().currentUser!.isEmailVerified {
+            lblTitle.text = NSLocalizedString("titConfirmOK", comment: "")
+            lblMessage.text = NSLocalizedString("mesConfirmOK", comment: "")
+            btnContinue.isHidden = false
+            btnResend.isHidden = true
+        }else{
+            lblTitle.text = NSLocalizedString("titConfirmEmail", comment: "")
+            lblMessage.text = NSLocalizedString("mesConfirmEmail", comment: "")
+            btnContinue.isHidden = true
+            btnResend.isHidden = false
+        }
+    }
+    
+    //MARK: - IBAction
+    @IBAction func resendEmailBtnPressed(){
+        self.btnResend.showLoading()
+        VOFBAuthService.shared.sendEmailConfirmation( { (error) in
+            self.btnResend.hideLoading()
+            if let error = error {
+                self.showMessagePrompt(error)
+            }else{
+                self.showMessagePrompt(NSLocalizedString("mesConfirmEmail", comment: ""))
+            }
+        })
+    }
+    
+    /*
+     let message = String(format: NSLocalizedString("emailNotVerified", comment: ""), self.tfEmail.text!)
+     let alertVC = UIAlertController(title: NSLocalizedString("errorTitle", comment: ""), message: message, preferredStyle: .alert)
+     let alertActionOkay = UIAlertAction(title: NSLocalizedString("actOK", comment: ""), style: .default) {
+     (_) in
+     VOFBAuthService.shared.sendEmailConfirmation({ (error) in
+     if let error = error {
+     self.showMessagePrompt(error)
+     }else{
+     self.performSegue(withIdentifier: K.segue.segueEmailConfirmation, sender: nil)
+     }
+     })
+     }
+     let alertActionCancel = UIAlertAction(title: NSLocalizedString("actCancel", comment: ""), style: .default, handler: nil)
+     
+     alertVC.addAction(alertActionOkay)
+     alertVC.addAction(alertActionCancel)
+     self.present(alertVC, animated: true, completion: nil)
+ 
+ */
+    
 }

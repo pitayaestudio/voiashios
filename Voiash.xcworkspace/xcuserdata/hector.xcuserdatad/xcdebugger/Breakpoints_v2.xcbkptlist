@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Voiash/Utils/Extensions.swift"
-            timestampString = "521046555.739127"
+            filePath = "Voiash/Controller/VOConfirmEmailVC.swift"
+            timestampString = "521061079.199936"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "presentWhiteNavigationBar()"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "resendEmailBtnPressed()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

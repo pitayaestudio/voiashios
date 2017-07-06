@@ -41,7 +41,7 @@ class VOFBUser: NSObject {
         }
         
         if let key = userKey {
-            self.userRef = VODataService.shared.usersRef.child(key)
+            self.userRef = VOFBDataService.shared.usersRef.child(key)
         }
     }
     

@@ -17,6 +17,7 @@ class VOSignUpVC: UIViewController {
     @IBOutlet weak var tfEmail: TextFieldEffects!
     @IBOutlet weak var tfPassword: TextFieldEffects!
     @IBOutlet weak var tfPassword2: TextFieldEffects!
+    @IBOutlet weak var btnSingIn: VORoundButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,30 +44,21 @@ class VOSignUpVC: UIViewController {
         guard let data = validateData() else{
             return
         }
-        showSpinner { 
+        //showSpinner {
+        self.btnSingIn.showLoading()
             VOFBAuthService.shared.createUserWithEmail(userData: data, password: self.tfPassword.text!) { (error, user) in
-                self.hideSpinner({
+               //self.hideSpinner({
+                self.btnSingIn.hideLoading()
                     if user != nil {
-                        self.performSegue(withIdentifier: K.segue.segueTabBar, sender: nil)
-                    }else{
                         if !Auth.auth().currentUser!.isEmailVerified {
-                            let alertVC = UIAlertController(title: "Error", message: "Sorry. Your email address has not yet been verified. Do you want us to send another verification email to \(self.tfEmail.text!).", preferredStyle: .alert)
-                            let alertActionOkay = UIAlertAction(title: "Okay", style: .default) {
-                                (_) in
-                                Auth.auth().currentUser!.sendEmailVerification(completion: nil)
-                            }
-                            let alertActionCancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
-                            
-                            alertVC.addAction(alertActionOkay)
-                            alertVC.addAction(alertActionCancel)
+                            self.performSegue(withIdentifier: K.segue.segueEmailConfirmation, sender: nil)
                         } else {
                             self.performSegue(withIdentifier: K.segue.segueTabBar, sender: nil)
                         }
-                        self.showMessagePrompt(error!)
                     }
-                })
+               // })
             }
-        }
+        //}
         
     }
     
@@ -112,7 +104,7 @@ class VOSignUpVC: UIViewController {
             return nil
         }
         
-        let userData:JSONStandard = [K.FB.user.name:tfName.text! as AnyObject, K.FB.user.lastName:tfLastName.text! as AnyObject, K.FB.user.provider: K.provider.email as AnyObject, K.FB.user.email: tfEmail.text! as AnyObject]
+        let userData:JSONStandard = [K.FB.user.name:tfName.text!.capitalized as AnyObject, K.FB.user.lastName:tfLastName.text!.capitalized as AnyObject, K.FB.user.provider: K.provider.email as AnyObject, K.FB.user.email: tfEmail.text! as AnyObject]
         
         return userData
     }

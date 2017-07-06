@@ -82,8 +82,46 @@ class VOFBAuthService: NSObject {
                     onComplete?(err, nil)
                 })
             }else{
-                self.saveUserInKeychain((user?.uid)!, userData: userData)
-                onComplete?(nil,user)
+                self.loginWithEmail(email, password: password, onComplete: { (error, user) in
+                    if let error = error {
+                        onComplete?(error, nil)
+                    }else{
+                        self.sendEmailConfirmation({ (error) in
+                            if let error = error {
+                                print(error)
+                            }
+                        })
+                        self.saveUserInKeychain((user?.uid)!, userData: userData)
+                        onComplete?(nil,user)
+                    }
+                    
+                })
+            }
+        }
+    }
+    
+    /**
+     Send email confirmation to the current User
+     */
+    func sendEmailConfirmation(_ onComplete:@escaping (_ errMsg: String?)-> Void){
+        Auth.auth().currentUser!.sendEmailVerification(completion: { (error) in
+            if error != nil {
+                onComplete(NSLocalizedString("errorGeneral", comment: ""))
+            }else{
+                onComplete(nil)
+            }
+        })
+    }
+    
+    /**
+     Reload info of the current user
+     */
+    func reloadUser(){
+        Auth.auth().currentUser!.reload { (error) in
+            if error != nil {
+                print("====> error: \(String(describing: error?.localizedDescription))")
+            }else{
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue:K.notifications.reloadEmail), object: nil)
             }
         }
     }
@@ -94,7 +132,7 @@ class VOFBAuthService: NSObject {
      - Parameter userData: Dictionary with (email,provider)
      */
     func saveUserInKeychain(_ userID: String, userData:JSONStandard){
-        VODataService.shared.saveUser(uid: userID, userData: userData)
+        VOFBDataService.shared.saveUser(uid: userID, userData: userData)
         keychain.set(userID, forKey: K.FB.user.userId)
     }
     

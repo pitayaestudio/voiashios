@@ -12,6 +12,7 @@
 "errorInvalidEmail" = "Invalid email address";
 "errorWrongPassword" = "Invalid password, must have at least 6 characters";
 "errorGeneral" = "There was a problem, try again";
+"errorTitle" = "Error";
 
 //SIGNUP
 "nameRequired" = "Name is required";
@@ -20,9 +21,16 @@
 "passRequired" = "Password is required";
 "pass2Required" = "Password2 is required";
 "passwordDifferent" = "The confirmation password is not the same";
+"emailNotVerified" = "Sorry. Your email address has not yet been verified. Do you want us to send another verification email to %@?";
 
 //RESET PASS
 "resetPassOK" = "Password reset email sent.";
+
+//CONFIRM EMAIL
+"titConfirmEmail" = "Confirm your email";
+"mesConfirmEmail" = "We have sent you an email, click in the link to confirm your email";
+"titConfirmOK" = "Thank you!";
+"mesConfirmOK" = "Your email has been confirmed";
 
 //SPINNER
 "msgWait" = "Please Wait...\n\n\n\n";

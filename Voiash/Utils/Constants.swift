@@ -19,9 +19,11 @@ var nodeLanguage = ""
 struct K {
     struct FB {
         static let urlStorage = "gs://voiash-794d0.appspot.com"
-       
+        
+        static let kindDB = "devDB"
+        
         struct user {
-            static let ref = "user"
+            static let ref = "users"
             static let userId = "userId"
             static let provider = "provider"
             static let email = "email"
@@ -46,6 +48,10 @@ struct K {
     struct segue {
         static let segueTabBar = "segueTabBar"
         static let segueForgotPass = "segueForgotPass"
+        static let segueEmailConfirmation = "segueEmailConfirmation"
+    }
+    struct notifications {
+        static let reloadEmail = "reloadEmailConfirmation"
     }
     
 }

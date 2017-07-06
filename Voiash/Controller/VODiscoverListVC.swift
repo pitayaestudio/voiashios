@@ -12,7 +12,6 @@ class VODiscoverListVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.presentWhiteNavigationBar()
     }
 
     override func didReceiveMemoryWarning() {

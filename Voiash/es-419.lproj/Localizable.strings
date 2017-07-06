@@ -12,6 +12,7 @@
 "errorInvalidEmail" = "Email inválido";
 "errorWrongPassword" = "Password incorrecto, debe de tener al menos 6 caracteres";
 "errorGeneral" = "Ups, existió un problema. Inténtelo más tade";
+"errorTitle" = "Error";
 
 //SIGNUP
 "nameRequired" = "Nombre es requerido";
@@ -20,9 +21,16 @@
 "passRequired" = "Password es requerido";
 "pass2Required" = "Password2 es requerido";
 "passwordDifferent" = "La confirmación de password no es igual";
+"emailNotVerified" = "Disculpa, tu email no ha sido verificado. ¿Quieres que te enviemos otro email a %@ ?";
 
 //RESET PASS
 "resetPassOK" = "Se ha enviado un email para resetear su correo.";
+
+//CONFIRM EMAIL
+"titConfirmEmail" = "Confirma tu email";
+"mesConfirmEmail" = "Te hemos enviado un email, haz click en el link que te hemos enviado para confirmarlo";
+"titConfirmOK" = "¡Muchas gracias!";
+"mesConfirmOK" = "Tu emai ha sido confirmado correctamente";
 
 //SPINNER
 "msgWait" = "Espere ...\n\n\n\n";

@@ -16,6 +16,7 @@ class VOSignInVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
     @IBOutlet weak var tfEmail: TextFieldEffects!
     @IBOutlet weak var tfPassword: TextFieldEffects!
     @IBOutlet weak var signInButton: GIDSignInButton!
+    @IBOutlet weak var btnLogin: VORoundButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,18 +71,21 @@ class VOSignInVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
     
     @IBAction func signInBtnPressed(_ sender: AnyObject) {
         if let email = tfEmail.text, let pass = tfPassword.text , (email.characters.count > 0 && pass.characters.count > 5){
-            showSpinner {
+            //showSpinner {
+                self.btnLogin.showLoading()
                 VOFBAuthService.shared.loginWithEmail(email, password: pass, onComplete: { (errMsg, data) in
-                    self.hideSpinner {
+                    //self.hideSpinner {
+                    
+                        self.btnLogin.hideLoading()
                         if let error = errMsg {
                             self.showMessagePrompt(error)
                             return
                         }else{
                             self.performSegue(withIdentifier: K.segue.segueTabBar, sender: nil)
                         }
-                    }
+                    //}
                 })
-            }
+            //}
         }else{
             self.showMessagePrompt("You must enter both an email and a password (6 characters)")
         }
