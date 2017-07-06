@@ -24,15 +24,6 @@
 static NSString *const kPleaseWaitAssociatedObjectKey =
 @"_UIViewControllerAlertCategory_PleaseWaitScreenAssociatedObject";
 
-/*! @var kOK
- @brief Text for an 'OK' button.
- */
-static NSString *const kOK = @"OK";
-
-/*! @var kCancel
- @brief Text for an 'Cancel' button.
- */
-static NSString *const kCancel = @"Cancel";
 
 /*! @class SimpleTextPromptDelegate
  @brief A @c UIAlertViewDelegate which allows @c UIAlertView to be used with blocks more easily.
@@ -70,7 +61,7 @@ static NSString *const kCancel = @"Cancel";
                                             message:message
                                      preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *okAction =
-        [UIAlertAction actionWithTitle:kOK style:UIAlertActionStyleDefault handler:nil];
+        [UIAlertAction actionWithTitle:NSLocalizedString(@"actOK", nil) style:UIAlertActionStyleDefault handler:nil];
         [alert addAction:okAction];
         [self presentViewController:alert animated:YES completion:nil];
     } else {
@@ -78,7 +69,7 @@ static NSString *const kCancel = @"Cancel";
                                                         message:message
                                                        delegate:nil
                                               cancelButtonTitle:nil
-                                              otherButtonTitles:kOK, nil];
+                                              otherButtonTitles:NSLocalizedString(@"actOK", nil), nil];
         [alert show];
     }
 }
@@ -91,13 +82,13 @@ static NSString *const kCancel = @"Cancel";
                                             message:message
                                      preferredStyle:UIAlertControllerStyleAlert];
         __weak UIAlertController *weakPrompt = prompt;
-        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:kCancel
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"actCancel", nil)
                                                                style:UIAlertActionStyleCancel
                                                              handler:^(UIAlertAction *_Nonnull action) {
                                                                  completion(NO, nil);
                                                              }];
         UIAlertAction *okAction =
-        [UIAlertAction actionWithTitle:kOK
+        [UIAlertAction actionWithTitle:NSLocalizedString(@"actOK", nil)
                                  style:UIAlertActionStyleDefault
                                handler:^(UIAlertAction *_Nonnull action) {
                                    UIAlertController *strongPrompt = weakPrompt;
@@ -113,8 +104,8 @@ static NSString *const kCancel = @"Cancel";
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
                                                             message:message
                                                            delegate:prompt
-                                                  cancelButtonTitle:@"Cancel"
-                                                  otherButtonTitles:@"Ok", nil];
+                                                  cancelButtonTitle:NSLocalizedString(@"actCancel", nil)
+                                                  otherButtonTitles:NSLocalizedString(@"actOK", nil), nil];
         alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
         [alertView show];
     }
@@ -138,7 +129,7 @@ static NSString *const kCancel = @"Cancel";
         return;
     }
     pleaseWaitAlert = [UIAlertController alertControllerWithTitle:nil
-                                                          message:@"Please Wait...\n\n\n\n"
+                                                          message:NSLocalizedString(@"msgWait", nil)
                                                    preferredStyle:UIAlertControllerStyleAlert];
     
     UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc]

@@ -23,3 +23,10 @@
 
 //RESET PASS
 "resetPassOK" = "Password reset email sent.";
+
+//SPINNER
+"msgWait" = "Please Wait...\n\n\n\n";
+
+//ACTIONS
+"actOK" = "OK";
+"actCancel" = "Cancel";

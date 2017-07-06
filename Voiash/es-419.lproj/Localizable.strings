@@ -22,4 +22,12 @@
 "passwordDifferent" = "La confirmación de password no es igual";
 
 //RESET PASS
-"resetPassOK" = "Password reiniciado correctamente";
+"resetPassOK" = "Se ha enviado un email para resetear su correo.";
+
+//SPINNER
+"msgWait" = "Espere ...\n\n\n\n";
+
+//ACTIONS
+"actOK" = "OK";
+"actCancel" = "Cancelar";
+

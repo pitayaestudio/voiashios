@@ -18,8 +18,6 @@ class VOFBAuthService: NSObject {
         return _shared
     }
     
-    
-    
     /**
      Make a login anonymous.
      */

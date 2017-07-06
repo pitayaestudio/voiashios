@@ -9,14 +9,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Gotham-Light.otf">
-            <string>Gotham-Light</string>
-        </array>
-        <array key="Gotham-Medium.otf">
-            <string>Gotham-Medium</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--InitialVC-->
         <scene sceneID="tne-QT-ifu">
@@ -45,7 +37,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Na-yG-G76" customClass="VORoundButton" customModule="Voiash" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="224" height="48"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="12"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="12"/>
                                         <state key="normal" title="REGÍSTRATE Y DISFRUTA">
                                             <color key="titleColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -55,7 +47,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VSa-hA-JMj" customClass="VORoundButton" customModule="Voiash" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="64" width="224" height="48"/>
-                                        <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="12"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="12"/>
                                         <state key="normal" title="INGRESAR SIN REGISTRAR">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -148,7 +140,7 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7xh-ox-9Wn" customClass="HoshiTextField" customModule="TextFieldEffects">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="47.5"/>
                                         <color key="textColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Gotham-Light" family="Gotham" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
@@ -165,7 +157,7 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TMk-mD-t1g" customClass="HoshiTextField" customModule="TextFieldEffects">
                                         <rect key="frame" x="0.0" y="62.5" width="260" height="47.5"/>
                                         <color key="textColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Gotham-Light" family="Gotham" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
@@ -190,7 +182,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="hmU-04-pgf"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="12"/>
                                 <state key="normal" title="INGRESAR CON EMAIL">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -203,12 +195,12 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46.5" id="Bcr-gF-bk8"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="12"/>
                                 <state key="normal" title="¿Olvidaste tu password?">
                                     <color key="titleColor" red="0.45098039215686275" green="0.45098039215686275" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="GnE-Sy-CZD" kind="show" id="OhO-JK-iii"/>
+                                    <segue destination="GnE-Sy-CZD" kind="show" identifier="segueForgotPass" id="OhO-JK-iii"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Y28-6y-TvI">
@@ -304,45 +296,86 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="Bxp-38-0mF">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yvA-m9-vxG" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="54" y="141" width="212" height="46.5"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dNY-k7-OHj">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recordar contraseña" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZT-qh-SRP">
+                                        <rect key="frame" x="62" y="32.5" width="196" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="7DL-xs-dV6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                        <color key="textColor" red="0.45098039215686275" green="0.45098039215686275" blue="0.45098039215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="46.5" id="sIy-CR-51j"/>
+                                    <constraint firstAttribute="height" constant="70" id="NoF-hB-CGn"/>
+                                    <constraint firstAttribute="trailing" secondItem="cZT-qh-SRP" secondAttribute="trailing" constant="62" id="cb7-aa-YET"/>
                                 </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="point" keyPath="shadowOffset">
+                                        <point key="value" x="0.0" y="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAi-Tg-B3C" userLabel="btnBack">
+                                <rect key="frame" x="16" y="20" width="46" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="3zM-dH-DCo"/>
+                                    <constraint firstAttribute="width" constant="46" id="bBY-lc-xXK"/>
+                                </constraints>
+                                <state key="normal" image="ic_arrow_back"/>
+                                <connections>
+                                    <action selector="backBtnPressed" destination="GnE-Sy-CZD" eventType="touchUpInside" id="TVw-I1-v2l"/>
+                                    <action selector="backBtnPressed:" destination="fGi-18-7Kb" eventType="touchUpInside" id="q4O-N5-CxJ"/>
+                                    <action selector="backBtnPressed:" destination="yEV-DP-WTA" eventType="touchUpInside" id="vT4-bV-uh3"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿No recuerdas tu contraseña? Coloca tu email y nosotros te eviaremos un link para resetear tu password" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLS-DO-Zeh">
+                                <rect key="frame" x="56" y="100" width="208" height="55.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="70" id="sjt-jR-KGT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="12"/>
+                                <color key="textColor" red="0.45098039215686275" green="0.45098039215686275" blue="0.45098039215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2hO-yP-bAP" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                <rect key="frame" x="54" y="195.5" width="212" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="yrb-iI-FKe"/>
+                                </constraints>
+                                <color key="textColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="value" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
-                                        <color key="value" red="0.71372549019999998" green="0.73725490199999999" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="0.91866046189999995" green="0.25856518750000002" blue="0.267291218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
                                         <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explicacion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLS-DO-Zeh">
-                                <rect key="frame" x="54" y="84" width="212" height="17"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="70" id="sjt-jR-KGT"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Axb-ax-gR9" customClass="VORoundButton" customModule="Voiash" customModuleProvider="target">
-                                <rect key="frame" x="54" y="227.5" width="212" height="48"/>
+                                <rect key="frame" x="54" y="265.5" width="212" height="48"/>
+                                <color key="backgroundColor" red="0.078431372550000003" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="ETE-Kq-AtS"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="nxU-09-BeT"/>
                                 </constraints>
-                                <state key="normal" title="Resetear Password">
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="12"/>
+                                <state key="normal" title="RESETEAR PASSWORD">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -352,23 +385,27 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="yvA-m9-vxG" secondAttribute="trailing" constant="38" id="0UR-oq-nTC"/>
-                            <constraint firstItem="bLS-DO-Zeh" firstAttribute="leading" secondItem="87M-7n-eIc" secondAttribute="leadingMargin" constant="38" id="2Nz-eT-u1O"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="bLS-DO-Zeh" secondAttribute="trailing" constant="38" id="Gkx-rH-tvu"/>
+                            <constraint firstItem="Axb-ax-gR9" firstAttribute="top" secondItem="2hO-yP-bAP" secondAttribute="bottom" constant="30" id="0Dn-Dx-jzd"/>
+                            <constraint firstItem="bLS-DO-Zeh" firstAttribute="leading" secondItem="87M-7n-eIc" secondAttribute="leadingMargin" constant="40" id="2Nz-eT-u1O"/>
+                            <constraint firstItem="2hO-yP-bAP" firstAttribute="leading" secondItem="87M-7n-eIc" secondAttribute="leadingMargin" constant="38" id="8F7-p2-qPH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bLS-DO-Zeh" secondAttribute="trailing" constant="40" id="Gkx-rH-tvu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Axb-ax-gR9" secondAttribute="trailing" constant="38" id="MUx-fN-pCU"/>
-                            <constraint firstItem="Axb-ax-gR9" firstAttribute="top" secondItem="yvA-m9-vxG" secondAttribute="bottom" constant="40" id="PyI-3L-50r"/>
-                            <constraint firstItem="yvA-m9-vxG" firstAttribute="top" secondItem="bLS-DO-Zeh" secondAttribute="bottom" constant="40" id="R6L-85-f7b"/>
                             <constraint firstItem="Axb-ax-gR9" firstAttribute="leading" secondItem="87M-7n-eIc" secondAttribute="leadingMargin" constant="38" id="SRk-zf-TQa"/>
-                            <constraint firstItem="Bxp-38-0mF" firstAttribute="leading" secondItem="87M-7n-eIc" secondAttribute="leading" id="W2N-Aw-opy"/>
-                            <constraint firstItem="Ra6-2K-c1k" firstAttribute="top" secondItem="Bxp-38-0mF" secondAttribute="bottom" id="fOu-xl-JRH"/>
-                            <constraint firstItem="bLS-DO-Zeh" firstAttribute="top" secondItem="X5X-Vn-eJ5" secondAttribute="bottom" constant="20" id="lm5-s6-RBO"/>
-                            <constraint firstAttribute="trailing" secondItem="Bxp-38-0mF" secondAttribute="trailing" id="r3U-RI-qEd"/>
-                            <constraint firstItem="yvA-m9-vxG" firstAttribute="leading" secondItem="87M-7n-eIc" secondAttribute="leadingMargin" constant="38" id="rtH-8N-3nJ"/>
-                            <constraint firstItem="Bxp-38-0mF" firstAttribute="top" secondItem="X5X-Vn-eJ5" secondAttribute="bottom" constant="-64" id="zao-FT-eHG"/>
+                            <constraint firstAttribute="trailing" secondItem="dNY-k7-OHj" secondAttribute="trailing" id="XHq-Tr-Awj"/>
+                            <constraint firstItem="eAi-Tg-B3C" firstAttribute="top" secondItem="87M-7n-eIc" secondAttribute="top" constant="20" id="Za2-0n-GOx"/>
+                            <constraint firstItem="2hO-yP-bAP" firstAttribute="top" secondItem="bLS-DO-Zeh" secondAttribute="bottom" constant="40" id="aJs-lj-i9h"/>
+                            <constraint firstItem="bLS-DO-Zeh" firstAttribute="top" secondItem="dNY-k7-OHj" secondAttribute="bottom" constant="30" id="aLV-1d-LEU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2hO-yP-bAP" secondAttribute="trailing" constant="38" id="aqL-Kw-7yC"/>
+                            <constraint firstItem="eAi-Tg-B3C" firstAttribute="leading" secondItem="87M-7n-eIc" secondAttribute="leading" constant="16" id="dmM-B6-orb"/>
+                            <constraint firstItem="dNY-k7-OHj" firstAttribute="leading" secondItem="87M-7n-eIc" secondAttribute="leading" id="leP-ED-95Z"/>
+                            <constraint firstItem="cZT-qh-SRP" firstAttribute="leading" secondItem="eAi-Tg-B3C" secondAttribute="trailing" id="mKJ-di-CXX"/>
+                            <constraint firstItem="cZT-qh-SRP" firstAttribute="centerY" secondItem="eAi-Tg-B3C" secondAttribute="centerY" id="uub-7T-gCp"/>
+                            <constraint firstItem="dNY-k7-OHj" firstAttribute="top" secondItem="X5X-Vn-eJ5" secondAttribute="bottom" constant="-20" id="zEw-gn-oSD"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="tfEmail" destination="yvA-m9-vxG" id="pDg-tP-67F"/>
+                        <outlet property="tfEmail" destination="2hO-yP-bAP" id="ZKs-IU-Rnn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E8H-tF-eTY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -388,10 +425,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3go-JG-anV">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="177"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="157"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_crear_cuenta" translatesAutoresizingMaskIntoConstraints="NO" id="Rhu-CD-DXk">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="177"/>
+                                    <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_crear_cuenta" translatesAutoresizingMaskIntoConstraints="NO" id="Rhu-CD-DXk">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="157"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lur-Du-TPo" userLabel="btnBack">
                                         <rect key="frame" x="16" y="20" width="46" height="46"/>
@@ -405,18 +442,18 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crea tu cuenta y vive un mundo de viajes y aventuras con Voiash" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyC-cl-r7r">
-                                        <rect key="frame" x="40" y="92" width="240" height="31.5"/>
+                                        <rect key="frame" x="40" y="92" width="240" height="32.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="J26-oC-Ql6"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
                                         <color key="textColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="177" id="5sB-u1-OSx"/>
+                                    <constraint firstAttribute="height" constant="157" id="5sB-u1-OSx"/>
                                     <constraint firstItem="nyC-cl-r7r" firstAttribute="top" secondItem="3go-JG-anV" secondAttribute="top" constant="92" id="Ec3-gl-1kA"/>
                                     <constraint firstItem="nyC-cl-r7r" firstAttribute="leading" secondItem="3go-JG-anV" secondAttribute="leading" constant="40" id="HMo-xX-G05"/>
                                     <constraint firstItem="Rhu-CD-DXk" firstAttribute="leading" secondItem="3go-JG-anV" secondAttribute="leading" id="JwB-2a-rX7"/>
@@ -434,7 +471,7 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nombre" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HNu-Ys-4BW" customClass="HoshiTextField" customModule="TextFieldEffects">
                                         <rect key="frame" x="0.0" y="0.0" width="212" height="40"/>
                                         <color key="textColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Gotham-Light" family="Gotham" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
@@ -451,7 +488,7 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Apellido" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eY7-Un-7wz" customClass="HoshiTextField" customModule="TextFieldEffects">
                                         <rect key="frame" x="0.0" y="50" width="212" height="40"/>
                                         <color key="textColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Gotham-Light" family="Gotham" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
@@ -468,7 +505,7 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wkH-qG-VBx" customClass="HoshiTextField" customModule="TextFieldEffects">
                                         <rect key="frame" x="0.0" y="100" width="212" height="40"/>
                                         <color key="textColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Gotham-Light" family="Gotham" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
@@ -485,7 +522,7 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Contraseña" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Adl-dF-iLh" customClass="HoshiTextField" customModule="TextFieldEffects">
                                         <rect key="frame" x="0.0" y="150" width="212" height="40"/>
                                         <color key="textColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Gotham-Light" family="Gotham" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
@@ -502,7 +539,7 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirmar Contraseña" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="95z-lO-rhZ" customClass="HoshiTextField" customModule="TextFieldEffects">
                                         <rect key="frame" x="0.0" y="200" width="212" height="40"/>
                                         <color key="textColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Gotham-Light" family="Gotham" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
@@ -522,12 +559,12 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKG-Gc-FtE" customClass="VORoundButton" customModule="Voiash" customModuleProvider="target">
-                                <rect key="frame" x="40" y="423" width="240" height="48"/>
+                                <rect key="frame" x="40" y="422" width="240" height="48"/>
                                 <color key="backgroundColor" red="0.078431372550000003" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="sVv-hI-7TH"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="12"/>
                                 <state key="normal" title="REGISTRARSE">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -536,11 +573,11 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Al registrarte, aceptas los términos y condiciones de Voiash" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnl-j4-FfZ">
-                                <rect key="frame" x="56" y="491" width="208" height="27"/>
+                                <rect key="frame" x="56" y="490" width="208" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="70" id="Ald-lF-ghw"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
                                 <color key="textColor" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -557,7 +594,7 @@
                             <constraint firstAttribute="trailing" secondItem="NKG-Gc-FtE" secondAttribute="trailing" constant="40" id="f4p-KE-Lpf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Upm-Re-Wi9" secondAttribute="trailing" constant="38" id="qhh-Nz-bKU"/>
                             <constraint firstItem="Upm-Re-Wi9" firstAttribute="leading" secondItem="axf-I2-vI6" secondAttribute="leadingMargin" constant="38" id="slm-8E-pkf"/>
-                            <constraint firstItem="Upm-Re-Wi9" firstAttribute="top" secondItem="3go-JG-anV" secondAttribute="bottom" constant="-20" id="spI-lR-eWR"/>
+                            <constraint firstItem="Upm-Re-Wi9" firstAttribute="top" secondItem="3go-JG-anV" secondAttribute="bottom" id="spI-lR-eWR"/>
                             <constraint firstAttribute="trailing" secondItem="3go-JG-anV" secondAttribute="trailing" id="uza-Ti-Azq"/>
                         </constraints>
                     </view>
@@ -939,6 +976,6 @@
         <image name="logo_voiash_color_signIn" width="208" height="68"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="o8z-Sl-N3N"/>
+        <segue reference="vmX-cy-3b9"/>
     </inferredMetricsTieBreakers>
 </document>

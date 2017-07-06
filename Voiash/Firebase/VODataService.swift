@@ -12,6 +12,8 @@ import Firebase
 class VODataService {
     fileprivate static let _shared = VODataService()
     
+    var myUser: VOFBUser!
+    
     static var shared:VODataService{
         return _shared
     }
@@ -24,12 +26,14 @@ class VODataService {
         return mainRef.child(K.FB.user.ref)
     }
     
-   /* func saveUser(uid: String, provider:String){
-        let userData: Dictionary<String, AnyObject> = [K.FB.user.provider: provider as AnyObject]
-        usersRef.child(uid).updateChildValues(userData)
-    } **/
-    
+    /*
+    * Save user with all data
+    */
     func saveUser(uid: String, userData:JSONStandard){
-        usersRef.child(uid).setValue(userData)
+        usersRef.child(uid).setValue(userData, withCompletionBlock: { (err, ref) in
+            if err == nil {
+                self.myUser = VOFBUser.init(userKey: uid, userData: userData)
+            }
+        })
     }
 }

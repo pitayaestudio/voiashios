@@ -20,6 +20,8 @@
 		C4CFD0001F0BFA8A0086D498 /* VOInitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CFCFFF1F0BFA8A0086D498 /* VOInitialVC.swift */; };
 		C4CFD0041F0C0EE40086D498 /* VOForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CFD0031F0C0EE40086D498 /* VOForgotPasswordVC.swift */; };
 		C4CFD0071F0C12F30086D498 /* VOConfirmEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CFD0061F0C12F30086D498 /* VOConfirmEmailVC.swift */; };
+		C4ED03231F0E8DBE00ADD0A6 /* VOUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ED03221F0E8DBE00ADD0A6 /* VOUIView.swift */; };
+		C4ED03261F0E94E000ADD0A6 /* VOFBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ED03251F0E94E000ADD0A6 /* VOFBUser.swift */; };
 		C4EEE17E1F0C1BDC00B1177B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EEE17D1F0C1BDC00B1177B /* Extensions.swift */; };
 		C4EEE1801F0C1F1300B1177B /* VOSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EEE17F1F0C1F1300B1177B /* VOSignUpVC.swift */; };
 		C4EEE1851F0C248800B1177B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4EEE1831F0C248800B1177B /* Localizable.strings */; };
@@ -50,12 +52,12 @@
 		C4CFCFF81F0AE5F10086D498 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C4CFCFFC1F0BC9E50086D498 /* VORoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VORoundButton.swift; path = View/VORoundButton.swift; sourceTree = "<group>"; };
 		C4CFCFFF1F0BFA8A0086D498 /* VOInitialVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOInitialVC.swift; path = Controller/VOInitialVC.swift; sourceTree = "<group>"; };
-		C4CFD0021F0BFAAC0086D498 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		C4CFD0031F0C0EE40086D498 /* VOForgotPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOForgotPasswordVC.swift; path = Controller/VOForgotPasswordVC.swift; sourceTree = "<group>"; };
 		C4CFD0061F0C12F30086D498 /* VOConfirmEmailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOConfirmEmailVC.swift; path = Controller/VOConfirmEmailVC.swift; sourceTree = "<group>"; };
+		C4ED03221F0E8DBE00ADD0A6 /* VOUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOUIView.swift; path = View/VOUIView.swift; sourceTree = "<group>"; };
+		C4ED03251F0E94E000ADD0A6 /* VOFBUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOFBUser.swift; path = Model/VOFBUser.swift; sourceTree = "<group>"; };
 		C4EEE17D1F0C1BDC00B1177B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Utils/Extensions.swift; sourceTree = "<group>"; };
 		C4EEE17F1F0C1F1300B1177B /* VOSignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOSignUpVC.swift; path = Controller/VOSignUpVC.swift; sourceTree = "<group>"; };
-		C4EEE1811F0C23D800B1177B /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Main.strings"; sourceTree = "<group>"; };
 		C4EEE1821F0C23D800B1177B /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		C4EEE1861F0C249100B1177B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C4EEE1881F0C24A800B1177B /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 		C4AC16D01F0AE054007ECB38 /* Voiash */ = {
 			isa = PBXGroup;
 			children = (
+				C4ED03241F0E94C100ADD0A6 /* Model */,
 				4B9304991F0B39CC00721977 /* Utils */,
 				4B9304961F0B14B200721977 /* Firebase */,
 				4B93049E1F0B425F00721977 /* Controller */,
@@ -170,6 +173,7 @@
 				C4EEE18A1F0C3B7600B1177B /* UIViewController+Alerts.h */,
 				C4EEE18B1F0C3B7600B1177B /* UIViewController+Alerts.m */,
 				C4EEE19E1F0D726D00B1177B /* Discover Cells */,
+				C4ED03221F0E8DBE00ADD0A6 /* VOUIView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -184,6 +188,14 @@
 				C4EEE17F1F0C1F1300B1177B /* VOSignUpVC.swift */,
 			);
 			name = "Welcome SignIn";
+			sourceTree = "<group>";
+		};
+		C4ED03241F0E94C100ADD0A6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C4ED03251F0E94E000ADD0A6 /* VOFBUser.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		C4EEE18D1F0D67E800B1177B /* Resources */ = {
@@ -364,9 +376,11 @@
 				C4CFCFFD1F0BC9E50086D498 /* VORoundButton.swift in Sources */,
 				C4CFD0071F0C12F30086D498 /* VOConfirmEmailVC.swift in Sources */,
 				C4EEE19B1F0D71DC00B1177B /* VODiscoverListVC.swift in Sources */,
+				C4ED03261F0E94E000ADD0A6 /* VOFBUser.swift in Sources */,
 				C4EEE18C1F0C3B7600B1177B /* UIViewController+Alerts.m in Sources */,
 				4B93049D1F0B425A00721977 /* VOSignInVC.swift in Sources */,
 				C4AC16D21F0AE054007ECB38 /* AppDelegate.swift in Sources */,
+				C4ED03231F0E8DBE00ADD0A6 /* VOUIView.swift in Sources */,
 				C4EEE17E1F0C1BDC00B1177B /* Extensions.swift in Sources */,
 				4B9304981F0B39C800721977 /* Constants.swift in Sources */,
 				C4EEE1801F0C1F1300B1177B /* VOSignUpVC.swift in Sources */,
@@ -383,8 +397,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				C4AC16D61F0AE054007ECB38 /* Base */,
-				C4CFD0021F0BFAAC0086D498 /* en */,
-				C4EEE1811F0C23D800B1177B /* es-419 */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

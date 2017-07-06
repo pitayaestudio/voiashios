@@ -99,7 +99,7 @@ class VOSignInVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
     }
     
     
-    //MARK: GIDSignIn Delegate
+    //MARK: - GIDSignIn Delegate
 
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!)
     {}
@@ -107,5 +107,10 @@ class VOSignInVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
     // Finished disconnecting |user| from the app successfully if |error| is |nil|.
     public func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!)
     {}
+    
+    // MARK: - Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+    }
 }
 

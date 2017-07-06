@@ -32,7 +32,9 @@ extension UINavigationController {
         navigationBar.barTintColor = .white
         navigationBar.tintColor = K.color.colorRed
         navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:K.color.colorRed]
-
+        let imgBack = UIImage(named: "ic_arrow_back")
+        navigationBar.backIndicatorImage = imgBack
+        navigationBar.backIndicatorTransitionMaskImage = imgBack
         setNavigationBarHidden(false, animated:true)
     }
     
@@ -52,6 +54,18 @@ extension UINavigationController {
         navigationBar.setBackgroundImage(UINavigationBar.appearance().backgroundImage(for: UIBarMetrics.default), for:UIBarMetrics.default)
         navigationBar.isTranslucent = UINavigationBar.appearance().isTranslucent
         navigationBar.shadowImage = UINavigationBar.appearance().shadowImage
+    }
+}
+
+extension UINavigationItem {
+    func customTitle(title: String) {
+        let titleLabel = UILabel()
+        titleLabel.text = title
+        titleLabel.font = UIFont(name: "Helvetica", size: 12)
+        titleLabel.textColor = K.color.titleGray
+        titleLabel.textAlignment = .center
+        titleLabel.sizeToFit()
+        titleView = titleLabel
     }
 }
 

@@ -27,6 +27,9 @@ struct K {
             static let email = "email"
             static let name = "name"
             static let lastName = "lastName"
+            static let phone = "phoneNumber"
+            static let urlAvatar = "profilePicture"
+            static let pushToken = "pushToken"
         }
     }
     
@@ -38,9 +41,11 @@ struct K {
     struct color {
         static let shadowGray = UIColor(red: 255, green: 255, blue: 255, alpha: 0.5)
         static let colorRed = UIColor(red: 255, green: 72, blue: 71, alpha: 1)
+        static let titleGray = UIColor(red: 115, green: 115, blue: 115, alpha: 1)
     }
     struct segue {
         static let segueTabBar = "segueTabBar"
+        static let segueForgotPass = "segueForgotPass"
     }
     
 }
