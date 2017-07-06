@@ -14,6 +14,12 @@
 	<string>es</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
+	<key>FacebookAppID</key>
+	<string>1601883649853037</string>
+	<key>FacebookDisplayName</key>
+	<string></string>
+	<key>FirebaseAppDelegateProxyEnabled</key>
+	<true/>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -26,6 +32,12 @@
 	<string>1.0</string>
 	<key>CFBundleURLTypes</key>
 	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb1601883649853037</string>
+			</array>
+		</dict>
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>

@@ -55,25 +55,4 @@ class VOConfirmEmailVC: UIViewController {
         })
     }
     
-    /*
-     let message = String(format: NSLocalizedString("emailNotVerified", comment: ""), self.tfEmail.text!)
-     let alertVC = UIAlertController(title: NSLocalizedString("errorTitle", comment: ""), message: message, preferredStyle: .alert)
-     let alertActionOkay = UIAlertAction(title: NSLocalizedString("actOK", comment: ""), style: .default) {
-     (_) in
-     VOFBAuthService.shared.sendEmailConfirmation({ (error) in
-     if let error = error {
-     self.showMessagePrompt(error)
-     }else{
-     self.performSegue(withIdentifier: K.segue.segueEmailConfirmation, sender: nil)
-     }
-     })
-     }
-     let alertActionCancel = UIAlertAction(title: NSLocalizedString("actCancel", comment: ""), style: .default, handler: nil)
-     
-     alertVC.addAction(alertActionOkay)
-     alertVC.addAction(alertActionCancel)
-     self.present(alertVC, animated: true, completion: nil)
- 
- */
-    
 }

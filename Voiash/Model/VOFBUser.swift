@@ -13,7 +13,7 @@ class VOFBUser: NSObject {
 
     var email: String!
     var name: String!
-    var lastName: String!
+    var lastName: String?
     var provider: String!
     var pushToken: String?
     var phone: String?
@@ -24,7 +24,11 @@ class VOFBUser: NSObject {
     init(userKey:String?, userData:JSONStandard){
         self.userKey = userKey
         self.name = userData[K.FB.user.name] as! String
-        self.lastName = userData[K.FB.user.name] as! String
+        
+        if let lastName = userData[K.FB.user.lastName] as? String {
+            self.lastName = lastName
+        }
+        
         self.email = userData[K.FB.user.email] as! String
         self.provider = userData[K.FB.user.provider] as! String
         

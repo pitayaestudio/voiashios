@@ -44,7 +44,6 @@ class VOSignInVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
     
     @IBAction func facebookBtnPressed(_ sender: AnyObject) {
         return
-        
         let facebookLogin = FBSDKLoginManager()
         facebookLogin.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
             if error != nil {
@@ -55,9 +54,36 @@ class VOSignInVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
                 print("BSC:: Successfully auth FaceBook")
                 let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
                 
-                let userData: JSONStandard = [K.FB.user.provider:K.provider.fb as AnyObject]
-                VOFBAuthService.shared.loginWithCredential(credential, userData: userData, onComplete: { (errMsg, data) in
+                VOFBAuthService.shared.loginWithCredential(credential, onComplete: { (errMsg, data) in
                     if errMsg == nil {
+                        if((FBSDKAccessToken.current()) != nil) {
+                            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
+                                if (error == nil){
+                                    if let result = result as? [String: Any] {
+                                        guard let email = result["email"] as? String else {
+                                            return
+                                        }
+                                        guard let name = result["first_name"] as? String else {
+                                            return
+                                        }
+                                        var lastName = ""
+                                        if let last = result["last_name"] as? String {
+                                            lastName = last.capitalized
+                                        }
+                                        var urlAvatar = ""
+                                        if let ditPict = result["picture"] as? [String: Any] {
+                                            if let ditType = ditPict["data"] as? [String: Any] {
+                                                if let strUrl = ditType["url"] as? String {
+                                                    urlAvatar = strUrl
+                                                }
+                                            }
+                                        }
+                                        let userData:JSONStandard = [K.FB.user.name:name.capitalized as AnyObject, K.FB.user.lastName:lastName as AnyObject, K.FB.user.provider: K.provider.fb as AnyObject, K.FB.user.email: email as AnyObject,K.FB.user.urlAvatar:urlAvatar as AnyObject]
+                                        VOFBDataService.shared.saveUser(uid: (Auth.auth().currentUser?.uid)!, userData: userData)
+                                    }
+                                }
+                            })
+                        }
                         self.performSegue(withIdentifier: K.segue.segueTabBar, sender: nil)
                     } else {
                         let alert = UIAlertController(title: "Error Authentication", message: errMsg, preferredStyle: .alert)

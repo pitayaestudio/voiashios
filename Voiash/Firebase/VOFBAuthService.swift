@@ -37,14 +37,13 @@ class VOFBAuthService: NSObject {
      - Parameter credential: The auth credential
      - Returns: Error, User.
      */
-    func loginWithCredential(_ credential: AuthCredential, userData:JSONStandard, onComplete:Completion?){
+    func loginWithCredential(_ credential: AuthCredential, onComplete:Completion?){
         Auth.auth().signIn(with: credential, completion: { (user, error) in
             if error != nil {
                 print ("loginWithCredential Error:: " + error.debugDescription)
                 self.handleFirebaseError(error! as NSError, onComplete: onComplete)
             } else {
                 print ("BSC:: successfully auth Firebase")
-                self.saveUserInKeychain((user?.uid)!, userData: userData)
                 onComplete?(nil,user)
             }
         })
@@ -91,7 +90,7 @@ class VOFBAuthService: NSObject {
                                 print(error)
                             }
                         })
-                        self.saveUserInKeychain((user?.uid)!, userData: userData)
+                        VOFBDataService.shared.saveUser(uid: (user?.uid)!, userData: userData)
                         onComplete?(nil,user)
                     }
                     
@@ -131,10 +130,10 @@ class VOFBAuthService: NSObject {
      - Parameter userID: Save the userID
      - Parameter userData: Dictionary with (email,provider)
      */
-    func saveUserInKeychain(_ userID: String, userData:JSONStandard){
+   /* func saveUserInKeychain(_ userID: String, userData:JSONStandard){
         VOFBDataService.shared.saveUser(uid: userID, userData: userData)
         keychain.set(userID, forKey: K.FB.user.userId)
-    }
+    }*/
     
     /**
      Reset password

@@ -112,12 +112,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // [END google_credential]
         // [START_EXCLUDE]
         controller.showSpinner {
-            let userData: JSONStandard = [K.FB.user.provider:K.provider.google as AnyObject]
-            VOFBAuthService.shared.loginWithCredential(credential, userData:userData) { (error, user) in
+            VOFBAuthService.shared.loginWithCredential(credential) { (error, user) in
                 controller.hideSpinner({ 
                     if let error = error {
                         controller.showMessagePrompt(error)
                     }else{
+                        if (GIDSignIn.sharedInstance().currentUser != nil) {
+                            let urlAvatar = GIDSignIn.sharedInstance().currentUser.profile.imageURL(withDimension: 400).absoluteString
+                            let email = GIDSignIn.sharedInstance().currentUser.profile.email
+                            let name =  GIDSignIn.sharedInstance().currentUser.profile.givenName
+                            let lastName =  GIDSignIn.sharedInstance().currentUser.profile.familyName
+                            
+                            let userData:JSONStandard = [K.FB.user.name:name?.capitalized as AnyObject, K.FB.user.lastName:lastName?.capitalized as AnyObject, K.FB.user.provider: K.provider.google as AnyObject, K.FB.user.email: email as AnyObject,K.FB.user.urlAvatar:urlAvatar as AnyObject]
+                            VOFBDataService.shared.saveUser(uid: (Auth.auth().currentUser?.uid)!, userData: userData)
+                        }
                         controller.performSegue(withIdentifier: K.segue.segueTabBar, sender: nil)
                     }
                 })
