@@ -16,7 +16,7 @@ class VODiscoverListVC: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-       self.navigationController?.presentWhiteNavigationBar()
+       self.navigationController?.navigationBar.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
