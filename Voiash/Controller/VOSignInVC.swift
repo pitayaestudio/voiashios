@@ -15,13 +15,12 @@ class VOSignInVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
     
     @IBOutlet weak var tfEmail: TextFieldEffects!
     @IBOutlet weak var tfPassword: TextFieldEffects!
-    @IBOutlet weak var signInButton: GIDSignInButton!
+    @IBOutlet weak var btnGoogle: VORoundButton!
     @IBOutlet weak var btnLogin: VORoundButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         appDel.currentVC = self
-        
         self.hideBack()
         self.hideKeyboardWhenTappedAround()
     }
@@ -29,6 +28,7 @@ class VOSignInVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         GIDSignIn.sharedInstance().uiDelegate = self
+        
         self.navigationController?.navigationBar.isHidden = true
     }
     
@@ -42,18 +42,31 @@ class VOSignInVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
         self.navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func facebookBtnPressed(_ sender: AnyObject) {
-        return
+    @IBAction func googleBtnPressed(_ sender: VORoundButton) {
+        sender.showSpinner()
+        appDel.isFBActive = false
+        GIDSignIn.sharedInstance().signIn()
+    }
+    
+    @IBAction func facebookBtnPressed(_ sender: VORoundButton) {
+        sender.showSpinner()
+        appDel.isFBActive = true
         let facebookLogin = FBSDKLoginManager()
         facebookLogin.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
             if error != nil {
+                appDel.isFBActive = true
+                sender.hideSpinner()
                 print("BSC:: " + error.debugDescription)
             } else if result?.isCancelled == true {
+                
+                appDel.isFBActive = true
+                sender.hideSpinner()
                 print("BSC:: User cancelled facebook auth" )
             } else {
                 print("BSC:: Successfully auth FaceBook")
                 let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
                 
+                appDel.isFBActive = true
                 VOFBAuthService.shared.loginWithCredential(credential, onComplete: { (errMsg, data) in
                     if errMsg == nil {
                         if((FBSDKAccessToken.current()) != nil) {
@@ -84,9 +97,11 @@ class VOSignInVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
                                 }
                             })
                         }
+                        
+                        sender.hideSpinner()
                         appDel.setTabBarRoot()
-                        //self.performSegue(withIdentifier: K.segue.segueTabBar, sender: nil)
                     } else {
+                        sender.hideSpinner()
                         let alert = UIAlertController(title: "Error Authentication", message: errMsg, preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
                         self.present(alert, animated:true, completion:nil)
@@ -98,22 +113,28 @@ class VOSignInVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
     
     @IBAction func signInBtnPressed(_ sender: AnyObject) {
         if let email = tfEmail.text, let pass = tfPassword.text , (email.characters.count > 0 && pass.characters.count > 5){
-            //showSpinner {
-                self.btnLogin.showLoading()
-                VOFBAuthService.shared.loginWithEmail(email, password: pass, onComplete: { (errMsg, data) in
-                    //self.hideSpinner {
-                    
-                        self.btnLogin.hideLoading()
-                        if let error = errMsg {
-                            self.showMessagePrompt(error)
-                            return
-                        }else{
-                            appDel.setTabBarRoot()
-                            //self.performSegue(withIdentifier: K.segue.segueTabBar, sender: nil)
+            self.btnLogin.showSpinner()
+            VOFBAuthService.shared.loginWithEmail(email, password: pass, onComplete: { (errMsg, data) in
+                if let error = errMsg {
+                    self.btnLogin.hideSpinner()
+                    if error == NSLocalizedString("errorEmailWithoutConfirmation", comment: "") {
+                        let vc = self.storyboard?.instantiateViewController(withIdentifier: "VOConfirmEmailVC") as! VOConfirmEmailVC
+                        vc.cameFromSignIn = true
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    }else{
+                        self.showMessagePrompt(error)
+                    }
+                    return
+                }else{
+                    VOFBDataService.shared.getUser(uid: data!.uid, onComplete: { (fbUser) in
+                        self.btnLogin.hideSpinner()
+                        if let fbUser = fbUser {
+                            VOFBDataService.shared.myUser = fbUser
                         }
-                    //}
-                })
-            //}
+                        appDel.setTabBarRoot()
+                    })
+                }
+            })
         }else{
             self.showMessagePrompt("You must enter both an email and a password (6 characters)")
         }
@@ -134,15 +155,17 @@ class VOSignInVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
     //MARK: - GIDSignIn Delegate
 
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!)
-    {}
+    {
+        if let error = error {
+            self.showMessagePrompt(NSLocalizedString("", comment: ""))
+        }
+        self.btnGoogle.hideSpinner()
+    }
     
     // Finished disconnecting |user| from the app successfully if |error| is |nil|.
     public func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!)
-    {}
-    
-    // MARK: - Segue
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+    {
+        self.btnGoogle.hideSpinner()
     }
 }
 

@@ -44,26 +44,23 @@ class VOSignUpVC: UIViewController {
         guard let data = validateData() else{
             return
         }
-        //showSpinner {
-        self.btnSingIn.showLoading()
-            VOFBAuthService.shared.createUserWithEmail(userData: data, password: self.tfPassword.text!) { (error, user) in
-               //self.hideSpinner({
-                self.btnSingIn.hideLoading()
-                    if user != nil {
-                        if !Auth.auth().currentUser!.isEmailVerified {
-                            self.performSegue(withIdentifier: K.segue.segueEmailConfirmation, sender: nil)
-                        } else {
-                            //self.performSegue(withIdentifier: K.segue.segueTabBar, sender: nil)
-                            
-                            appDel.setTabBarRoot()
-                        }
-                    }
-               // })
+        self.btnSingIn.showSpinner()
+        VOFBAuthService.shared.createUserWithEmail(userData: data, password: self.tfPassword.text!) { (error, user) in
+            self.btnSingIn.hideSpinner()
+            if user != nil {
+                if !Auth.auth().currentUser!.isEmailVerified {
+                    self.performSegue(withIdentifier: K.segue.segueEmailConfirmation, sender: nil)
+                } else {
+                    appDel.setTabBarRoot()
+                }
+            }else if error == NSLocalizedString("errorEmailWithoutConfirmation", comment: "") {
+                self.performSegue(withIdentifier: K.segue.segueEmailConfirmation, sender: nil)
+            }else{
+                self.showMessagePrompt(error!)
             }
-        //}
-        
+        }
     }
-    
+
     // MARK: - Validations
     func validateData()->JSONStandard? {
         guard  (tfName.text != nil)  && !(tfName.text?.isBlank)! else {

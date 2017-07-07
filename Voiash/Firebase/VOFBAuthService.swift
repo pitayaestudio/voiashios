@@ -61,7 +61,11 @@ class VOFBAuthService: NSObject {
             if let error = error {
                 self.handleFirebaseError(error as NSError, onComplete: onComplete)
             }else{
-                onComplete?(nil,user)
+                if user!.isEmailVerified {
+                    onComplete?(nil,user)
+                }else{
+                    onComplete?(NSLocalizedString("errorEmailWithoutConfirmation", comment: ""),nil)
+                }
             }
         })
     }
@@ -81,20 +85,13 @@ class VOFBAuthService: NSObject {
                     onComplete?(err, nil)
                 })
             }else{
-                self.loginWithEmail(email, password: password, onComplete: { (error, user) in
+                self.sendEmailConfirmation({ (error) in
                     if let error = error {
-                        onComplete?(error, nil)
-                    }else{
-                        self.sendEmailConfirmation({ (error) in
-                            if let error = error {
-                                print(error)
-                            }
-                        })
-                        VOFBDataService.shared.saveUser(uid: (user?.uid)!, userData: userData)
-                        onComplete?(nil,user)
+                        print(error)
                     }
-                    
                 })
+                VOFBDataService.shared.saveUser(uid: (user?.uid)!, userData: userData)
+                onComplete?(nil,user)
             }
         }
     }

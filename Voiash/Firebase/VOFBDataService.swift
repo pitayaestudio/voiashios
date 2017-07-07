@@ -53,9 +53,9 @@ class VOFBDataService {
                     onComplete(user)
                     return
                 }
+            }else{
+                onComplete(nil)
             }
-            onComplete(nil)
-            
         })
     }
     

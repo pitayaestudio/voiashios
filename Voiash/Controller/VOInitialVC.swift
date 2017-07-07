@@ -14,18 +14,20 @@ class VOInitialVC: UIViewController {
     @IBOutlet weak var imgClouds:UIImageView!
     @IBOutlet weak var imgClouds2:UIImageView!
     @IBOutlet weak var imgClouds3:UIImageView!
+    @IBOutlet weak var vPlane:PlaneView!
     var isActive = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        animateClouds()
-        animatePlane()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
         self.navigationItem.title = " "
+        self.isActive = true
+        animateClouds()
+        animatePlane()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -37,6 +39,8 @@ class VOInitialVC: UIViewController {
     
     // MARK: - Animations
     func animatePlane(){
+        vPlane.addFlightAnimation()
+        return
         UIView.animate(withDuration: 1, delay:0, animations: {
             self.imgPlane.frame.origin.y = self.imgPlane.frame.origin.y
             self.imgPlane.frame.origin.x = self.imgPlane.frame.origin.x + 85
@@ -67,12 +71,12 @@ class VOInitialVC: UIViewController {
             return
         }
         imgClouds.frame.origin.x = 75
-        //imgClouds.frame.origin.x = 35
-        //imgClouds.frame.origin.x = 5
-        UIView.animate(withDuration: 7, delay: 0.0, options: .curveLinear, animations: {[unowned self] () -> Void in
+        imgClouds.frame.origin.x = 35
+        imgClouds.frame.origin.x = 5
+        UIView.animate(withDuration: 10, delay: 0.0, options: .curveLinear, animations: {[unowned self] () -> Void in
             self.imgClouds.frame.origin.x = self.view.frame.size.width - 125
-            //self.imgClouds2.frame.origin.x = self.view.frame.size.width - 85
-            //self.imgClouds3.frame.origin.x = self.view.frame.size.width - 100
+            self.imgClouds2.frame.origin.x = self.view.frame.size.width - 85
+            self.imgClouds3.frame.origin.x = self.view.frame.size.width - 100
         }) {[unowned self] (finsihed) -> Void in
             self.animateClouds()
         }

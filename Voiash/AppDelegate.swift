@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     var window: UIWindow?
     var currentVC: UIViewController?
     var reloadUser = false
+    var isFBActive = false
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
@@ -71,29 +72,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             self.window?.makeKeyAndVisible()
         }
     }
-
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        
-        return GIDSignIn.sharedInstance().handle(url,
-                                                 sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
-                                                 annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+        if self.isFBActive {
+            let handled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
+            
+            return handled
+        }else{
+            return GIDSignIn.sharedInstance().handle(url,
+                                                     sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
+                                                     annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+        }
     }
     
-    // [END new_options]
-    // [START old_delegate]
+
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        // [END old_delegate]
+        if self.isFBActive {
+            return FBSDKApplicationDelegate.sharedInstance().application(application,
+                                                                         open: url,
+                                                                         // [START old_options]
+                sourceApplication: sourceApplication,
+                annotation: annotation)
+        }
+        
         if GIDSignIn.sharedInstance().handle(url,
                                              sourceApplication: sourceApplication,
                                              annotation: annotation) {
             return true
         }
-        return FBSDKApplicationDelegate.sharedInstance().application(application,
-                                                                     open: url,
-                                                                     // [START old_options]
-            sourceApplication: sourceApplication,
-            annotation: annotation)
+        return false
     }
+    
     // [END old_options]
     // [START headless_google_auth]
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {

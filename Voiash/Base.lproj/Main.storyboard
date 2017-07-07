@@ -31,22 +31,39 @@
                                     <constraint firstAttribute="height" constant="126" id="hFg-XU-WGu"/>
                                 </constraints>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_bg_nubes" translatesAutoresizingMaskIntoConstraints="NO" id="K2M-3r-txf">
-                                <rect key="frame" x="-320" y="307" width="320" height="261"/>
+                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_nubes_part_2" translatesAutoresizingMaskIntoConstraints="NO" id="zcO-ta-Qab">
+                                <rect key="frame" x="-84" y="249" width="189" height="179"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="261" id="AbJ-7c-QDC"/>
+                                    <constraint firstAttribute="height" constant="179" id="ROs-Uw-px6"/>
+                                    <constraint firstAttribute="width" constant="189" id="eJk-ch-ByX"/>
                                 </constraints>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_bg_nubes" translatesAutoresizingMaskIntoConstraints="NO" id="3gL-8j-TJ7">
-                                <rect key="frame" x="0.0" y="237" width="320" height="261"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_nubes_part_1" translatesAutoresizingMaskIntoConstraints="NO" id="68U-hV-zsd">
+                                <rect key="frame" x="7" y="257" width="313" height="191"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="261" id="cxG-Lf-dqe"/>
+                                    <constraint firstAttribute="width" constant="313" id="GA8-A2-jZe"/>
+                                    <constraint firstAttribute="height" constant="191" id="oNV-98-FOc"/>
                                 </constraints>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_bg_edificios" translatesAutoresizingMaskIntoConstraints="NO" id="pJT-QI-Qqa">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_nubes_part_3" translatesAutoresizingMaskIntoConstraints="NO" id="fvR-WO-lZc">
+                                <rect key="frame" x="3" y="249" width="66" height="179"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="179" id="eNf-fa-AXl"/>
+                                    <constraint firstAttribute="width" constant="66" id="nky-t3-gJf"/>
+                                </constraints>
+                            </imageView>
+                            <view opaque="NO" clipsSubviews="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="KeG-vo-2mN" customClass="PlaneView" customModule="Voiash" customModuleProvider="target">
+                                <rect key="frame" x="-90" y="198" width="500" height="230"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="230" id="Ef4-sq-BZr"/>
+                                    <constraint firstAttribute="width" constant="500" id="Jc1-8q-PfX"/>
+                                </constraints>
+                            </view>
+                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_bg_edificios" translatesAutoresizingMaskIntoConstraints="NO" id="pJT-QI-Qqa">
                                 <rect key="frame" x="0.0" y="307" width="320" height="261"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="261" id="O4i-dG-SJb"/>
+                                    <constraint firstAttribute="height" constant="261" id="BOY-Dx-68c"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Ndh-tc-TyQ">
@@ -55,8 +72,8 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Na-yG-G76" customClass="VORoundButton" customModule="Voiash" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="224" height="48"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="12"/>
-                                        <state key="normal" title="REGÍSTRATE Y DISFRUTA">
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
+                                        <state key="normal" title="Registrate y disfruta">
                                             <color key="titleColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -65,8 +82,8 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VSa-hA-JMj" customClass="VORoundButton" customModule="Voiash" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="64" width="224" height="48"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="12"/>
-                                        <state key="normal" title="INGRESAR SIN REGISTRAR">
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
+                                        <state key="normal" title="Ingresar sin registrar">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -75,7 +92,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="loginAnonymousBtnPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="RDo-9C-gqH"/>
+                                            <action selector="loginAnonymousBtnPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="E4K-Gs-QlL"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -83,8 +100,8 @@
                                     <constraint firstAttribute="height" constant="112" id="HXL-UB-n1U"/>
                                 </constraints>
                             </stackView>
-                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_bg_avion" translatesAutoresizingMaskIntoConstraints="NO" id="WzX-HT-2RX">
-                                <rect key="frame" x="0.0" y="305" width="37" height="32"/>
+                            <imageView hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_bg_avion" translatesAutoresizingMaskIntoConstraints="NO" id="WzX-HT-2RX">
+                                <rect key="frame" x="0.0" y="314" width="37" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="37" id="YvL-aa-PLi"/>
                                     <constraint firstAttribute="height" constant="32" id="cLo-M9-vf6"/>
@@ -93,27 +110,28 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="3gL-8j-TJ7" secondAttribute="trailing" constant="-16" id="6W4-Hh-01e"/>
                             <constraint firstAttribute="trailing" secondItem="HyV-Om-ct7" secondAttribute="trailing" id="7s9-IB-pef"/>
-                            <constraint firstItem="K2M-3r-txf" firstAttribute="width" secondItem="3gL-8j-TJ7" secondAttribute="width" id="FMy-28-cGb"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="K2M-3r-txf" secondAttribute="bottom" id="IQh-2t-Mdv"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="68U-hV-zsd" secondAttribute="bottom" constant="120" id="FaW-A7-vax"/>
+                            <constraint firstItem="fvR-WO-lZc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-13" id="HMQ-Sb-O0d"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fvR-WO-lZc" secondAttribute="bottom" constant="140" id="Hbq-zQ-MIE"/>
                             <constraint firstItem="58I-vE-2yQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="48" id="Lhr-gl-NIa"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zcO-ta-Qab" secondAttribute="bottom" constant="140" id="Lm8-9J-HEV"/>
                             <constraint firstItem="58I-vE-2yQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="120" id="OTo-cR-Sey"/>
-                            <constraint firstItem="Ndh-tc-TyQ" firstAttribute="top" secondItem="WzX-HT-2RX" secondAttribute="bottom" constant="99" id="QTl-z9-EI6"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3gL-8j-TJ7" secondAttribute="bottom" constant="70" id="WyI-8p-gcV"/>
+                            <constraint firstItem="Ndh-tc-TyQ" firstAttribute="top" secondItem="WzX-HT-2RX" secondAttribute="bottom" constant="90" id="QTl-z9-EI6"/>
                             <constraint firstItem="Ndh-tc-TyQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="48" id="XAl-gs-4lW"/>
                             <constraint firstItem="WzX-HT-2RX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XLy-gb-wJC"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ndh-tc-TyQ" secondAttribute="bottom" constant="20" id="YxG-D7-Jny"/>
                             <constraint firstAttribute="trailing" secondItem="Ndh-tc-TyQ" secondAttribute="trailing" constant="48" id="ZY8-9v-xfA"/>
-                            <constraint firstItem="3gL-8j-TJ7" firstAttribute="leading" secondItem="K2M-3r-txf" secondAttribute="trailing" id="bTB-SU-sbh"/>
+                            <constraint firstItem="zcO-ta-Qab" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-100" id="Zrc-Es-5PS"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pJT-QI-Qqa" secondAttribute="bottom" id="cMu-rS-qJ9"/>
+                            <constraint firstItem="Ndh-tc-TyQ" firstAttribute="top" secondItem="KeG-vo-2mN" secondAttribute="bottom" constant="8" id="d6m-pw-s17"/>
+                            <constraint firstItem="KeG-vo-2mN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jWD-Tq-QW1"/>
                             <constraint firstAttribute="trailing" secondItem="pJT-QI-Qqa" secondAttribute="trailing" id="kEs-Hw-zgD"/>
                             <constraint firstItem="HyV-Om-ct7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="kLf-sh-eWo"/>
-                            <constraint firstItem="3gL-8j-TJ7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="maR-qm-hOb"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="HyV-Om-ct7" secondAttribute="bottom" id="nDF-V3-uSx"/>
                             <constraint firstAttribute="trailing" secondItem="58I-vE-2yQ" secondAttribute="trailing" constant="48" id="nFH-x9-Pxb"/>
                             <constraint firstItem="pJT-QI-Qqa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qjP-jT-B8m"/>
-                            <constraint firstItem="K2M-3r-txf" firstAttribute="height" secondItem="3gL-8j-TJ7" secondAttribute="height" id="un4-mz-h3Z"/>
+                            <constraint firstAttribute="trailing" secondItem="68U-hV-zsd" secondAttribute="trailing" id="r3B-d8-0cH"/>
                             <constraint firstItem="HyV-Om-ct7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="yRw-Em-dLf"/>
                         </constraints>
                     </view>
@@ -121,8 +139,11 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="MHL-cW-dRD"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="imgClouds" destination="3gL-8j-TJ7" id="eJ6-gh-5M7"/>
+                        <outlet property="imgClouds" destination="68U-hV-zsd" id="JOw-W2-kjH"/>
+                        <outlet property="imgClouds2" destination="zcO-ta-Qab" id="320-XM-gRb"/>
+                        <outlet property="imgClouds3" destination="fvR-WO-lZc" id="z8a-T1-qea"/>
                         <outlet property="imgPlane" destination="WzX-HT-2RX" id="C8J-iM-RuZ"/>
+                        <outlet property="vPlane" destination="KeG-vo-2mN" id="Uxf-sH-oAp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -141,6 +162,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KnH-Mi-2Fi" customClass="GIDSignInButton">
+                                <rect key="frame" x="290" y="381" width="38" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="32"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dqm-Sh-Ysu">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="176"/>
                                 <subviews>
@@ -155,7 +186,7 @@
                                         </constraints>
                                         <state key="normal" image="ic_arrow_back"/>
                                         <connections>
-                                            <action selector="backBtnPressed:" destination="yEV-DP-WTA" eventType="touchUpInside" id="tiz-OO-HHs"/>
+                                            <action selector="backBtnPressed:" destination="yEV-DP-WTA" eventType="touchUpInside" id="i2V-tM-TVW"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_voiash_color_signIn" translatesAutoresizingMaskIntoConstraints="NO" id="yAR-x2-oOu">
@@ -185,7 +216,7 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7xh-ox-9Wn" customClass="HoshiTextField" customModule="TextFieldEffects">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="47.5"/>
                                         <color key="textColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
@@ -202,7 +233,7 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TMk-mD-t1g" customClass="HoshiTextField" customModule="TextFieldEffects">
                                         <rect key="frame" x="0.0" y="62.5" width="260" height="47.5"/>
                                         <color key="textColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
@@ -227,8 +258,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="hmU-04-pgf"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="12"/>
-                                <state key="normal" title="INGRESAR CON EMAIL">
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
+                                <state key="normal" title="Ingresar con email">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -240,7 +271,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46.5" id="Bcr-gF-bk8"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
                                 <state key="normal" title="¿Olvidaste tu password?">
                                     <color key="titleColor" red="0.45098039215686275" green="0.45098039215686275" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -251,41 +282,48 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Y28-6y-TvI">
                                 <rect key="frame" x="24" y="474" width="272" height="64"/>
                                 <subviews>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDg-u9-TGc">
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDg-u9-TGc" customClass="VORoundButton" customModule="Voiash" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
-                                        <color key="backgroundColor" red="0.25490196078431371" green="0.28235294117647058" blue="0.59607843137254901" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <size key="titleShadowOffset" width="2" height="4"/>
                                         <state key="normal" image="ic_fb_signIn">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="32"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="facebookBtnPressed:" destination="yEV-DP-WTA" eventType="touchUpInside" id="56t-z1-OdG"/>
+                                            <action selector="facebookBtnPressed:" destination="yEV-DP-WTA" eventType="touchUpInside" id="eId-WH-sjV"/>
                                         </connections>
                                     </button>
-                                    <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MeW-4N-IuO" customClass="GIDSignInButton">
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JpG-UZ-m1A" customClass="VORoundButton" customModule="Voiash" customModuleProvider="target">
                                         <rect key="frame" x="104" y="0.0" width="64" height="64"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="ic_google_signIn"/>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="32"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aV4-Kc-fRa">
+                                        <connections>
+                                            <action selector="googleBtnPressed:" destination="yEV-DP-WTA" eventType="touchUpInside" id="t32-9q-MNZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aV4-Kc-fRa" customClass="VORoundButton" customModule="Voiash" customModuleProvider="target">
                                         <rect key="frame" x="208" y="0.0" width="64" height="64"/>
-                                        <color key="backgroundColor" red="0.75686274509803919" green="0.75686274509803919" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <size key="titleShadowOffset" width="2" height="4"/>
                                         <state key="normal" image="ic_mail_signIn">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="32"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -319,8 +357,8 @@
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="btnGoogle" destination="JpG-UZ-m1A" id="U6X-i5-wmr"/>
                         <outlet property="btnLogin" destination="5x2-bL-ZjP" id="oCR-eh-DEr"/>
-                        <outlet property="signInButton" destination="MeW-4N-IuO" id="lYE-MY-Wf7"/>
                         <outlet property="tfEmail" destination="7xh-ox-9Wn" id="5Jv-AU-hX6"/>
                         <outlet property="tfPassword" destination="TMk-mD-t1g" id="E33-yv-W41"/>
                     </connections>
@@ -349,7 +387,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="7DL-xs-dV6"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
                                         <color key="textColor" red="0.45098039215686275" green="0.45098039215686275" blue="0.45098039215686275" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -380,25 +418,24 @@
                                 <state key="normal" image="ic_arrow_back"/>
                                 <connections>
                                     <action selector="backBtnPressed" destination="GnE-Sy-CZD" eventType="touchUpInside" id="TVw-I1-v2l"/>
-                                    <action selector="backBtnPressed:" destination="yEV-DP-WTA" eventType="touchUpInside" id="vT4-bV-uh3"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿No recuerdas tu contraseña? Coloca tu email y nosotros te eviaremos un link para resetear tu password" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLS-DO-Zeh">
-                                <rect key="frame" x="56" y="100" width="208" height="55.5"/>
+                                <rect key="frame" x="56" y="100" width="208" height="76.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="70" id="sjt-jR-KGT"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="90" id="sjt-jR-KGT"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <color key="textColor" red="0.45098039215686275" green="0.45098039215686275" blue="0.45098039215686275" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2hO-yP-bAP" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="54" y="195.5" width="212" height="40"/>
+                                <rect key="frame" x="54" y="216.5" width="212" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="yrb-iI-FKe"/>
                                 </constraints>
-                                <color key="textColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                <color key="textColor" red="1" green="0.40000000000000002" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
@@ -413,13 +450,13 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Axb-ax-gR9" customClass="VORoundButton" customModule="Voiash" customModuleProvider="target">
-                                <rect key="frame" x="54" y="265.5" width="212" height="48"/>
-                                <color key="backgroundColor" red="0.078431372550000003" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="54" y="286.5" width="212" height="48"/>
+                                <color key="backgroundColor" red="1" green="0.28235294117647058" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="ETE-Kq-AtS"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="12"/>
-                                <state key="normal" title="RESETEAR PASSWORD">
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
+                                <state key="normal" title="Resetear Password">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -486,11 +523,11 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crea tu cuenta y vive un mundo de viajes y aventuras con Voiash" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyC-cl-r7r">
-                                        <rect key="frame" x="40" y="92" width="240" height="32.5"/>
+                                        <rect key="frame" x="40" y="92" width="240" height="38.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="J26-oC-Ql6"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                         <color key="textColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -509,13 +546,13 @@
                                     <constraint firstAttribute="trailing" secondItem="Rhu-CD-DXk" secondAttribute="trailing" id="tHW-vM-kdY"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Upm-Re-Wi9">
-                                <rect key="frame" x="54" y="157" width="212" height="240"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Upm-Re-Wi9">
+                                <rect key="frame" x="54" y="157" width="212" height="270"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nombre" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HNu-Ys-4BW" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                        <rect key="frame" x="0.0" y="0.0" width="212" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="212" height="48.5"/>
                                         <color key="textColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="namePhonePad"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
@@ -530,9 +567,9 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Apellido" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eY7-Un-7wz" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                        <rect key="frame" x="0.0" y="50" width="212" height="40"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="212" height="48.5"/>
                                         <color key="textColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="namePhonePad"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
@@ -547,9 +584,9 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wkH-qG-VBx" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                        <rect key="frame" x="0.0" y="100" width="212" height="40"/>
+                                        <rect key="frame" x="0.0" y="111" width="212" height="48"/>
                                         <color key="textColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
@@ -564,9 +601,9 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Contraseña" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Adl-dF-iLh" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                        <rect key="frame" x="0.0" y="150" width="212" height="40"/>
+                                        <rect key="frame" x="0.0" y="166" width="212" height="48.5"/>
                                         <color key="textColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
@@ -581,9 +618,9 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirmar Contraseña" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="95z-lO-rhZ" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                        <rect key="frame" x="0.0" y="200" width="212" height="40"/>
+                                        <rect key="frame" x="0.0" y="221.5" width="212" height="48.5"/>
                                         <color key="textColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
@@ -599,17 +636,17 @@
                                     </textField>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="240" id="OwG-KL-BEe"/>
+                                    <constraint firstAttribute="height" constant="270" id="OwG-KL-BEe"/>
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKG-Gc-FtE" customClass="VORoundButton" customModule="Voiash" customModuleProvider="target">
-                                <rect key="frame" x="40" y="422" width="240" height="48"/>
+                                <rect key="frame" x="40" y="447" width="240" height="48"/>
                                 <color key="backgroundColor" red="0.078431372550000003" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="sVv-hI-7TH"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="12"/>
-                                <state key="normal" title="REGISTRARSE">
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
+                                <state key="normal" title="Registrarse">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -617,11 +654,11 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Al registrarte, aceptas los términos y condiciones de Voiash" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnl-j4-FfZ">
-                                <rect key="frame" x="56" y="490" width="208" height="28"/>
+                                <rect key="frame" x="56" y="505" width="208" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="70" id="Ald-lF-ghw"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
                                 <color key="textColor" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -631,9 +668,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="hnl-j4-FfZ" secondAttribute="trailing" constant="40" id="0gq-2J-MTn"/>
                             <constraint firstItem="3go-JG-anV" firstAttribute="leading" secondItem="axf-I2-vI6" secondAttribute="leading" id="5b0-hK-PZj"/>
                             <constraint firstItem="hnl-j4-FfZ" firstAttribute="leading" secondItem="axf-I2-vI6" secondAttribute="leadingMargin" constant="40" id="8dn-1d-pBh"/>
-                            <constraint firstItem="Aon-2b-zLr" firstAttribute="top" secondItem="hnl-j4-FfZ" secondAttribute="bottom" constant="50" id="QMd-Ip-lmv"/>
+                            <constraint firstItem="Aon-2b-zLr" firstAttribute="top" secondItem="hnl-j4-FfZ" secondAttribute="bottom" constant="30" id="QMd-Ip-lmv"/>
                             <constraint firstItem="3go-JG-anV" firstAttribute="top" secondItem="NNo-8D-zcJ" secondAttribute="bottom" constant="-20" id="byo-ow-Lro"/>
-                            <constraint firstItem="hnl-j4-FfZ" firstAttribute="top" secondItem="NKG-Gc-FtE" secondAttribute="bottom" constant="20" id="dZS-MY-eTC"/>
+                            <constraint firstItem="hnl-j4-FfZ" firstAttribute="top" secondItem="NKG-Gc-FtE" secondAttribute="bottom" constant="10" id="dZS-MY-eTC"/>
                             <constraint firstItem="NKG-Gc-FtE" firstAttribute="leading" secondItem="axf-I2-vI6" secondAttribute="leading" constant="40" id="dmK-pS-3Ef"/>
                             <constraint firstAttribute="trailing" secondItem="NKG-Gc-FtE" secondAttribute="trailing" constant="40" id="f4p-KE-Lpf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Upm-Re-Wi9" secondAttribute="trailing" constant="38" id="qhh-Nz-bKU"/>
@@ -702,8 +739,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="7pA-Kj-wWf"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="12"/>
-                                <state key="normal" title="CONTINUAR">
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
+                                <state key="normal" title="Continuar">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -715,8 +752,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="yZ9-yL-fME"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="12"/>
-                                <state key="normal" title="VOLVER A ENVIAR EMAIL">
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
+                                <state key="normal" title="Volver a enviar email">
                                     <color key="titleColor" red="0.078431372550000003" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -728,12 +765,26 @@
                                     <action selector="resendEmailBtnPressed" destination="u2z-uv-9Mv" eventType="touchUpInside" id="zNl-GR-PCq"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ls-hL-Xtu" userLabel="btnBack">
+                                <rect key="frame" x="16" y="20" width="46" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="LI9-7w-JVR"/>
+                                    <constraint firstAttribute="width" constant="46" id="xcK-te-PoI"/>
+                                </constraints>
+                                <state key="normal" image="ic_close"/>
+                                <connections>
+                                    <action selector="backBtnPressed:" destination="fGi-18-7Kb" eventType="touchUpInside" id="8m2-tf-Za7"/>
+                                    <action selector="closeBtnPressed" destination="u2z-uv-9Mv" eventType="touchUpInside" id="1i1-Vq-dTi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ZNy-l5-wnU" firstAttribute="leading" secondItem="vfU-Ft-lIJ" secondAttribute="leadingMargin" constant="38" id="B7i-Gc-DLg"/>
                             <constraint firstAttribute="trailing" secondItem="BnP-Lp-ezN" secondAttribute="trailing" constant="40" id="I1t-rx-IoP"/>
                             <constraint firstItem="eFm-Da-KVn" firstAttribute="top" secondItem="BnP-Lp-ezN" secondAttribute="bottom" constant="100" id="LIA-BU-6QQ"/>
+                            <constraint firstItem="8Ls-hL-Xtu" firstAttribute="top" secondItem="qr6-ly-blL" secondAttribute="bottom" id="Ssu-Xq-1A3"/>
+                            <constraint firstItem="8Ls-hL-Xtu" firstAttribute="leading" secondItem="vfU-Ft-lIJ" secondAttribute="leading" constant="16" id="V0L-6f-zAg"/>
                             <constraint firstItem="ZNy-l5-wnU" firstAttribute="top" secondItem="Tno-c9-WRA" secondAttribute="bottom" constant="20" id="W7x-df-TYI"/>
                             <constraint firstItem="Tno-c9-WRA" firstAttribute="top" secondItem="qr6-ly-blL" secondAttribute="bottom" constant="30" id="XfF-Cv-3d6"/>
                             <constraint firstAttribute="trailing" secondItem="EuY-eR-aj9" secondAttribute="trailing" constant="40" id="cLL-WR-kPM"/>
@@ -744,6 +795,7 @@
                             <constraint firstItem="eFm-Da-KVn" firstAttribute="top" secondItem="EuY-eR-aj9" secondAttribute="bottom" constant="100" id="yAK-qa-kko"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="btnContinue" destination="BnP-Lp-ezN" id="wW8-9v-0ko"/>
                         <outlet property="btnResend" destination="EuY-eR-aj9" id="yFH-in-WDZ"/>
@@ -1071,13 +1123,13 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7v-Or-bsS">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="24"/>
-                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M59-gp-cXa">
                                                 <rect key="frame" x="0.0" y="29" width="240" height="21"/>
-                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -1097,7 +1149,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="21" id="Xg6-HT-BjW"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="13"/>
+                                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -1127,7 +1179,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="21" id="gbX-at-jJa"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
+                                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -1157,7 +1209,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="21" id="yJ3-8D-S62"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
+                                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -1215,8 +1267,8 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="6bf-1Z-43O"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="12"/>
-                                        <state key="normal" title="BORRAR CUENTA">
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
+                                        <state key="normal" title="Borrar cuenta">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -1229,8 +1281,8 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="iNw-a6-vlg"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="12"/>
-                                        <state key="normal" title="CERRAR SESIÓN">
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
+                                        <state key="normal" title="Cerrar sesión">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -1444,19 +1496,23 @@
         <image name="gradiente_login" width="320" height="568"/>
         <image name="ic_arrow_back" width="16" height="16"/>
         <image name="ic_chat" width="16" height="16"/>
-        <image name="ic_fb_signIn" width="13" height="24"/>
+        <image name="ic_close" width="14" height="14"/>
+        <image name="ic_fb_signIn" width="72" height="72"/>
         <image name="ic_flight" width="15" height="16"/>
-        <image name="ic_mail_signIn" width="24" height="20"/>
+        <image name="ic_google_signIn" width="72" height="72"/>
+        <image name="ic_mail_signIn" width="72" height="72"/>
         <image name="ic_menu" width="18" height="12"/>
         <image name="ic_notifications" width="17" height="20"/>
         <image name="ic_person" width="12" height="12"/>
         <image name="ic_search_active" width="18" height="18"/>
         <image name="ic_settings" width="20" height="20"/>
         <image name="ic_voiash" width="12" height="16"/>
+        <image name="img_nubes_part_1" width="313" height="191"/>
+        <image name="img_nubes_part_2" width="189" height="179"/>
+        <image name="img_nubes_part_3" width="66" height="179"/>
         <image name="img_sobre" width="100" height="76"/>
         <image name="login_bg_avion" width="37" height="32"/>
         <image name="login_bg_edificios" width="320" height="261"/>
-        <image name="login_bg_nubes" width="279" height="164"/>
         <image name="logo_Voiash_sin_fondo_baja" width="224" height="74"/>
         <image name="logo_voiash_color" width="80" height="26"/>
         <image name="logo_voiash_color_signIn" width="208" height="68"/>

@@ -14,12 +14,6 @@
 	<string>es</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
-	<key>FacebookAppID</key>
-	<string>1601883649853037</string>
-	<key>FacebookDisplayName</key>
-	<string></string>
-	<key>FirebaseAppDelegateProxyEnabled</key>
-	<true/>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -35,7 +29,7 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb1601883649853037</string>
+				<string>fb2052042458356841</string>
 			</array>
 		</dict>
 		<dict>
@@ -55,6 +49,17 @@
 			</array>
 		</dict>
 	</array>
+    <key>FacebookAppID</key>
+    <string>2052042458356841</string>
+    <key>FacebookDisplayName</key>
+    <string>Voiash Dev</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>fbapi</string>
+        <string>fb-messenger-api</string>
+        <string>fbauth2</string>
+        <string>fbshareextension</string>
+    </array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>

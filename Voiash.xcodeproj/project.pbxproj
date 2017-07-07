@@ -11,6 +11,7 @@
 		4B9304981F0B39C800721977 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9304971F0B39C800721977 /* Constants.swift */; };
 		4B93049B1F0B3CB200721977 /* VOFBDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B93049A1F0B3CB200721977 /* VOFBDataService.swift */; };
 		4B93049D1F0B425A00721977 /* VOSignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B93049C1F0B425A00721977 /* VOSignInVC.swift */; };
+		C403DD7D1F0FCC2500B70F04 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C403DD7B1F0FC9F400B70F04 /* UIButton+Extension.swift */; };
 		C4AC16D21F0AE054007ECB38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AC16D11F0AE054007ECB38 /* AppDelegate.swift */; };
 		C4AC16D71F0AE054007ECB38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4AC16D51F0AE054007ECB38 /* Main.storyboard */; };
 		C4AC16D91F0AE054007ECB38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4AC16D81F0AE054007ECB38 /* Assets.xcassets */; };
@@ -20,6 +21,8 @@
 		C4CFD0001F0BFA8A0086D498 /* VOInitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CFCFFF1F0BFA8A0086D498 /* VOInitialVC.swift */; };
 		C4CFD0041F0C0EE40086D498 /* VOForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CFD0031F0C0EE40086D498 /* VOForgotPasswordVC.swift */; };
 		C4CFD0071F0C12F30086D498 /* VOConfirmEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CFD0061F0C12F30086D498 /* VOConfirmEmailVC.swift */; };
+		C4DD28101F10174100F9AAF2 /* PlaneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DD280E1F10174100F9AAF2 /* PlaneView.swift */; };
+		C4DD28111F10174100F9AAF2 /* QCMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DD280F1F10174100F9AAF2 /* QCMethod.swift */; };
 		C4ED03231F0E8DBE00ADD0A6 /* VOUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ED03221F0E8DBE00ADD0A6 /* VOUIView.swift */; };
 		C4ED03261F0E94E000ADD0A6 /* VOFBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ED03251F0E94E000ADD0A6 /* VOFBUser.swift */; };
 		C4ED03291F0EDEB400ADD0A6 /* VOProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ED03281F0EDEB400ADD0A6 /* VOProfileVC.swift */; };
@@ -45,6 +48,7 @@
 		4B93049C1F0B425A00721977 /* VOSignInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOSignInVC.swift; path = Controller/VOSignInVC.swift; sourceTree = "<group>"; };
 		6117376A61DC3EE56084EA46 /* Pods_Voiash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Voiash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C341E08A4A594C5BF0E74433 /* Pods-Voiash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voiash.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Voiash/Pods-Voiash.debug.xcconfig"; sourceTree = "<group>"; };
+		C403DD7B1F0FC9F400B70F04 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton+Extension.swift"; path = "Utils/UIButton+Extension.swift"; sourceTree = "<group>"; };
 		C4AC16CE1F0AE054007ECB38 /* Voiash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Voiash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4AC16D11F0AE054007ECB38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4AC16D61F0AE054007ECB38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,6 +60,8 @@
 		C4CFCFFF1F0BFA8A0086D498 /* VOInitialVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOInitialVC.swift; path = Controller/VOInitialVC.swift; sourceTree = "<group>"; };
 		C4CFD0031F0C0EE40086D498 /* VOForgotPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOForgotPasswordVC.swift; path = Controller/VOForgotPasswordVC.swift; sourceTree = "<group>"; };
 		C4CFD0061F0C12F30086D498 /* VOConfirmEmailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOConfirmEmailVC.swift; path = Controller/VOConfirmEmailVC.swift; sourceTree = "<group>"; };
+		C4DD280E1F10174100F9AAF2 /* PlaneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaneView.swift; path = Animations/PlaneView.swift; sourceTree = "<group>"; };
+		C4DD280F1F10174100F9AAF2 /* QCMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QCMethod.swift; path = Animations/QCMethod.swift; sourceTree = "<group>"; };
 		C4ED03221F0E8DBE00ADD0A6 /* VOUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOUIView.swift; path = View/VOUIView.swift; sourceTree = "<group>"; };
 		C4ED03251F0E94E000ADD0A6 /* VOFBUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOFBUser.swift; path = Model/VOFBUser.swift; sourceTree = "<group>"; };
 		C4ED03281F0EDEB400ADD0A6 /* VOProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOProfileVC.swift; path = Controller/VOProfileVC.swift; sourceTree = "<group>"; };
@@ -120,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				4B9304971F0B39C800721977 /* Constants.swift */,
-				C4EEE17D1F0C1BDC00B1177B /* Extensions.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -133,6 +138,15 @@
 				C4CFD0051F0C0EF20086D498 /* Welcome SignIn */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		C403DD7A1F0FC9DF00B70F04 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C4EEE17D1F0C1BDC00B1177B /* Extensions.swift */,
+				C403DD7B1F0FC9F400B70F04 /* UIButton+Extension.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		C4AC16C51F0AE054007ECB38 = {
@@ -156,6 +170,8 @@
 		C4AC16D01F0AE054007ECB38 /* Voiash */ = {
 			isa = PBXGroup;
 			children = (
+				C4DD280D1F10170F00F9AAF2 /* Animations */,
+				C403DD7A1F0FC9DF00B70F04 /* Extensions */,
 				C4ED03241F0E94C100ADD0A6 /* Model */,
 				4B9304991F0B39CC00721977 /* Utils */,
 				4B9304961F0B14B200721977 /* Firebase */,
@@ -193,6 +209,15 @@
 				C4EEE17F1F0C1F1300B1177B /* VOSignUpVC.swift */,
 			);
 			name = "Welcome SignIn";
+			sourceTree = "<group>";
+		};
+		C4DD280D1F10170F00F9AAF2 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				C4DD280E1F10174100F9AAF2 /* PlaneView.swift */,
+				C4DD280F1F10174100F9AAF2 /* QCMethod.swift */,
+			);
+			name = Animations;
 			sourceTree = "<group>";
 		};
 		C4ED03241F0E94C100ADD0A6 /* Model */ = {
@@ -386,9 +411,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B9304951F0B14AE00721977 /* VOFBAuthService.swift in Sources */,
+				C403DD7D1F0FCC2500B70F04 /* UIButton+Extension.swift in Sources */,
 				C4EEE19D1F0D726000B1177B /* VODiscoverTypeCell.swift in Sources */,
 				C4CFCFFD1F0BC9E50086D498 /* VORoundButton.swift in Sources */,
 				C4ED03291F0EDEB400ADD0A6 /* VOProfileVC.swift in Sources */,
+				C4DD28111F10174100F9AAF2 /* QCMethod.swift in Sources */,
 				C4CFD0071F0C12F30086D498 /* VOConfirmEmailVC.swift in Sources */,
 				C4EEE19B1F0D71DC00B1177B /* VODiscoverListVC.swift in Sources */,
 				C4ED03261F0E94E000ADD0A6 /* VOFBUser.swift in Sources */,
@@ -397,6 +424,7 @@
 				C4AC16D21F0AE054007ECB38 /* AppDelegate.swift in Sources */,
 				C4ED03231F0E8DBE00ADD0A6 /* VOUIView.swift in Sources */,
 				C4EEE17E1F0C1BDC00B1177B /* Extensions.swift in Sources */,
+				C4DD28101F10174100F9AAF2 /* PlaneView.swift in Sources */,
 				4B9304981F0B39C800721977 /* Constants.swift in Sources */,
 				C4ED032B1F0EDED800ADD0A6 /* VOMyProfileVC.swift in Sources */,
 				C4EEE1801F0C1F1300B1177B /* VOSignUpVC.swift in Sources */,

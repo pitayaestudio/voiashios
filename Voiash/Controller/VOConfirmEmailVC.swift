@@ -16,8 +16,11 @@ class VOConfirmEmailVC: UIViewController {
     @IBOutlet weak var btnContinue:VORoundButton!
     @IBOutlet weak var btnResend:VORoundButton!
     
+    var cameFromSignIn = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.isHidden = true
         NotificationCenter.default.addObserver(self, selector: #selector(VOConfirmEmailVC.reloadScreen), name: NSNotification.Name(rawValue:K.notifications.reloadEmail), object: nil)
         appDel.reloadUser = true
         reloadScreen()
@@ -44,15 +47,25 @@ class VOConfirmEmailVC: UIViewController {
     
     //MARK: - IBAction
     @IBAction func resendEmailBtnPressed(){
-        self.btnResend.showLoading()
+        self.btnResend.showSpinner()
         VOFBAuthService.shared.sendEmailConfirmation( { (error) in
-            self.btnResend.hideLoading()
+            self.btnResend.hideSpinner()
             if let error = error {
                 self.showMessagePrompt(error)
             }else{
                 self.showMessagePrompt(NSLocalizedString("mesConfirmEmail", comment: ""))
             }
         })
+    }
+    
+    @IBAction func closeBtnPressed(){
+        if self.cameFromSignIn {
+            self.navigationController?.popViewController(animated: true)
+        }else{
+            VOFBAuthService.shared.signOut()
+            let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
+            self.navigationController!.popToViewController(viewControllers[viewControllers.count - 1], animated: true)
+        }
     }
     
     @IBAction func continueBtnPressed(){

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import QuartzCore
 
 @IBDesignable class VORoundButton: UIButton {
     
@@ -62,6 +61,7 @@ import QuartzCore
     func setup() {
         layer.borderColor = UIColor.white.cgColor
         layer.borderWidth = 1.5
+        self.addTarget(self, action: #selector(self.pulsate), for: .touchDown)
     }
     
     func configure() {
@@ -75,7 +75,9 @@ import QuartzCore
         super.layoutSubviews()
     }
     
-    func showLoading() {
+    
+    func showSpinner() {
+        self.isEnabled = false
         originalButtonText = self.titleLabel?.text
         self.setTitle("", for: UIControlState.normal)
         
@@ -86,7 +88,8 @@ import QuartzCore
         showSpinning()
     }
     
-    func hideLoading() {
+    func hideSpinner() {
+        self.isEnabled = true
         self.setTitle(originalButtonText, for: UIControlState.normal)
         activityIndicator.stopAnimating()
     }

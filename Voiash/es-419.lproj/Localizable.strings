@@ -12,6 +12,7 @@
 "errorInvalidEmail" = "Email inválido";
 "errorWrongPassword" = "Password incorrecto, debe de tener al menos 6 caracteres";
 "errorGeneral" = "Ups, existió un problema. Inténtelo más tade";
+"errorEmailWithoutConfirmation" = "Su email no ha sido verificado";
 "errorTitle" = "Error";
 
 //SIGNUP

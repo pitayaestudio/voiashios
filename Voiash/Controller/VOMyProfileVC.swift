@@ -49,9 +49,9 @@ class VOMyProfileVC: UIViewController {
     }
     
     @IBAction func deleteBtnPressed(){
-        btnDelete.showLoading()
+        btnDelete.showSpinner()
         VOFBDataService.shared.deleteMyUser { (error) in
-            self.btnDelete.hideLoading()
+            self.btnDelete.hideSpinner()
             if let error = error {
                 self.showMessagePrompt(error)
             }else{

@@ -12,6 +12,7 @@
 "errorInvalidEmail" = "Invalid email address";
 "errorWrongPassword" = "Invalid password, must have at least 6 characters";
 "errorGeneral" = "There was a problem, try again";
+"errorEmailWithoutConfirmation" = "Error you need to confirm your email";
 "errorTitle" = "Error";
 
 //SIGNUP
