@@ -12,7 +12,7 @@ class VOInitialVC: UIViewController {
 
     @IBOutlet weak var imgPlane:UIImageView!
     @IBOutlet weak var imgClouds:UIImageView!
-    
+    var isActive = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,11 +28,15 @@ class VOInitialVC: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.isNavigationBarHidden = false
+        self.isActive = false
     }
     
     
     // MARK: - Animations
     func animateClouds(){
+        if !self.isActive {
+            return
+        }
         imgClouds.frame.origin.x = 75
         UIView.animate(withDuration: 7, delay: 0.0, options: .curveLinear, animations: {[unowned self] () -> Void in
             self.imgClouds.frame.origin.x = self.view.frame.size.width - 125
