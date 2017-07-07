@@ -22,6 +22,8 @@
 		C4CFD0071F0C12F30086D498 /* VOConfirmEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CFD0061F0C12F30086D498 /* VOConfirmEmailVC.swift */; };
 		C4ED03231F0E8DBE00ADD0A6 /* VOUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ED03221F0E8DBE00ADD0A6 /* VOUIView.swift */; };
 		C4ED03261F0E94E000ADD0A6 /* VOFBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ED03251F0E94E000ADD0A6 /* VOFBUser.swift */; };
+		C4ED03291F0EDEB400ADD0A6 /* VOProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ED03281F0EDEB400ADD0A6 /* VOProfileVC.swift */; };
+		C4ED032B1F0EDED800ADD0A6 /* VOMyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ED032A1F0EDED800ADD0A6 /* VOMyProfileVC.swift */; };
 		C4EEE17E1F0C1BDC00B1177B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EEE17D1F0C1BDC00B1177B /* Extensions.swift */; };
 		C4EEE1801F0C1F1300B1177B /* VOSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EEE17F1F0C1F1300B1177B /* VOSignUpVC.swift */; };
 		C4EEE1851F0C248800B1177B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4EEE1831F0C248800B1177B /* Localizable.strings */; };
@@ -56,6 +58,8 @@
 		C4CFD0061F0C12F30086D498 /* VOConfirmEmailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOConfirmEmailVC.swift; path = Controller/VOConfirmEmailVC.swift; sourceTree = "<group>"; };
 		C4ED03221F0E8DBE00ADD0A6 /* VOUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOUIView.swift; path = View/VOUIView.swift; sourceTree = "<group>"; };
 		C4ED03251F0E94E000ADD0A6 /* VOFBUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOFBUser.swift; path = Model/VOFBUser.swift; sourceTree = "<group>"; };
+		C4ED03281F0EDEB400ADD0A6 /* VOProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOProfileVC.swift; path = Controller/VOProfileVC.swift; sourceTree = "<group>"; };
+		C4ED032A1F0EDED800ADD0A6 /* VOMyProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOMyProfileVC.swift; path = Controller/VOMyProfileVC.swift; sourceTree = "<group>"; };
 		C4EEE17D1F0C1BDC00B1177B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Utils/Extensions.swift; sourceTree = "<group>"; };
 		C4EEE17F1F0C1F1300B1177B /* VOSignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOSignUpVC.swift; path = Controller/VOSignUpVC.swift; sourceTree = "<group>"; };
 		C4EEE1821F0C23D800B1177B /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 		4B93049E1F0B425F00721977 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C4ED03271F0EDE8B00ADD0A6 /* Profile */,
 				C4EEE1991F0D6E8300B1177B /* Discover */,
 				C4CFD0051F0C0EF20086D498 /* Welcome SignIn */,
 			);
@@ -196,6 +201,15 @@
 				C4ED03251F0E94E000ADD0A6 /* VOFBUser.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		C4ED03271F0EDE8B00ADD0A6 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				C4ED03281F0EDEB400ADD0A6 /* VOProfileVC.swift */,
+				C4ED032A1F0EDED800ADD0A6 /* VOMyProfileVC.swift */,
+			);
+			name = Profile;
 			sourceTree = "<group>";
 		};
 		C4EEE18D1F0D67E800B1177B /* Resources */ = {
@@ -374,6 +388,7 @@
 				4B9304951F0B14AE00721977 /* VOFBAuthService.swift in Sources */,
 				C4EEE19D1F0D726000B1177B /* VODiscoverTypeCell.swift in Sources */,
 				C4CFCFFD1F0BC9E50086D498 /* VORoundButton.swift in Sources */,
+				C4ED03291F0EDEB400ADD0A6 /* VOProfileVC.swift in Sources */,
 				C4CFD0071F0C12F30086D498 /* VOConfirmEmailVC.swift in Sources */,
 				C4EEE19B1F0D71DC00B1177B /* VODiscoverListVC.swift in Sources */,
 				C4ED03261F0E94E000ADD0A6 /* VOFBUser.swift in Sources */,
@@ -383,6 +398,7 @@
 				C4ED03231F0E8DBE00ADD0A6 /* VOUIView.swift in Sources */,
 				C4EEE17E1F0C1BDC00B1177B /* Extensions.swift in Sources */,
 				4B9304981F0B39C800721977 /* Constants.swift in Sources */,
+				C4ED032B1F0EDED800ADD0A6 /* VOMyProfileVC.swift in Sources */,
 				C4EEE1801F0C1F1300B1177B /* VOSignUpVC.swift in Sources */,
 				C4CFD0041F0C0EE40086D498 /* VOForgotPasswordVC.swift in Sources */,
 				4B93049B1F0B3CB200721977 /* VOFBDataService.swift in Sources */,

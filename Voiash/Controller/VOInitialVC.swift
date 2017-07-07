@@ -25,15 +25,10 @@ class VOInitialVC: UIViewController {
         self.navigationController?.isNavigationBarHidden = false
     }
     
-
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == K.segue.segueTabBar {
-            VOFBAuthService.shared.loginAnonymous()
-        }
+    // MARK: - IBAction
+    @IBAction func loginAnonymousBtnPressed(){
+        VOFBAuthService.shared.loginAnonymous()
+        appDel.setTabBarRoot()
     }
     
 

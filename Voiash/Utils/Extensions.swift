@@ -28,13 +28,12 @@ extension UIViewController {
 extension UINavigationController {
     
     public func presentWhiteNavigationBar() {
-        navigationBar.isTranslucent = false
-        navigationBar.barTintColor = .white
-        navigationBar.tintColor = K.color.colorRed
-        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:K.color.colorRed]
-        let imgBack = UIImage(named: "ic_arrow_back")
-        navigationBar.backIndicatorImage = imgBack
-        navigationBar.backIndicatorTransitionMaskImage = imgBack
+        self.navigationBar.isTranslucent = false
+        self.navigationBar.tintColor = K.color.colorRed
+        self.navigationBar.barTintColor = K.color.colorRed
+        
+        self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:K.color.colorRed]
+        
         setNavigationBarHidden(false, animated:true)
     }
     

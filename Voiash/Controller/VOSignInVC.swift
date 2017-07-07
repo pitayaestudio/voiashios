@@ -84,7 +84,8 @@ class VOSignInVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
                                 }
                             })
                         }
-                        self.performSegue(withIdentifier: K.segue.segueTabBar, sender: nil)
+                        appDel.setTabBarRoot()
+                        //self.performSegue(withIdentifier: K.segue.segueTabBar, sender: nil)
                     } else {
                         let alert = UIAlertController(title: "Error Authentication", message: errMsg, preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
@@ -107,7 +108,8 @@ class VOSignInVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
                             self.showMessagePrompt(error)
                             return
                         }else{
-                            self.performSegue(withIdentifier: K.segue.segueTabBar, sender: nil)
+                            appDel.setTabBarRoot()
+                            //self.performSegue(withIdentifier: K.segue.segueTabBar, sender: nil)
                         }
                     //}
                 })

@@ -20,19 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     var reloadUser = false
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        // Sets background to a blank/empty image
-        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-        // Sets shadow (line below the bar) to a blank image
-        UINavigationBar.appearance().shadowImage = UIImage()
-        // Sets the translucent background color
-        UINavigationBar.appearance().backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
-        // Set translucent. (Default value is already true, so this can be removed if desired.)
-        UINavigationBar.appearance().isTranslucent = true
-        
-        UINavigationBar.appearance().tintColor = UIColor.white
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
-        
         FirebaseApp.configure()
         
         // [START setup_gidsignin]
@@ -44,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         IQKeyboardManager.sharedManager().enable = true
         
-        try! Auth.auth().signOut()
+        //try! Auth.auth().signOut()
         
         reloadRootVC()
         
@@ -57,10 +44,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         }
     }
     
+    //MARK: - Functions
+    func setTabBarRoot(){
+        let tabBar = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
+        self.window?.rootViewController = tabBar
+    }
+    
+    func setInitRoot(){
+        let tabBar = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "InitNavBar") as! UINavigationController
+        self.window?.rootViewController = tabBar
+    }
+    
     func reloadRootVC() {
         //if keychain.getBool(K.FB.user.userId) != nil {
         if (Auth.auth().currentUser != nil) {
-            
+            VOFBDataService.shared.getUser(uid: Auth.auth().currentUser!.uid, onComplete: { (user) in
+                if let user = user {
+                    VOFBDataService.shared.myUser = user
+                }
+            })
             self.window = UIWindow(frame: UIScreen.main.bounds)
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let initialViewController = storyboard.instantiateViewController(withIdentifier: "TabBar")
@@ -113,22 +115,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // [START_EXCLUDE]
         controller.showSpinner {
             VOFBAuthService.shared.loginWithCredential(credential) { (error, user) in
-                controller.hideSpinner({ 
-                    if let error = error {
+                if let error = error {
+                    controller.hideSpinner({
                         controller.showMessagePrompt(error)
-                    }else{
-                        if (GIDSignIn.sharedInstance().currentUser != nil) {
-                            let urlAvatar = GIDSignIn.sharedInstance().currentUser.profile.imageURL(withDimension: 400).absoluteString
-                            let email = GIDSignIn.sharedInstance().currentUser.profile.email
-                            let name =  GIDSignIn.sharedInstance().currentUser.profile.givenName
-                            let lastName =  GIDSignIn.sharedInstance().currentUser.profile.familyName
-                            
-                            let userData:JSONStandard = [K.FB.user.name:name?.capitalized as AnyObject, K.FB.user.lastName:lastName?.capitalized as AnyObject, K.FB.user.provider: K.provider.google as AnyObject, K.FB.user.email: email as AnyObject,K.FB.user.urlAvatar:urlAvatar as AnyObject]
-                            VOFBDataService.shared.saveUser(uid: (Auth.auth().currentUser?.uid)!, userData: userData)
+                    })
+                }else{
+                    VOFBDataService.shared.getUser(uid: (Auth.auth().currentUser?.uid)!, onComplete: { (user) in
+                        if user == nil {
+                            if (GIDSignIn.sharedInstance().currentUser != nil) {
+                                let urlAvatar = GIDSignIn.sharedInstance().currentUser.profile.imageURL(withDimension: 400).absoluteString
+                                let email = GIDSignIn.sharedInstance().currentUser.profile.email
+                                let name =  GIDSignIn.sharedInstance().currentUser.profile.givenName
+                                let lastName =  GIDSignIn.sharedInstance().currentUser.profile.familyName
+                                
+                                let userData:JSONStandard = [K.FB.user.name:name?.capitalized as AnyObject, K.FB.user.lastName:lastName?.capitalized as AnyObject, K.FB.user.provider: K.provider.google as AnyObject, K.FB.user.email: email as AnyObject,K.FB.user.urlAvatar:urlAvatar as AnyObject]
+                                VOFBDataService.shared.saveUser(uid: (Auth.auth().currentUser?.uid)!, userData: userData)
+                            }
+                        }else{
+                            VOFBDataService.shared.myUser = user!
                         }
-                        controller.performSegue(withIdentifier: K.segue.segueTabBar, sender: nil)
-                    }
-                })
+                        controller.hideSpinner({
+                            appDel.setTabBarRoot()
+                            //controller.performSegue(withIdentifier: K.segue.segueTabBar, sender: nil)
+                        })
+                    })
+                }
             }
         }
         

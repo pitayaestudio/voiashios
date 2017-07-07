@@ -13,6 +13,7 @@ class VOFBUser: NSObject {
 
     var email: String!
     var name: String!
+    var age: String?
     var lastName: String?
     var provider: String!
     var pushToken: String?
@@ -20,6 +21,14 @@ class VOFBUser: NSObject {
     var urlAvatar: URL?
     var userKey: String!
     var userRef: DatabaseReference?
+    
+    var fullName:String! {
+        var fn = self.name
+        if let ln = self.lastName {
+            fn = "\(self.name!) \(ln)"
+        }
+        return fn
+    }
     
     init(userKey:String?, userData:JSONStandard){
         self.userKey = userKey
@@ -34,6 +43,12 @@ class VOFBUser: NSObject {
         
         if let push = userData[K.FB.user.pushToken] as? String {
             self.pushToken = push
+        }
+        
+        if let age = userData[K.FB.user.age] as? String {
+            self.age = age
+        }else{
+            self.age = ""
         }
         
         if let url = userData[K.FB.user.urlAvatar] as? String {

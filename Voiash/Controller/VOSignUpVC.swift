@@ -53,7 +53,9 @@ class VOSignUpVC: UIViewController {
                         if !Auth.auth().currentUser!.isEmailVerified {
                             self.performSegue(withIdentifier: K.segue.segueEmailConfirmation, sender: nil)
                         } else {
-                            self.performSegue(withIdentifier: K.segue.segueTabBar, sender: nil)
+                            //self.performSegue(withIdentifier: K.segue.segueTabBar, sender: nil)
+                            
+                            appDel.setTabBarRoot()
                         }
                     }
                // })

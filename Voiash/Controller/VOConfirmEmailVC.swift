@@ -55,4 +55,8 @@ class VOConfirmEmailVC: UIViewController {
         })
     }
     
+    @IBAction func continueBtnPressed(){
+        appDel.setTabBarRoot()
+    }
+    
 }

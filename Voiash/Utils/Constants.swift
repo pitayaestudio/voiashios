@@ -32,6 +32,7 @@ struct K {
             static let phone = "phoneNumber"
             static let urlAvatar = "profilePicture"
             static let pushToken = "pushToken"
+            static let age = "age"
         }
     }
     
@@ -46,7 +47,7 @@ struct K {
         static let titleGray = UIColor(red: 115, green: 115, blue: 115, alpha: 1)
     }
     struct segue {
-        static let segueTabBar = "segueTabBar"
+        //static let segueTabBar = "segueTabBar"
         static let segueForgotPass = "segueForgotPass"
         static let segueEmailConfirmation = "segueEmailConfirmation"
     }

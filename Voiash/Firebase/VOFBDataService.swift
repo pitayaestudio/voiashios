@@ -9,10 +9,13 @@
 import Foundation
 import Firebase
 
+
+typealias CompletionUser = (_ user:VOFBUser?)-> Void
+
 class VOFBDataService {
     fileprivate static let _shared = VOFBDataService()
     
-    var myUser: VOFBUser!
+    var myUser: VOFBUser?
     
     static var shared:VOFBDataService{
         return _shared
@@ -26,6 +29,8 @@ class VOFBDataService {
         return mainRef.child(K.FB.user.ref)
     }
     
+    
+    //MARK: - User
     /*
     * Save user with all data
     */
@@ -36,4 +41,36 @@ class VOFBDataService {
             }
         })
     }
+    
+    /*
+     * Get the users data
+     */
+    func getUser(uid: String, onComplete:@escaping CompletionUser){
+        usersRef.child(uid).observeSingleEvent(of: .value, with: {(snapshot)  in
+            if snapshot.exists() {
+                if let data = snapshot.value as? JSONStandard {
+                    let user = VOFBUser.init(userKey:uid, userData:data)
+                    onComplete(user)
+                    return
+                }
+            }
+            onComplete(nil)
+            
+        })
+    }
+    
+    /*
+     Delete all contents of current User
+     */
+    func deleteMyUser(_ onComplete:@escaping (_ error:String?)-> Void){
+        usersRef.child(self.myUser!.userKey).removeValue { (error, ref) in
+            if let error = error {
+                onComplete(error as! String)
+            }else{
+                onComplete(nil)
+            }
+        }
+    }
+    
+    
 }
