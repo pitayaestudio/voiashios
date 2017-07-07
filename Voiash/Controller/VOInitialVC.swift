@@ -10,8 +10,13 @@ import UIKit
 
 class VOInitialVC: UIViewController {
 
+    @IBOutlet weak var imgPlane:UIImageView!
+    @IBOutlet weak var imgClouds:UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        animateClouds()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -23,6 +28,17 @@ class VOInitialVC: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.isNavigationBarHidden = false
+    }
+    
+    
+    // MARK: - Animations
+    func animateClouds(){
+        imgClouds.frame.origin.x = 75
+        UIView.animate(withDuration: 7, delay: 0.0, options: .curveLinear, animations: {[unowned self] () -> Void in
+            self.imgClouds.frame.origin.x = self.view.frame.size.width - 125
+        }) {[unowned self] (finsihed) -> Void in
+            self.animateClouds()
+        }
     }
     
     // MARK: - IBAction

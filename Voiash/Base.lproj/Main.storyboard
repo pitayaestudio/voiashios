@@ -22,13 +22,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="HyV-Om-ct7">
+                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradiente_login" translatesAutoresizingMaskIntoConstraints="NO" id="HyV-Om-ct7">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_Voiash_sin_fondo_baja" translatesAutoresizingMaskIntoConstraints="NO" id="58I-vE-2yQ">
                                 <rect key="frame" x="48" y="140" width="224" height="126"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="126" id="hFg-XU-WGu"/>
+                                </constraints>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_bg_nubes" translatesAutoresizingMaskIntoConstraints="NO" id="K2M-3r-txf">
+                                <rect key="frame" x="-320" y="307" width="320" height="261"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="261" id="AbJ-7c-QDC"/>
+                                </constraints>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_bg_nubes" translatesAutoresizingMaskIntoConstraints="NO" id="3gL-8j-TJ7">
+                                <rect key="frame" x="0.0" y="307" width="320" height="261"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="261" id="cxG-Lf-dqe"/>
+                                </constraints>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_bg_edificios" translatesAutoresizingMaskIntoConstraints="NO" id="pJT-QI-Qqa">
+                                <rect key="frame" x="0.0" y="307" width="320" height="261"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="261" id="O4i-dG-SJb"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Ndh-tc-TyQ">
@@ -65,24 +83,47 @@
                                     <constraint firstAttribute="height" constant="112" id="HXL-UB-n1U"/>
                                 </constraints>
                             </stackView>
+                            <imageView hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_bg_avion" translatesAutoresizingMaskIntoConstraints="NO" id="WzX-HT-2RX">
+                                <rect key="frame" x="0.0" y="305" width="37" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="37" id="YvL-aa-PLi"/>
+                                    <constraint firstAttribute="height" constant="32" id="cLo-M9-vf6"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="3gL-8j-TJ7" secondAttribute="trailing" constant="-16" id="6W4-Hh-01e"/>
                             <constraint firstAttribute="trailing" secondItem="HyV-Om-ct7" secondAttribute="trailing" id="7s9-IB-pef"/>
+                            <constraint firstItem="K2M-3r-txf" firstAttribute="width" secondItem="3gL-8j-TJ7" secondAttribute="width" id="FMy-28-cGb"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="K2M-3r-txf" secondAttribute="bottom" id="IQh-2t-Mdv"/>
                             <constraint firstItem="58I-vE-2yQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="48" id="Lhr-gl-NIa"/>
                             <constraint firstItem="58I-vE-2yQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="120" id="OTo-cR-Sey"/>
+                            <constraint firstItem="Ndh-tc-TyQ" firstAttribute="top" secondItem="WzX-HT-2RX" secondAttribute="bottom" constant="99" id="QTl-z9-EI6"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3gL-8j-TJ7" secondAttribute="bottom" id="WyI-8p-gcV"/>
                             <constraint firstItem="Ndh-tc-TyQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="48" id="XAl-gs-4lW"/>
+                            <constraint firstItem="WzX-HT-2RX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XLy-gb-wJC"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ndh-tc-TyQ" secondAttribute="bottom" constant="20" id="YxG-D7-Jny"/>
                             <constraint firstAttribute="trailing" secondItem="Ndh-tc-TyQ" secondAttribute="trailing" constant="48" id="ZY8-9v-xfA"/>
+                            <constraint firstItem="3gL-8j-TJ7" firstAttribute="leading" secondItem="K2M-3r-txf" secondAttribute="trailing" id="bTB-SU-sbh"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pJT-QI-Qqa" secondAttribute="bottom" id="cMu-rS-qJ9"/>
+                            <constraint firstAttribute="trailing" secondItem="pJT-QI-Qqa" secondAttribute="trailing" id="kEs-Hw-zgD"/>
                             <constraint firstItem="HyV-Om-ct7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="kLf-sh-eWo"/>
+                            <constraint firstItem="3gL-8j-TJ7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="maR-qm-hOb"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="HyV-Om-ct7" secondAttribute="bottom" id="nDF-V3-uSx"/>
                             <constraint firstAttribute="trailing" secondItem="58I-vE-2yQ" secondAttribute="trailing" constant="48" id="nFH-x9-Pxb"/>
+                            <constraint firstItem="pJT-QI-Qqa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qjP-jT-B8m"/>
+                            <constraint firstItem="K2M-3r-txf" firstAttribute="height" secondItem="3gL-8j-TJ7" secondAttribute="height" id="un4-mz-h3Z"/>
                             <constraint firstItem="HyV-Om-ct7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="yRw-Em-dLf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="oTf-hH-QbB">
                         <barButtonItem key="backBarButtonItem" title=" " id="MHL-cW-dRD"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imgClouds" destination="3gL-8j-TJ7" id="eJ6-gh-5M7"/>
+                        <outlet property="imgPlane" destination="WzX-HT-2RX" id="C8J-iM-RuZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -924,6 +965,14 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_perfil_pic" translatesAutoresizingMaskIntoConstraints="NO" id="fxY-v2-RfY">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="260"/>
                                     </imageView>
+                                    <visualEffectView opaque="NO" alpha="0.38" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ukn-W5-kZQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="260"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="L6W-vf-BId">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="260"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </view>
+                                        <blurEffect style="dark"/>
+                                    </visualEffectView>
                                     <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cce-Hq-wPY">
                                         <rect key="frame" x="118" y="30" width="84" height="84"/>
                                         <constraints>
@@ -1054,7 +1103,10 @@
                                 <constraints>
                                     <constraint firstItem="fxY-v2-RfY" firstAttribute="top" secondItem="a7P-fk-VQN" secondAttribute="top" id="8L4-tr-M0I"/>
                                     <constraint firstItem="fxY-v2-RfY" firstAttribute="leading" secondItem="a7P-fk-VQN" secondAttribute="leading" id="Boi-Sx-1Jx"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ukn-W5-kZQ" secondAttribute="bottom" id="EPo-Oz-9dG"/>
                                     <constraint firstItem="cce-Hq-wPY" firstAttribute="top" secondItem="a7P-fk-VQN" secondAttribute="top" constant="30" id="G01-fc-9us"/>
+                                    <constraint firstItem="Ukn-W5-kZQ" firstAttribute="leading" secondItem="a7P-fk-VQN" secondAttribute="leading" id="Nwq-vG-JFW"/>
+                                    <constraint firstItem="Ukn-W5-kZQ" firstAttribute="top" secondItem="a7P-fk-VQN" secondAttribute="top" id="Qso-ee-b9h"/>
                                     <constraint firstAttribute="height" constant="260" id="YNl-DW-AoP"/>
                                     <constraint firstAttribute="trailing" secondItem="twQ-eH-iSG" secondAttribute="trailing" id="cqL-YE-q2s"/>
                                     <constraint firstItem="twQ-eH-iSG" firstAttribute="leading" secondItem="a7P-fk-VQN" secondAttribute="leading" id="dk0-wq-MZm"/>
@@ -1062,6 +1114,7 @@
                                     <constraint firstAttribute="trailing" secondItem="fxY-v2-RfY" secondAttribute="trailing" id="fx0-w2-lHj"/>
                                     <constraint firstAttribute="trailing" secondItem="MD5-sV-7oF" secondAttribute="trailing" constant="40" id="msD-bY-5D8"/>
                                     <constraint firstItem="cce-Hq-wPY" firstAttribute="centerX" secondItem="a7P-fk-VQN" secondAttribute="centerX" id="oWT-Vf-OaU"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ukn-W5-kZQ" secondAttribute="trailing" id="pte-Uz-A7J"/>
                                     <constraint firstAttribute="bottom" secondItem="twQ-eH-iSG" secondAttribute="bottom" id="sVB-w2-I0p"/>
                                     <constraint firstItem="MD5-sV-7oF" firstAttribute="top" secondItem="cce-Hq-wPY" secondAttribute="bottom" constant="10" id="uM0-2f-35F"/>
                                     <constraint firstAttribute="bottom" secondItem="fxY-v2-RfY" secondAttribute="bottom" id="vjY-DS-lxV"/>
@@ -1278,10 +1331,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bg" width="375" height="667"/>
         <image name="bgSignIn" width="360" height="177"/>
         <image name="bg_crear_cuenta" width="360" height="177"/>
         <image name="bg_perfil_pic" width="360" height="260"/>
+        <image name="gradiente_login" width="320" height="568"/>
         <image name="ic_arrow_back" width="16" height="16"/>
         <image name="ic_chat" width="16" height="16"/>
         <image name="ic_fb_signIn" width="13" height="24"/>
@@ -1294,6 +1347,9 @@
         <image name="ic_settings" width="20" height="20"/>
         <image name="ic_voiash" width="12" height="16"/>
         <image name="img_sobre" width="100" height="76"/>
+        <image name="login_bg_avion" width="37" height="32"/>
+        <image name="login_bg_edificios" width="320" height="261"/>
+        <image name="login_bg_nubes" width="279" height="164"/>
         <image name="logo_Voiash_sin_fondo_baja" width="224" height="74"/>
         <image name="logo_voiash_color" width="80" height="26"/>
         <image name="logo_voiash_color_signIn" width="208" height="68"/>
