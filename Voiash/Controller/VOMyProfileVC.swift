@@ -20,7 +20,6 @@ class VOMyProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setScreen()
-        self.navigationController?.presentWhiteNavigationBar()
     }
 
     func setScreen(){
