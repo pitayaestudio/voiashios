@@ -55,7 +55,7 @@ class VOMyProfileVC: UIViewController {
             if let error = error {
                 self.showMessagePrompt(error)
             }else{
-                VOFBAuthService.shared.signOut()
+                appDel.setInitRoot()
             }
         }
         
