@@ -31,28 +31,7 @@
                                     <constraint firstAttribute="height" constant="126" id="hFg-XU-WGu"/>
                                 </constraints>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_nubes_part_2" translatesAutoresizingMaskIntoConstraints="NO" id="zcO-ta-Qab">
-                                <rect key="frame" x="-84" y="249" width="189" height="179"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="179" id="ROs-Uw-px6"/>
-                                    <constraint firstAttribute="width" constant="189" id="eJk-ch-ByX"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_nubes_part_1" translatesAutoresizingMaskIntoConstraints="NO" id="68U-hV-zsd">
-                                <rect key="frame" x="7" y="257" width="313" height="191"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="313" id="GA8-A2-jZe"/>
-                                    <constraint firstAttribute="height" constant="191" id="oNV-98-FOc"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_nubes_part_3" translatesAutoresizingMaskIntoConstraints="NO" id="fvR-WO-lZc">
-                                <rect key="frame" x="3" y="249" width="66" height="179"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="179" id="eNf-fa-AXl"/>
-                                    <constraint firstAttribute="width" constant="66" id="nky-t3-gJf"/>
-                                </constraints>
-                            </imageView>
-                            <view opaque="NO" clipsSubviews="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="KeG-vo-2mN" customClass="PlaneView" customModule="Voiash" customModuleProvider="target">
+                            <view opaque="NO" clipsSubviews="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="KeG-vo-2mN" customClass="FlightCloudsView" customModule="Voiash" customModuleProvider="target">
                                 <rect key="frame" x="-90" y="198" width="500" height="230"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -100,29 +79,15 @@
                                     <constraint firstAttribute="height" constant="112" id="HXL-UB-n1U"/>
                                 </constraints>
                             </stackView>
-                            <imageView hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_bg_avion" translatesAutoresizingMaskIntoConstraints="NO" id="WzX-HT-2RX">
-                                <rect key="frame" x="0.0" y="314" width="37" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="37" id="YvL-aa-PLi"/>
-                                    <constraint firstAttribute="height" constant="32" id="cLo-M9-vf6"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="HyV-Om-ct7" secondAttribute="trailing" id="7s9-IB-pef"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="68U-hV-zsd" secondAttribute="bottom" constant="120" id="FaW-A7-vax"/>
-                            <constraint firstItem="fvR-WO-lZc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-13" id="HMQ-Sb-O0d"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fvR-WO-lZc" secondAttribute="bottom" constant="140" id="Hbq-zQ-MIE"/>
                             <constraint firstItem="58I-vE-2yQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="48" id="Lhr-gl-NIa"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zcO-ta-Qab" secondAttribute="bottom" constant="140" id="Lm8-9J-HEV"/>
                             <constraint firstItem="58I-vE-2yQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="120" id="OTo-cR-Sey"/>
-                            <constraint firstItem="Ndh-tc-TyQ" firstAttribute="top" secondItem="WzX-HT-2RX" secondAttribute="bottom" constant="90" id="QTl-z9-EI6"/>
                             <constraint firstItem="Ndh-tc-TyQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="48" id="XAl-gs-4lW"/>
-                            <constraint firstItem="WzX-HT-2RX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XLy-gb-wJC"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ndh-tc-TyQ" secondAttribute="bottom" constant="20" id="YxG-D7-Jny"/>
                             <constraint firstAttribute="trailing" secondItem="Ndh-tc-TyQ" secondAttribute="trailing" constant="48" id="ZY8-9v-xfA"/>
-                            <constraint firstItem="zcO-ta-Qab" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-100" id="Zrc-Es-5PS"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pJT-QI-Qqa" secondAttribute="bottom" id="cMu-rS-qJ9"/>
                             <constraint firstItem="Ndh-tc-TyQ" firstAttribute="top" secondItem="KeG-vo-2mN" secondAttribute="bottom" constant="8" id="d6m-pw-s17"/>
                             <constraint firstItem="KeG-vo-2mN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jWD-Tq-QW1"/>
@@ -131,7 +96,6 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="HyV-Om-ct7" secondAttribute="bottom" id="nDF-V3-uSx"/>
                             <constraint firstAttribute="trailing" secondItem="58I-vE-2yQ" secondAttribute="trailing" constant="48" id="nFH-x9-Pxb"/>
                             <constraint firstItem="pJT-QI-Qqa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qjP-jT-B8m"/>
-                            <constraint firstAttribute="trailing" secondItem="68U-hV-zsd" secondAttribute="trailing" id="r3B-d8-0cH"/>
                             <constraint firstItem="HyV-Om-ct7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="yRw-Em-dLf"/>
                         </constraints>
                     </view>
@@ -139,11 +103,7 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="MHL-cW-dRD"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="imgClouds" destination="68U-hV-zsd" id="JOw-W2-kjH"/>
-                        <outlet property="imgClouds2" destination="zcO-ta-Qab" id="320-XM-gRb"/>
-                        <outlet property="imgClouds3" destination="fvR-WO-lZc" id="z8a-T1-qea"/>
-                        <outlet property="imgPlane" destination="WzX-HT-2RX" id="C8J-iM-RuZ"/>
-                        <outlet property="vPlane" destination="KeG-vo-2mN" id="Uxf-sH-oAp"/>
+                        <outlet property="vFlightClouds" destination="KeG-vo-2mN" id="u0C-1b-hA7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -1507,11 +1467,7 @@
         <image name="ic_search_active" width="18" height="18"/>
         <image name="ic_settings" width="20" height="20"/>
         <image name="ic_voiash" width="12" height="16"/>
-        <image name="img_nubes_part_1" width="313" height="191"/>
-        <image name="img_nubes_part_2" width="189" height="179"/>
-        <image name="img_nubes_part_3" width="66" height="179"/>
         <image name="img_sobre" width="100" height="76"/>
-        <image name="login_bg_avion" width="37" height="32"/>
         <image name="login_bg_edificios" width="320" height="261"/>
         <image name="logo_Voiash_sin_fondo_baja" width="224" height="74"/>
         <image name="logo_voiash_color" width="80" height="26"/>
