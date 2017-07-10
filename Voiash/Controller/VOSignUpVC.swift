@@ -23,6 +23,7 @@ class VOSignUpVC: UIViewController {
         super.viewDidLoad()
         self.hideBack()
         self.hideKeyboardWhenTappedAround()
+        setupScreen()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,6 +34,11 @@ class VOSignUpVC: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.navigationBar.isHidden = false
+    }
+    
+    func setupScreen(){
+        tfName.autocapitalizationType = .words
+        tfLastName.autocapitalizationType = .words
     }
     
     // MARK: - IBAction

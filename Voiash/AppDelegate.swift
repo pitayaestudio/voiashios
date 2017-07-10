@@ -48,6 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     //MARK: - Functions
     func setTabBarRoot(){
         let tabBar = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
+        tabBar.selectedIndex = 4
         self.window?.rootViewController = tabBar
     }
     
@@ -113,7 +114,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             self.currentVC!.showMessagePrompt(error.localizedDescription)
             // [END_EXCLUDE]
             return
-        }
+        } 
         
         // [START google_credential]
         guard let authentication = user.authentication else { return }
@@ -121,12 +122,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                                                        accessToken: authentication.accessToken)
         // [END google_credential]
         // [START_EXCLUDE]
-        controller.showSpinner {
+       // controller.showSpinner {
             VOFBAuthService.shared.loginWithCredential(credential) { (error, user) in
                 if let error = error {
-                    controller.hideSpinner({
+                   // controller.hideSpinner({
                         controller.showMessagePrompt(error)
-                    })
+                   // })
                 }else{
                     VOFBDataService.shared.getUser(uid: (Auth.auth().currentUser?.uid)!, onComplete: { (user) in
                         if user == nil {
@@ -142,14 +143,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                         }else{
                             VOFBDataService.shared.myUser = user!
                         }
-                        controller.hideSpinner({
+                       // controller.hideSpinner({
                             appDel.setTabBarRoot()
                             //controller.performSegue(withIdentifier: K.segue.segueTabBar, sender: nil)
-                        })
+                       // })
                     })
                 }
             }
-        }
+        //}
         
         // [END_EXCLUDE]
     }

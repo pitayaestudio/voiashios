@@ -187,7 +187,5 @@ class VOFBAuthService: NSObject {
         try! Auth.auth().signOut()
         keychain.clear()
         VOFBDataService.shared.myUser = nil
-        appDel.setInitRoot()
-        
     }
 }

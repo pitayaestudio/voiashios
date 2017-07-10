@@ -63,14 +63,14 @@ class VOFBDataService {
      Delete all contents of current User
      */
     func deleteMyUser(_ onComplete:@escaping (_ error:String?)-> Void){
-        Auth.auth().currentUser?.delete { error in
+        self.usersRef.child(self.myUser!.userKey).removeValue { (error, ref) in
             if let error = error {
-                onComplete(error as! String)
-            } else {
-                self.usersRef.child(self.myUser!.userKey).removeValue { (error, ref) in
+                onComplete(error.localizedDescription)
+            }else{
+                Auth.auth().currentUser?.delete { error in
                     if let error = error {
                         onComplete(error as! String)
-                    }else{
+                    } else {
                         self.myUser = nil
                         onComplete(nil)
                     }

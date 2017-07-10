@@ -13,6 +13,7 @@
 		4B93049B1F0B3CB200721977 /* VOFBDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B93049A1F0B3CB200721977 /* VOFBDataService.swift */; };
 		4B93049D1F0B425A00721977 /* VOSignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B93049C1F0B425A00721977 /* VOSignInVC.swift */; };
 		C403DD7D1F0FCC2500B70F04 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C403DD7B1F0FC9F400B70F04 /* UIButton+Extension.swift */; };
+		C465181E1F13BD50000E7C03 /* VOEditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C465181D1F13BD50000E7C03 /* VOEditProfileVC.swift */; };
 		C4AC16D21F0AE054007ECB38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AC16D11F0AE054007ECB38 /* AppDelegate.swift */; };
 		C4AC16D71F0AE054007ECB38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4AC16D51F0AE054007ECB38 /* Main.storyboard */; };
 		C4AC16D91F0AE054007ECB38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4AC16D81F0AE054007ECB38 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		6117376A61DC3EE56084EA46 /* Pods_Voiash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Voiash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C341E08A4A594C5BF0E74433 /* Pods-Voiash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voiash.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Voiash/Pods-Voiash.debug.xcconfig"; sourceTree = "<group>"; };
 		C403DD7B1F0FC9F400B70F04 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton+Extension.swift"; path = "Utils/UIButton+Extension.swift"; sourceTree = "<group>"; };
+		C465181D1F13BD50000E7C03 /* VOEditProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOEditProfileVC.swift; path = Controller/VOEditProfileVC.swift; sourceTree = "<group>"; };
 		C4AC16CE1F0AE054007ECB38 /* Voiash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Voiash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4AC16D11F0AE054007ECB38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4AC16D61F0AE054007ECB38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 			children = (
 				C4ED03281F0EDEB400ADD0A6 /* VOProfileVC.swift */,
 				C4ED032A1F0EDED800ADD0A6 /* VOMyProfileVC.swift */,
+				C465181D1F13BD50000E7C03 /* VOEditProfileVC.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B9304951F0B14AE00721977 /* VOFBAuthService.swift in Sources */,
+				C465181E1F13BD50000E7C03 /* VOEditProfileVC.swift in Sources */,
 				C403DD7D1F0FCC2500B70F04 /* UIButton+Extension.swift in Sources */,
 				C4EEE19D1F0D726000B1177B /* VODiscoverTypeCell.swift in Sources */,
 				C4CFCFFD1F0BC9E50086D498 /* VORoundButton.swift in Sources */,

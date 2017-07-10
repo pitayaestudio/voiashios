@@ -27,8 +27,6 @@ class VOSignInVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        GIDSignIn.sharedInstance().uiDelegate = self
-        
         self.navigationController?.navigationBar.isHidden = true
     }
     
@@ -45,6 +43,7 @@ class VOSignInVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
     @IBAction func googleBtnPressed(_ sender: VORoundButton) {
         sender.showSpinner()
         appDel.isFBActive = false
+        GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().signIn()
     }
     

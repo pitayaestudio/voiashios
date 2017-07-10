@@ -188,6 +188,9 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
                                                 <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TMk-mD-t1g" customClass="HoshiTextField" customModule="TextFieldEffects">
@@ -204,6 +207,9 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
                                                 <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
@@ -407,6 +413,9 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
                                         <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Axb-ax-gR9" customClass="VORoundButton" customModule="Voiash" customModuleProvider="target">
@@ -524,6 +533,9 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
                                                 <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Apellido" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eY7-Un-7wz" customClass="HoshiTextField" customModule="TextFieldEffects">
@@ -540,6 +552,9 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
                                                 <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
@@ -558,6 +573,9 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
                                                 <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Contraseña" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Adl-dF-iLh" customClass="HoshiTextField" customModule="TextFieldEffects">
@@ -575,6 +593,9 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
                                                 <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirmar Contraseña" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="95z-lO-rhZ" customClass="HoshiTextField" customModule="TextFieldEffects">
@@ -591,6 +612,9 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
                                                 <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
@@ -647,12 +671,12 @@
                         <outlet property="tfName" destination="HNu-Ys-4BW" id="oaW-jB-gIo"/>
                         <outlet property="tfPassword" destination="Adl-dF-iLh" id="5Dj-Yx-Kyo"/>
                         <outlet property="tfPassword2" destination="95z-lO-rhZ" id="xEJ-97-Rcu"/>
-                        <segue destination="u2z-uv-9Mv" kind="show" identifier="segueEmailConfirmation" id="s8T-M3-1hd"/>
+                        <segue destination="u2z-uv-9Mv" kind="show" identifier="segueEmailConfirmation" id="y6D-9m-OQd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iuD-3w-3yG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2763.75" y="-545.07042253521126"/>
+            <point key="canvasLocation" x="2781" y="-546"/>
         </scene>
         <!--Confirm EmailVC-->
         <scene sceneID="t08-26-KyS">
@@ -1071,6 +1095,14 @@
                                         </view>
                                         <blurEffect style="dark"/>
                                     </visualEffectView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1L-CH-rNy">
+                                        <rect key="frame" x="56" y="51" width="42" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="Hcp-ly-G22"/>
+                                            <constraint firstAttribute="width" constant="42" id="aev-PJ-DT1"/>
+                                        </constraints>
+                                        <state key="normal" title="Call"/>
+                                    </button>
                                     <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cce-Hq-wPY">
                                         <rect key="frame" x="118" y="30" width="84" height="84"/>
                                         <constraints>
@@ -1078,6 +1110,14 @@
                                             <constraint firstAttribute="height" constant="84" id="r9i-Er-tEm"/>
                                         </constraints>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAV-ZZ-2Js">
+                                        <rect key="frame" x="222" y="51" width="42" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="b0x-Fu-s35"/>
+                                            <constraint firstAttribute="width" constant="42" id="pm3-7j-hOe"/>
+                                        </constraints>
+                                        <state key="normal" title="Whats"/>
+                                    </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="MD5-sV-7oF">
                                         <rect key="frame" x="40" y="124" width="240" height="50"/>
                                         <subviews>
@@ -1199,6 +1239,8 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="cce-Hq-wPY" firstAttribute="leading" secondItem="n1L-CH-rNy" secondAttribute="trailing" constant="20" id="2RY-VG-xGn"/>
+                                    <constraint firstItem="uAV-ZZ-2Js" firstAttribute="leading" secondItem="cce-Hq-wPY" secondAttribute="trailing" constant="20" id="4cK-PO-pb0"/>
                                     <constraint firstItem="fxY-v2-RfY" firstAttribute="top" secondItem="a7P-fk-VQN" secondAttribute="top" id="8L4-tr-M0I"/>
                                     <constraint firstItem="fxY-v2-RfY" firstAttribute="leading" secondItem="a7P-fk-VQN" secondAttribute="leading" id="Boi-Sx-1Jx"/>
                                     <constraint firstAttribute="bottom" secondItem="Ukn-W5-kZQ" secondAttribute="bottom" id="EPo-Oz-9dG"/>
@@ -1210,12 +1252,14 @@
                                     <constraint firstItem="twQ-eH-iSG" firstAttribute="leading" secondItem="a7P-fk-VQN" secondAttribute="leading" id="dk0-wq-MZm"/>
                                     <constraint firstItem="MD5-sV-7oF" firstAttribute="leading" secondItem="a7P-fk-VQN" secondAttribute="leading" constant="40" id="eaX-TT-Vol"/>
                                     <constraint firstAttribute="trailing" secondItem="fxY-v2-RfY" secondAttribute="trailing" id="fx0-w2-lHj"/>
+                                    <constraint firstItem="uAV-ZZ-2Js" firstAttribute="centerY" secondItem="cce-Hq-wPY" secondAttribute="centerY" id="lHC-sQ-fPE"/>
                                     <constraint firstAttribute="trailing" secondItem="MD5-sV-7oF" secondAttribute="trailing" constant="40" id="msD-bY-5D8"/>
                                     <constraint firstItem="cce-Hq-wPY" firstAttribute="centerX" secondItem="a7P-fk-VQN" secondAttribute="centerX" id="oWT-Vf-OaU"/>
                                     <constraint firstAttribute="trailing" secondItem="Ukn-W5-kZQ" secondAttribute="trailing" id="pte-Uz-A7J"/>
                                     <constraint firstAttribute="bottom" secondItem="twQ-eH-iSG" secondAttribute="bottom" id="sVB-w2-I0p"/>
                                     <constraint firstItem="MD5-sV-7oF" firstAttribute="top" secondItem="cce-Hq-wPY" secondAttribute="bottom" constant="10" id="uM0-2f-35F"/>
                                     <constraint firstAttribute="bottom" secondItem="fxY-v2-RfY" secondAttribute="bottom" id="vjY-DS-lxV"/>
+                                    <constraint firstItem="n1L-CH-rNy" firstAttribute="centerY" secondItem="cce-Hq-wPY" secondAttribute="centerY" id="zGB-T3-Usi"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rhn-oq-P7x">

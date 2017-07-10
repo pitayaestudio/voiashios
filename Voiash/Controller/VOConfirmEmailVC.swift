@@ -32,17 +32,17 @@ class VOConfirmEmailVC: UIViewController {
     }
     
     func reloadScreen(){
-        if Auth.auth().currentUser!.isEmailVerified {
+       /* if Auth.auth().currentUser!.isEmailVerified {
             lblTitle.text = NSLocalizedString("titConfirmOK", comment: "")
             lblMessage.text = NSLocalizedString("mesConfirmOK", comment: "")
             btnContinue.isHidden = false
             btnResend.isHidden = true
-        }else{
+        }else{*/
             lblTitle.text = NSLocalizedString("titConfirmEmail", comment: "")
             lblMessage.text = NSLocalizedString("mesConfirmEmail", comment: "")
             btnContinue.isHidden = true
             btnResend.isHidden = false
-        }
+        //}
     }
     
     //MARK: - IBAction
@@ -63,12 +63,18 @@ class VOConfirmEmailVC: UIViewController {
             self.navigationController?.popViewController(animated: true)
         }else{
             VOFBAuthService.shared.signOut()
-            let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
-            self.navigationController!.popToViewController(viewControllers[viewControllers.count - 1], animated: true)
+            let viewControllers: [UIViewController] = self.navigationController!.viewControllers
+            for aViewController in viewControllers {
+                if aViewController is VOSignInVC {
+                    self.navigationController!.popToViewController(aViewController, animated: true)
+                    break
+                }
+            }
         }
     }
     
     @IBAction func continueBtnPressed(){
+        
         appDel.setTabBarRoot()
     }
     

@@ -46,6 +46,7 @@ class VOMyProfileVC: UIViewController {
     // MARK: - IBAction
     @IBAction func logoutBtnPressed(){
         VOFBAuthService.shared.signOut()
+        appDel.setInitRoot()
     }
     
     @IBAction func deleteBtnPressed(){
@@ -55,6 +56,7 @@ class VOMyProfileVC: UIViewController {
             if let error = error {
                 self.showMessagePrompt(error)
             }else{
+                keychain.clear()
                 appDel.setInitRoot()
             }
         }
