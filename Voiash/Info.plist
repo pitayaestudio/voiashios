@@ -49,17 +49,23 @@
 			</array>
 		</dict>
 	</array>
-    <key>FacebookAppID</key>
-    <string>2052042458356841</string>
-    <key>FacebookDisplayName</key>
-    <string>Voiash Dev</string>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-        <string>fbapi</string>
-        <string>fb-messenger-api</string>
-        <string>fbauth2</string>
-        <string>fbshareextension</string>
-    </array>
+	<key>FacebookAppID</key>
+	<string>2052042458356841</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Access to photo is required</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>This app requires access to the photo library.</string>
+    <key>NSCameraUsageDescription</key>
+    <string>This app requires access to the camera.</string>
+	<key>FacebookDisplayName</key>
+	<string>Voiash Dev</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>

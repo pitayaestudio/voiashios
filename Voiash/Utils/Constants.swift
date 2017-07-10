@@ -30,9 +30,9 @@ struct K {
             static let name = "name"
             static let lastName = "lastName"
             static let phone = "phoneNumber"
+            static let birthday = "birthday"
             static let urlAvatar = "profilePicture"
             static let pushToken = "pushToken"
-            static let age = "age"
         }
     }
     

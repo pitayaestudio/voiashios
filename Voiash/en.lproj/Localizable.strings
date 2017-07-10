@@ -39,3 +39,6 @@
 //ACTIONS
 "actOK" = "OK";
 "actCancel" = "Cancel";
+
+//EDIT PROFILE
+"yearsAge" = "years";

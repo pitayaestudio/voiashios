@@ -15,6 +15,7 @@ class VOSignInVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
     
     @IBOutlet weak var tfEmail: TextFieldEffects!
     @IBOutlet weak var tfPassword: TextFieldEffects!
+    @IBOutlet weak var vBlur:UIVisualEffectView!
     @IBOutlet weak var btnGoogle: VORoundButton!
     @IBOutlet weak var btnLogin: VORoundButton!
     
@@ -42,6 +43,7 @@ class VOSignInVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
     
     @IBAction func googleBtnPressed(_ sender: VORoundButton) {
         sender.showSpinner()
+        self.vBlur.isHidden = false
         appDel.isFBActive = false
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().signIn()
@@ -51,25 +53,27 @@ class VOSignInVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
         sender.showSpinner()
         appDel.isFBActive = true
         let facebookLogin = FBSDKLoginManager()
+        self.vBlur.isHidden = false
+        
         facebookLogin.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
             if error != nil {
+                self.vBlur.isHidden = true
                 appDel.isFBActive = true
                 sender.hideSpinner()
                 print("BSC:: " + error.debugDescription)
             } else if result?.isCancelled == true {
-                
+                self.vBlur.isHidden = true
                 appDel.isFBActive = true
                 sender.hideSpinner()
                 print("BSC:: User cancelled facebook auth" )
             } else {
                 print("BSC:: Successfully auth FaceBook")
                 let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-                
                 appDel.isFBActive = true
                 VOFBAuthService.shared.loginWithCredential(credential, onComplete: { (errMsg, data) in
                     if errMsg == nil {
                         if((FBSDKAccessToken.current()) != nil) {
-                            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
+                            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email, birthday"]).start(completionHandler: { (connection, result, error) -> Void in
                                 if (error == nil){
                                     if let result = result as? [String: Any] {
                                         guard let email = result["email"] as? String else {
@@ -82,6 +86,10 @@ class VOSignInVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
                                         if let last = result["last_name"] as? String {
                                             lastName = last.capitalized
                                         }
+                                        var age = ""
+                                        if let birth = result["birthday"] as? String {
+                                            age = birth
+                                        }
                                         var urlAvatar = ""
                                         if let ditPict = result["picture"] as? [String: Any] {
                                             if let ditType = ditPict["data"] as? [String: Any] {
@@ -90,16 +98,27 @@ class VOSignInVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
                                                 }
                                             }
                                         }
-                                        let userData:JSONStandard = [K.FB.user.name:name.capitalized as AnyObject, K.FB.user.lastName:lastName as AnyObject, K.FB.user.provider: K.provider.fb as AnyObject, K.FB.user.email: email as AnyObject,K.FB.user.urlAvatar:urlAvatar as AnyObject]
-                                        VOFBDataService.shared.saveUser(uid: (Auth.auth().currentUser?.uid)!, userData: userData)
+                                        let userData:JSONStandard = [K.FB.user.name:name.capitalized as AnyObject, K.FB.user.lastName:lastName as AnyObject, K.FB.user.provider: K.provider.fb as AnyObject, K.FB.user.email: email as AnyObject,K.FB.user.urlAvatar:urlAvatar as AnyObject, K.FB.user.birthday:age as AnyObject]
+                                        VOFBDataService.shared.saveUser(uid: (Auth.auth().currentUser?.uid)!, userData: userData, onComplete: {(success) in
+                                            if success {
+                                                self.vBlur.isHidden = true
+                                                sender.hideSpinner()
+                                                appDel.setTabBarRoot()
+                                            }else{
+                                                self.vBlur.isHidden = true
+                                                sender.hideSpinner()
+                                            }
+                                        })
                                     }
+                                }else{
+                                    self.vBlur.isHidden = true
+                                    print("BSC:: " + error.debugDescription)
+                                    sender.hideSpinner()
                                 }
                             })
                         }
-                        
-                        sender.hideSpinner()
-                        appDel.setTabBarRoot()
                     } else {
+                        self.vBlur.isHidden = true
                         sender.hideSpinner()
                         let alert = UIAlertController(title: "Error Authentication", message: errMsg, preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
@@ -159,11 +178,15 @@ class VOSignInVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
             self.showMessagePrompt(NSLocalizedString("", comment: ""))
         }
         self.btnGoogle.hideSpinner()
+        
+        self.vBlur.isHidden = false
     }
     
     // Finished disconnecting |user| from the app successfully if |error| is |nil|.
     public func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!)
     {
+        
+        self.vBlur.isHidden = false
         self.btnGoogle.hideSpinner()
     }
 }

@@ -16,7 +16,7 @@ import IQKeyboardManagerSwift
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
     var window: UIWindow?
-    var currentVC: UIViewController?
+    var currentVC: VOSignInVC?
     var reloadUser = false
     var isFBActive = false
 
@@ -64,13 +64,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 if let user = user {
                     VOFBDataService.shared.myUser = user
                 }
+                
+                self.window = UIWindow(frame: UIScreen.main.bounds)
+                self.setTabBarRoot()
+                self.window?.makeKeyAndVisible()
             })
-            self.window = UIWindow(frame: UIScreen.main.bounds)
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let initialViewController = storyboard.instantiateViewController(withIdentifier: "TabBar")
-            
-            self.window?.rootViewController = initialViewController
-            self.window?.makeKeyAndVisible()
         }
     }
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
@@ -126,6 +124,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             VOFBAuthService.shared.loginWithCredential(credential) { (error, user) in
                 if let error = error {
                    // controller.hideSpinner({
+                        controller.vBlur.isHidden = true
                         controller.showMessagePrompt(error)
                    // })
                 }else{
@@ -136,15 +135,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                                 let email = GIDSignIn.sharedInstance().currentUser.profile.email
                                 let name =  GIDSignIn.sharedInstance().currentUser.profile.givenName
                                 let lastName =  GIDSignIn.sharedInstance().currentUser.profile.familyName
+                               // let birthday =
                                 
                                 let userData:JSONStandard = [K.FB.user.name:name?.capitalized as AnyObject, K.FB.user.lastName:lastName?.capitalized as AnyObject, K.FB.user.provider: K.provider.google as AnyObject, K.FB.user.email: email as AnyObject,K.FB.user.urlAvatar:urlAvatar as AnyObject]
-                                VOFBDataService.shared.saveUser(uid: (Auth.auth().currentUser?.uid)!, userData: userData)
+                                VOFBDataService.shared.saveUser(uid: (Auth.auth().currentUser?.uid)!, userData: userData, onComplete:{(success) in
+                                    if success {
+                                        appDel.setTabBarRoot()
+                                        controller.vBlur.isHidden = true
+                                    }else{
+                                        controller.vBlur.isHidden = true
+                                        VOFBAuthService.shared.signOut()
+                                        controller.showMessagePrompt(NSLocalizedString("errorGeneral", comment: ""))
+                                    }
+                                })
                             }
                         }else{
+                            controller.vBlur.isHidden = true
                             VOFBDataService.shared.myUser = user!
+                            appDel.setTabBarRoot()
                         }
                        // controller.hideSpinner({
-                            appDel.setTabBarRoot()
                             //controller.performSegue(withIdentifier: K.segue.segueTabBar, sender: nil)
                        // })
                     })

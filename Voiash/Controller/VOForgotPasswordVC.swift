@@ -12,6 +12,7 @@ import TextFieldEffects
 class VOForgotPasswordVC: UIViewController {
 
     @IBOutlet weak var tfEmail: TextFieldEffects!
+    @IBOutlet weak var btnForgot: VORoundButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +36,7 @@ class VOForgotPasswordVC: UIViewController {
     }
     
     @IBAction func resetPassBtnPressed(_ sender: AnyObject) {
-       
+        self.btnForgot.showSpinner()
         guard let email = self.tfEmail.text else{
             self.showMessagePrompt(NSLocalizedString("emailRequired", comment: ""))
             return
@@ -46,18 +47,18 @@ class VOForgotPasswordVC: UIViewController {
             return
         }
     
-       showSpinner {
-            VOFBAuthService.shared.resetPasswordForEmail(email, onComplete: { (error) in
-                self.hideSpinner({ 
-                    if let error = error {
-                        self.showMessagePrompt(error)
-                    }else{
-                        self.backBtnPressed()
-                        self.showMessagePrompt(NSLocalizedString("resetPassOK", comment: ""))
-                    }
-                })
-            })
-       }
+        VOFBAuthService.shared.resetPasswordForEmail(email, onComplete: { (error) in
+            self.btnForgot.hideSpinner()
+            if let error = error {
+                self.showMessagePrompt(error)
+            }else{
+                self.backBtnPressed()
+                self.showMessagePrompt(NSLocalizedString("resetPassOK", comment: ""))
+                
+            }
+            
+            
+        })
     }
 
 }

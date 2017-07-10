@@ -113,6 +113,12 @@ extension String {
     }
 }
 
+extension Date {
+    var age: Int {
+        return Calendar.current.dateComponents([.year], from: self, to: Date()).year!
+    }
+}
+
 extension AppDelegate {
     func findCurrentViewController() -> UIViewController{
         let rootVC = UIApplication.shared.keyWindow?.rootViewController

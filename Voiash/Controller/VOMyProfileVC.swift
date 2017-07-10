@@ -19,10 +19,18 @@ class VOMyProfileVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setScreen()
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped))
+        imgAvatar.addGestureRecognizer(tap)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+        setupScreen()
     }
 
-    func setScreen(){
+    func setupScreen(){
         imgAvatar.layer.masksToBounds = true
         imgAvatar.layer.borderWidth = 3.0
         imgAvatar.layer.borderColor = UIColor.white.cgColor
@@ -40,6 +48,11 @@ class VOMyProfileVC: UIViewController {
         }else{
             btnDelete.isHidden = true
         }
+    }
+    
+    func dismissFullscreenImage(_ sender: UITapGestureRecognizer) {
+        self.tabBarController?.tabBar.isHidden = false
+        sender.view?.removeFromSuperview()
     }
 
     
@@ -63,5 +76,17 @@ class VOMyProfileVC: UIViewController {
         
     }
 
+    @IBAction func imageTapped(_ sender: UITapGestureRecognizer) {
+        let imageView = sender.view as! UIImageView
+        let newImageView = UIImageView(image: imageView.image)
+        newImageView.frame = UIScreen.main.bounds
+        newImageView.backgroundColor = .black
+        newImageView.contentMode = .scaleAspectFit
+        newImageView.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissFullscreenImage))
+        newImageView.addGestureRecognizer(tap)
+        self.view.addSubview(newImageView)
+        self.tabBarController?.tabBar.isHidden = true
+    }
 
 }

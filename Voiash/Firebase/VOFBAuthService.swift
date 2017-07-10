@@ -90,8 +90,13 @@ class VOFBAuthService: NSObject {
                         print(error)
                     }
                 })
-                VOFBDataService.shared.saveUser(uid: (user?.uid)!, userData: userData)
-                onComplete?(nil,user)
+                VOFBDataService.shared.saveUser(uid: (user?.uid)!, userData: userData, onComplete: {(success) in
+                    if success {
+                        onComplete?(nil,user)
+                    }else{
+                        onComplete?(NSLocalizedString("errorGeneral", comment: ""),nil)
+                    }
+                })
             }
         }
     }

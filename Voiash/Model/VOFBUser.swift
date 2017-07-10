@@ -13,8 +13,8 @@ class VOFBUser: NSObject {
 
     var email: String!
     var name: String!
-    var age: String?
     var lastName: String?
+    var birthday: String!
     var provider: String!
     var pushToken: String?
     var phone: String?
@@ -30,12 +30,28 @@ class VOFBUser: NSObject {
         return fn
     }
     
+    var age:String? {
+        if self.birthday != "" {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "mm/dd/yyyy"
+            let date = dateFormatter.date(from: self.birthday!)
+            
+            return "\(date!.age) \(NSLocalizedString("yearsAge", comment: ""))"
+        }else{
+            return nil
+        }
+    }
+    
     init(userKey:String?, userData:JSONStandard){
         self.userKey = userKey
         self.name = userData[K.FB.user.name] as! String
         
         if let lastName = userData[K.FB.user.lastName] as? String {
             self.lastName = lastName
+        }
+        
+        if let birthday = userData[K.FB.user.birthday] as? String {
+            self.birthday = birthday
         }
         
         self.email = userData[K.FB.user.email] as! String
@@ -45,10 +61,10 @@ class VOFBUser: NSObject {
             self.pushToken = push
         }
         
-        if let age = userData[K.FB.user.age] as? String {
-            self.age = age
+        if let age = userData[K.FB.user.birthday] as? String , userData[K.FB.user.birthday] as! String != "" {
+            self.birthday = age
         }else{
-            self.age = ""
+            self.birthday = ""
         }
         
         if let url = userData[K.FB.user.urlAvatar] as? String {
