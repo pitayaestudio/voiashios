@@ -1106,7 +1106,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a7P-fk-VQN">
                                 <rect key="frame" x="0.0" y="70" width="320" height="260"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_perfil_pic" translatesAutoresizingMaskIntoConstraints="NO" id="fxY-v2-RfY">
+                                    <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_perfil_pic" translatesAutoresizingMaskIntoConstraints="NO" id="fxY-v2-RfY">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="260"/>
                                     </imageView>
                                     <visualEffectView opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ukn-W5-kZQ">
@@ -1336,6 +1336,7 @@
                     <connections>
                         <outlet property="btnDelete" destination="baL-U5-FHS" id="V6u-iX-4kO"/>
                         <outlet property="imgAvatar" destination="cce-Hq-wPY" id="09z-7C-UAc"/>
+                        <outlet property="imgBackground" destination="fxY-v2-RfY" id="Mnx-jM-xaS"/>
                         <outlet property="lblAge" destination="M59-gp-cXa" id="qhT-J5-XmQ"/>
                         <outlet property="lblName" destination="D7v-Or-bsS" id="gBj-51-ZL1"/>
                     </connections>

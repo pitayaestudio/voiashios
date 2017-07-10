@@ -15,6 +15,7 @@ class VOMyProfileVC: UIViewController {
     @IBOutlet weak var lblName:UILabel!
     @IBOutlet weak var lblAge:UILabel!
     @IBOutlet weak var imgAvatar:UIImageView!
+    @IBOutlet weak var imgBackground:UIImageView!
     @IBOutlet weak var btnDelete:VORoundButton!
     
     override func viewDidLoad() {
@@ -42,7 +43,7 @@ class VOMyProfileVC: UIViewController {
             
             if let url = user.urlAvatar {
                 imgAvatar.kf.setImage(with: url)
-                
+                imgBackground.kf.setImage(with: url)
             }
             btnDelete.isHidden = false
         }else{
