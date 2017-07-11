@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4B2513C91F11CB9E00C8F2BC /* FlightCloudsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2513C81F11CB9E00C8F2BC /* FlightCloudsView.swift */; };
+		4B2513CB1F1477DB00C8F2BC /* VOAlbumFacebookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2513CA1F1477DB00C8F2BC /* VOAlbumFacebookVC.swift */; };
+		4B2513CE1F147A1000C8F2BC /* VOFacebookPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2513CD1F147A1000C8F2BC /* VOFacebookPhotoCell.swift */; };
 		4B9304951F0B14AE00721977 /* VOFBAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9304941F0B14AE00721977 /* VOFBAuthService.swift */; };
 		4B9304981F0B39C800721977 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9304971F0B39C800721977 /* Constants.swift */; };
 		4B93049B1F0B3CB200721977 /* VOFBDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B93049A1F0B3CB200721977 /* VOFBDataService.swift */; };
@@ -44,6 +46,12 @@
 
 /* Begin PBXFileReference section */
 		4B2513C81F11CB9E00C8F2BC /* FlightCloudsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlightCloudsView.swift; path = Animations/FlightCloudsView.swift; sourceTree = "<group>"; };
+		4B2513CA1F1477DB00C8F2BC /* VOAlbumFacebookVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOAlbumFacebookVC.swift; path = Controller/VOAlbumFacebookVC.swift; sourceTree = "<group>"; };
+		4B2513CD1F147A1000C8F2BC /* VOFacebookPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOFacebookPhotoCell.swift; path = View/VOFacebookPhotoCell.swift; sourceTree = "<group>"; };
+		4B2513CF1F14879400C8F2BC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		4B2513D01F14879400C8F2BC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		4B2513D11F14879400C8F2BC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4B2513D31F14891B00C8F2BC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		4B9304941F0B14AE00721977 /* VOFBAuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOFBAuthService.swift; path = Firebase/VOFBAuthService.swift; sourceTree = "<group>"; };
 		4B9304971F0B39C800721977 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Utils/Constants.swift; sourceTree = "<group>"; };
 		4B93049A1F0B3CB200721977 /* VOFBDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOFBDataService.swift; path = Firebase/VOFBDataService.swift; sourceTree = "<group>"; };
@@ -70,9 +78,7 @@
 		C4ED032A1F0EDED800ADD0A6 /* VOMyProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOMyProfileVC.swift; path = Controller/VOMyProfileVC.swift; sourceTree = "<group>"; };
 		C4EEE17D1F0C1BDC00B1177B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Utils/Extensions.swift; sourceTree = "<group>"; };
 		C4EEE17F1F0C1F1300B1177B /* VOSignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOSignUpVC.swift; path = Controller/VOSignUpVC.swift; sourceTree = "<group>"; };
-		C4EEE1821F0C23D800B1177B /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		C4EEE1861F0C249100B1177B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		C4EEE1881F0C24A800B1177B /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		C4EEE1891F0C3B7500B1177B /* Voiash-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Voiash-Bridging-Header.h"; sourceTree = "<group>"; };
 		C4EEE18A1F0C3B7600B1177B /* UIViewController+Alerts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Alerts.h"; path = "View/UIViewController+Alerts.h"; sourceTree = "<group>"; };
 		C4EEE18B1F0C3B7600B1177B /* UIViewController+Alerts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Alerts.m"; path = "View/UIViewController+Alerts.m"; sourceTree = "<group>"; };
@@ -113,6 +119,14 @@
 				6117376A61DC3EE56084EA46 /* Pods_Voiash.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4B2513CC1F14794100C8F2BC /* Album Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4B2513CD1F147A1000C8F2BC /* VOFacebookPhotoCell.swift */,
+			);
+			name = "Album Cell";
 			sourceTree = "<group>";
 		};
 		4B9304961F0B14B200721977 /* Firebase */ = {
@@ -192,6 +206,7 @@
 		C4CFCFFE1F0BC9E90086D498 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4B2513CC1F14794100C8F2BC /* Album Cell */,
 				C4CFCFFC1F0BC9E50086D498 /* VORoundButton.swift */,
 				C4EEE18A1F0C3B7600B1177B /* UIViewController+Alerts.h */,
 				C4EEE18B1F0C3B7600B1177B /* UIViewController+Alerts.m */,
@@ -236,6 +251,7 @@
 				C4ED03281F0EDEB400ADD0A6 /* VOProfileVC.swift */,
 				C4ED032A1F0EDED800ADD0A6 /* VOMyProfileVC.swift */,
 				C465181D1F13BD50000E7C03 /* VOEditProfileVC.swift */,
+				4B2513CA1F1477DB00C8F2BC /* VOAlbumFacebookVC.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -328,7 +344,7 @@
 			knownRegions = (
 				en,
 				Base,
-				"es-419",
+				es,
 			);
 			mainGroup = C4AC16C51F0AE054007ECB38;
 			productRefGroup = C4AC16CF1F0AE054007ECB38 /* Products */;
@@ -414,6 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B9304951F0B14AE00721977 /* VOFBAuthService.swift in Sources */,
+				4B2513CB1F1477DB00C8F2BC /* VOAlbumFacebookVC.swift in Sources */,
 				C465181E1F13BD50000E7C03 /* VOEditProfileVC.swift in Sources */,
 				C403DD7D1F0FCC2500B70F04 /* UIButton+Extension.swift in Sources */,
 				C4EEE19D1F0D726000B1177B /* VODiscoverTypeCell.swift in Sources */,
@@ -433,6 +450,7 @@
 				C4ED032B1F0EDED800ADD0A6 /* VOMyProfileVC.swift in Sources */,
 				C4EEE1801F0C1F1300B1177B /* VOSignUpVC.swift in Sources */,
 				C4CFD0041F0C0EE40086D498 /* VOForgotPasswordVC.swift in Sources */,
+				4B2513CE1F147A1000C8F2BC /* VOFacebookPhotoCell.swift in Sources */,
 				4B93049B1F0B3CB200721977 /* VOFBDataService.swift in Sources */,
 				C4CFD0001F0BFA8A0086D498 /* VOInitialVC.swift in Sources */,
 			);
@@ -445,6 +463,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				C4AC16D61F0AE054007ECB38 /* Base */,
+				4B2513CF1F14879400C8F2BC /* es */,
+				4B2513D31F14891B00C8F2BC /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -453,7 +473,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				C4AC16DB1F0AE054007ECB38 /* Base */,
-				C4EEE1821F0C23D800B1177B /* es-419 */,
+				4B2513D01F14879400C8F2BC /* es */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -462,7 +482,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				C4EEE1861F0C249100B1177B /* en */,
-				C4EEE1881F0C24A800B1177B /* es-419 */,
+				4B2513D11F14879400C8F2BC /* es */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

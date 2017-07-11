@@ -88,6 +88,11 @@ class VOEditProfileVC: UIViewController,UIImagePickerControllerDelegate,UINaviga
         self.present(imagePicker, animated: true, completion: nil)
     }
     
+    func openFBImages() {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "VOAlbumFacebookVC")
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
     //MARK: - Age
     func datePickerValueChanged(_ sender: UIDatePicker) {
         let dateFormatter = DateFormatter()
@@ -135,16 +140,22 @@ class VOEditProfileVC: UIViewController,UIImagePickerControllerDelegate,UINaviga
     }
     
     @IBAction func changePhotoBtnPressed(){
-        let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
+        let alert = UIAlertController(title: NSLocalizedString("titChooseImage", comment: ""), message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("titCamera", comment: ""), style: .default, handler: { _ in
             self.openCamera()
         }))
         
-        alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
+        alert.addAction(UIAlertAction(title: NSLocalizedString("titGallery", comment: ""), style: .default, handler: { _ in
             self.openGallary()
         }))
         
-        alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+        if VOFBDataService.shared.myUser!.provider == K.provider.fb {
+            alert.addAction(UIAlertAction(title: NSLocalizedString("titFacebook", comment: ""), style: .default, handler: { _ in
+                self.openFBImages()
+            }))
+        }
+        
+        alert.addAction(UIAlertAction.init(title: NSLocalizedString("actCancel", comment: ""), style: .cancel, handler: nil))
         
         self.present(alert, animated: true, completion: nil)
     }

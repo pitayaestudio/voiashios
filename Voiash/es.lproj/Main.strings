@@ -1,66 +1,66 @@
 
 /* Class = "UILabel"; text = "MURO"; ObjectID = "1Gb-os-0yj"; */
-"1Gb-os-0yj.text" = "WALL";
+"1Gb-os-0yj.text" = "MURO";
 
 /* Class = "UITextField"; placeholder = "Email"; ObjectID = "2hO-yP-bAP"; */
 "2hO-yP-bAP.placeholder" = "Email";
 
 /* Class = "UIButton"; normalTitle = "Ingresar con email"; ObjectID = "5x2-bL-ZjP"; */
-"5x2-bL-ZjP.normalTitle" = "Login with email";
+"5x2-bL-ZjP.normalTitle" = "Ingresar con email";
 
 /* Class = "UILabel"; text = "Fotos Facebook"; ObjectID = "7V6-Xf-CVY"; */
-"7V6-Xf-CVY.text" = "Facebook Photos";
+"7V6-Xf-CVY.text" = "Fotos Facebook";
 
 /* Class = "UITextField"; placeholder = "Email"; ObjectID = "7xh-ox-9Wn"; */
 "7xh-ox-9Wn.placeholder" = "Email";
 
 /* Class = "UIButton"; normalTitle = "Registrate y disfruta"; ObjectID = "8Na-yG-G76"; */
-"8Na-yG-G76.normalTitle" = "Sign Up and enjoy";
+"8Na-yG-G76.normalTitle" = "Registrate y disfruta";
 
 /* Class = "UITextField"; placeholder = "Confirmar Contraseña"; ObjectID = "95z-lO-rhZ"; */
-"95z-lO-rhZ.placeholder" = "Confirm Password";
+"95z-lO-rhZ.placeholder" = "Confirmar Contraseña";
 
 /* Class = "UITextField"; placeholder = "Nombre"; ObjectID = "9EV-Rk-lC5"; */
-"9EV-Rk-lC5.placeholder" = "Name";
+"9EV-Rk-lC5.placeholder" = "Nombre";
 
 /* Class = "UILabel"; text = "Editar Perfil"; ObjectID = "A77-4B-hQp"; */
-"A77-4B-hQp.text" = "Edit Profil";
+"A77-4B-hQp.text" = "Editar Perfil";
 
 /* Class = "UITextField"; placeholder = "Contraseña"; ObjectID = "Adl-dF-iLh"; */
-"Adl-dF-iLh.placeholder" = "Password";
+"Adl-dF-iLh.placeholder" = "Contraseña";
 
 /* Class = "UIButton"; normalTitle = "Resetear Password"; ObjectID = "Axb-ax-gR9"; */
-"Axb-ax-gR9.normalTitle" = "Reset Password";
+"Axb-ax-gR9.normalTitle" = "Resetear Password";
 
 /* Class = "UIButton"; normalTitle = "Continuar"; ObjectID = "BnP-Lp-ezN"; */
-"BnP-Lp-ezN.normalTitle" = "Continue";
+"BnP-Lp-ezN.normalTitle" = "Continuar";
 
 /* Class = "UILabel"; text = "AMIGOS"; ObjectID = "Daj-le-lBR"; */
-"Daj-le-lBR.text" = "FRIENDS";
+"Daj-le-lBR.text" = "AMIGOS";
 
 /* Class = "UIButton"; normalTitle = "Volver a enviar email"; ObjectID = "EuY-eR-aj9"; */
-"EuY-eR-aj9.normalTitle" = "Send email again";
+"EuY-eR-aj9.normalTitle" = "Volver a enviar email";
 
 /* Class = "UIViewController"; title = "Recordar Password"; ObjectID = "GnE-Sy-CZD"; */
-"GnE-Sy-CZD.title" = "Remember Password";
+"GnE-Sy-CZD.title" = "Recordar Password";
 
 /* Class = "UITextField"; placeholder = "Nombre"; ObjectID = "HNu-Ys-4BW"; */
-"HNu-Ys-4BW.placeholder" = "Name";
+"HNu-Ys-4BW.placeholder" = "Nombre";
 
 /* Class = "UITabBarItem"; title = "social"; ObjectID = "J1e-nI-lo9"; */
 "J1e-nI-lo9.title" = "social";
 
 /* Class = "UIButton"; normalTitle = "Cambiar foto"; ObjectID = "KTn-d8-yHK"; */
-"KTn-d8-yHK.normalTitle" = "Change photo";
+"KTn-d8-yHK.normalTitle" = "Cambiar foto";
 
 /* Class = "UIBarButtonItem"; title = " "; ObjectID = "MHL-cW-dRD"; */
 "MHL-cW-dRD.title" = " ";
 
 /* Class = "UIButton"; normalTitle = "Registrarse"; ObjectID = "NKG-Gc-FtE"; */
-"NKG-Gc-FtE.normalTitle" = "Sign Up";
+"NKG-Gc-FtE.normalTitle" = "Registrarse";
 
 /* Class = "UITextField"; placeholder = "Apellido"; ObjectID = "PCY-Jd-Sbn"; */
-"PCY-Jd-Sbn.placeholder" = "Last Name";
+"PCY-Jd-Sbn.placeholder" = "Apellido";
 
 /* Class = "UITextField"; placeholder = "Email"; ObjectID = "QGE-hD-5oC"; */
 "QGE-hD-5oC.placeholder" = "Email";
@@ -72,70 +72,70 @@
 "UNU-mx-TTm.normalTitle" = "Edit";
 
 /* Class = "UIButton"; normalTitle = "Ingresar sin registrar"; ObjectID = "VSa-hA-JMj"; */
-"VSa-hA-JMj.normalTitle" = "Sign In without Sign Up";
+"VSa-hA-JMj.normalTitle" = "Ingresar sin registrar";
 
 /* Class = "UILabel"; text = "¿No recuerdas tu contraseña? Coloca tu email y nosotros te eviaremos un link para resetear tu password"; ObjectID = "bLS-DO-Zeh"; */
-"bLS-DO-Zeh.text" = "Do you forgot your password? Put your email and receive a link to reset your password";
+"bLS-DO-Zeh.text" = "¿No recuerdas tu contraseña? Coloca tu email y nosotros te eviaremos un link para resetear tu password";
 
 /* Class = "UIButton"; normalTitle = "Borrar cuenta"; ObjectID = "baL-U5-FHS"; */
-"baL-U5-FHS.normalTitle" = "Delete account";
+"baL-U5-FHS.normalTitle" = "Borrar cuenta";
 
 /* Class = "UITabBarItem"; title = "chat"; ObjectID = "boL-MV-g9B"; */
 "boL-MV-g9B.title" = "chat";
 
 /* Class = "UITabBarItem"; title = "mi perfil"; ObjectID = "bze-sj-UAw"; */
-"bze-sj-UAw.title" = "my profile";
+"bze-sj-UAw.title" = "mi perfil";
 
 /* Class = "UILabel"; text = "Recordar contraseña"; ObjectID = "cZT-qh-SRP"; */
-"cZT-qh-SRP.text" = "Remember password";
+"cZT-qh-SRP.text" = "Recordar contraseña";
 
 /* Class = "UITextField"; placeholder = "Apellido"; ObjectID = "eY7-Un-7wz"; */
-"eY7-Un-7wz.placeholder" = "Last Name";
+"eY7-Un-7wz.placeholder" = "Apellido";
 
 /* Class = "UIViewController"; title = "Crear cuenta"; ObjectID = "fGi-18-7Kb"; */
-"fGi-18-7Kb.title" = "Create account";
+"fGi-18-7Kb.title" = "Crear cuenta";
 
 /* Class = "UIButton"; normalTitle = "Cerrar sesión"; ObjectID = "gPy-nG-afc"; */
-"gPy-nG-afc.normalTitle" = "Logout";
+"gPy-nG-afc.normalTitle" = "Cerrar sesión";
 
 /* Class = "UILabel"; text = "Perfil"; ObjectID = "gwB-68-H4d"; */
-"gwB-68-H4d.text" = "Profile";
+"gwB-68-H4d.text" = "Perfil";
 
 /* Class = "UILabel"; text = "Al registrarte, aceptas los términos y condiciones de Voiash"; ObjectID = "hnl-j4-FfZ"; */
-"hnl-j4-FfZ.text" = "When you signIn, you accept the terms and condicions of Voiash";
+"hnl-j4-FfZ.text" = "Al registrarte, aceptas los términos y condiciones de Voiash";
 
 /* Class = "UIButton"; normalTitle = "¿Olvidaste tu password?"; ObjectID = "ksN-w3-Ne4"; */
-"ksN-w3-Ne4.normalTitle" = "Did you forget your password?";
+"ksN-w3-Ne4.normalTitle" = "¿Olvidaste tu password?";
 
 /* Class = "UIButton"; normalTitle = "Cancelar"; ObjectID = "kw1-dw-0hx"; */
-"kw1-dw-0hx.normalTitle" = "Cancela";
+"kw1-dw-0hx.normalTitle" = "Cancelar";
 
 /* Class = "UITextField"; placeholder = "Fecha de Nacimiento"; ObjectID = "mlk-Np-NGJ"; */
-"mlk-Np-NGJ.placeholder" = "Birthdate";
+"mlk-Np-NGJ.placeholder" = "Fecha de Nacimiento";
 
 /* Class = "UIButton"; normalTitle = "Call"; ObjectID = "n1L-CH-rNy"; */
 "n1L-CH-rNy.normalTitle" = "Call";
 
 /* Class = "UILabel"; text = "Crea tu cuenta y vive un mundo de viajes y aventuras con Voiash"; ObjectID = "nyC-cl-r7r"; */
-"nyC-cl-r7r.text" = "Create your account and live in a travel and adventure world with Voiahs";
+"nyC-cl-r7r.text" = "Crea tu cuenta y vive un mundo de viajes y aventuras con Voiash";
 
 /* Class = "UILabel"; text = "¿Eres usuario nuevo? Regístrate aquí"; ObjectID = "r86-oX-BLQ"; */
-"r86-oX-BLQ.text" = "Are you new user? Signin here";
+"r86-oX-BLQ.text" = "¿Eres usuario nuevo? Regístrate aquí";
 
 /* Class = "UIButton"; normalTitle = "Whats"; ObjectID = "uAV-ZZ-2Js"; */
 "uAV-ZZ-2Js.normalTitle" = "Whats";
 
 /* Class = "UIButton"; normalTitle = "Cancelar"; ObjectID = "ujs-VW-p4k"; */
-"ujs-VW-p4k.normalTitle" = "Cancel";
+"ujs-VW-p4k.normalTitle" = "Cancelar";
 
 /* Class = "UITabBarItem"; title = "descubre"; ObjectID = "vWu-R1-lWm"; */
-"vWu-R1-lWm.title" = "discover";
+"vWu-R1-lWm.title" = "descubre";
 
 /* Class = "UIButton"; normalTitle = "Listo"; ObjectID = "w6a-ox-FJ0"; */
-"w6a-ox-FJ0.normalTitle" = "Ready";
+"w6a-ox-FJ0.normalTitle" = "Listo";
 
 /* Class = "UITextField"; placeholder = "Email"; ObjectID = "wkH-qG-VBx"; */
 "wkH-qG-VBx.placeholder" = "Email";
 
 /* Class = "UITabBarItem"; title = "mi viaje"; ObjectID = "z8f-vG-auq"; */
-"z8f-vG-auq.title" = "my travel";
+"z8f-vG-auq.title" = "mi viaje";

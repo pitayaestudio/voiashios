@@ -42,3 +42,10 @@
 
 //EDIT PROFILE
 "yearsAge" = "years";
+
+//CAMERA
+"titGallery" = "Gallery";
+"titCamera" = "Camera";
+"titFacebook" = "Facebook";
+"titChooseImage" = "Choose Image";
+

@@ -60,6 +60,9 @@ PODS:
     - FirebaseAnalytics (~> 4.0)
     - FirebaseCore (~> 4.0)
     - GTMSessionFetcher/Core (~> 1.1)
+  - GBHFacebookImagePicker (1.2.3):
+    - FBSDKCoreKit (~> 4.24.0)
+    - FBSDKLoginKit (~> 4.24.0)
   - GoogleSignIn (4.0.2):
     - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
     - GoogleToolboxForMac/NSString+URLArguments (~> 2.1)
@@ -102,6 +105,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Messaging
   - Firebase/Storage
+  - GBHFacebookImagePicker
   - GoogleSignIn
   - IQKeyboardManagerSwift
   - KeychainSwift (~> 8.0)
@@ -134,6 +138,7 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: 9fbf536668f4d3f0880e7438456dabd1376e294b
   FirebaseMessaging: 227406c05b0dc9290702d2e9f18ab5528f0c2cf2
   FirebaseStorage: 8110a1ed2034c8fbfd83890d2acc9cdbbd99afec
+  GBHFacebookImagePicker: 83aeb372acdf1b5d952305fa572752bdda7945f7
   GoogleSignIn: d7ad83f13480e1f30453471d00d19b5293ac46af
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
@@ -146,6 +151,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   TextFieldEffects: 8706f53525f1ce51c8921b7af32237caab50c467
 
-PODFILE CHECKSUM: 1c3dfe5f18331f5bc15d7f499a887a5f6bcf75d5
+PODFILE CHECKSUM: 68caab667a8ebdc564772eb09418d57d839140d8
 
 COCOAPODS: 1.2.0

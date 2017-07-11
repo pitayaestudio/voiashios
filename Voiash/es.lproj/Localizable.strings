@@ -1,0 +1,51 @@
+/* 
+  Localizable.strings
+  Voiash
+
+  Created by Brenda Saavedra on 7/4/17.
+  Copyright © 2017 Pitaya Estudio. All rights reserved.
+*/
+
+//ERRORS
+"errorUserNotFound" = "Usuario no encontrado";
+"errorEmailAlreadyInUse" = "No se pudó crear la cuenta. Email ya registrado";
+"errorInvalidEmail" = "Email inválido";
+"errorWrongPassword" = "Password inválido, debe tener al menos 6 carácteres";
+"errorGeneral" = "Lo sentimos existió un error, inténtelo más tarde.";
+"errorEmailWithoutConfirmation" = "Error, necesita confirmar su email.";
+"errorTitle" = "Error";
+
+//SIGNUP
+"nameRequired" = "Nombre requerdio";
+"lastNameRequired" = "Apellido requerido";
+"emailRequired" = "Email requerido";
+"passRequired" = "Password requerido";
+"pass2Required" = "Password2 requerido";
+"passwordDifferent" = "La confirmación del password no es la misma";
+"emailNotVerified" = "Lo sentimos, su email no ha sido verificado. ¿Desea que le enviemos otro email a %@?";
+
+//RESET PASS
+"resetPassOK" = "Password reseteado correctamente.";
+
+//CONFIRM EMAIL
+"titConfirmEmail" = "Confirma tu email";
+"mesConfirmEmail" = "Hemos enviado un email, haz click en el link para confirmar tu email";
+"titConfirmOK" = "¡Gracias!";
+"mesConfirmOK" = "Tu email ha sido confirmado";
+
+//SPINNER
+"msgWait" = "Por favor espere...\n\n\n\n";
+
+//ACTIONS
+"actOK" = "OK";
+"actCancel" = "Cancelar";
+
+//EDIT PROFILE
+"yearsAge" = "años";
+
+//CAMERA
+"titGallery" = "Galería";
+"titCamera" = "Cámara";
+"titFacebook" = "Facebook";
+"titChooseImage" = "Escoge una imagen";
+
