@@ -27,15 +27,14 @@ class VOInitialVC: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.navigationController?.isNavigationBarHidden = false
+        vFlightClouds.removeAllAnimations()
+        self.navigationController?.isNavigationBarHidden = true
         self.isActive = false
     }
     
     // MARK: - IBAction
     @IBAction func loginAnonymousBtnPressed(){
-        VOFBAuthService.shared.loginAnonymous()
         appDel.setTabBarRoot()
+        VOFBAuthService.shared.loginAnonymous()
     }
-    
-
 }

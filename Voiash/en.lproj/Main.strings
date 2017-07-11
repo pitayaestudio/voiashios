@@ -72,7 +72,7 @@
 "UNU-mx-TTm.normalTitle" = "Edit";
 
 /* Class = "UIButton"; normalTitle = "Ingresar sin registrar"; ObjectID = "VSa-hA-JMj"; */
-"VSa-hA-JMj.normalTitle" = "Sign In without Sign Up";
+"VSa-hA-JMj.normalTitle" = "Login without registration";
 
 /* Class = "UILabel"; text = "¿No recuerdas tu contraseña? Coloca tu email y nosotros te eviaremos un link para resetear tu password"; ObjectID = "bLS-DO-Zeh"; */
 "bLS-DO-Zeh.text" = "Do you forgot your password? Put your email and receive a link to reset your password";

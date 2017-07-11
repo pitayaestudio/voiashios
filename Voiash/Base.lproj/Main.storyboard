@@ -1358,6 +1358,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="btnDelete" destination="baL-U5-FHS" id="V6u-iX-4kO"/>
+                        <outlet property="btnEdit" destination="UNU-mx-TTm" id="yZu-SM-hlB"/>
                         <outlet property="imgAvatar" destination="cce-Hq-wPY" id="09z-7C-UAc"/>
                         <outlet property="imgBackground" destination="fxY-v2-RfY" id="Mnx-jM-xaS"/>
                         <outlet property="lblAge" destination="M59-gp-cXa" id="qhT-J5-XmQ"/>

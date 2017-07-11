@@ -48,9 +48,9 @@ struct K {
         static let titleGray = UIColor(red: 115, green: 115, blue: 115, alpha: 1)
     }
     struct segue {
-        //static let segueTabBar = "segueTabBar"
         static let segueForgotPass = "segueForgotPass"
         static let segueEmailConfirmation = "segueEmailConfirmation"
+        static let segueTabBar = "segueTabBar"
     }
     struct notifications {
         static let reloadEmail = "reloadEmailConfirmation"

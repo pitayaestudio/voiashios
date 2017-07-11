@@ -17,6 +17,7 @@ class VOMyProfileVC: VOBaseVC {
     @IBOutlet weak var imgAvatar:UIImageView!
     @IBOutlet weak var imgBackground:UIImageView!
     @IBOutlet weak var btnDelete:VORoundButton!
+    @IBOutlet weak var btnEdit:UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +49,9 @@ class VOMyProfileVC: VOBaseVC {
                 }
             }
             btnDelete.isHidden = false
+            btnEdit.isHidden = false
         }else{
+            btnEdit.isHidden = true
             btnDelete.isHidden = true
         }
     }
@@ -80,6 +83,10 @@ class VOMyProfileVC: VOBaseVC {
     }
 
     @IBAction func imageTapped(_ sender: UITapGestureRecognizer) {
+        if VOFBDataService.shared.myUser == nil {
+            return
+        }
+        
         let imageView = sender.view as! UIImageView
         let newImageView = UIImageView(image: imageView.image)
         newImageView.frame = UIScreen.main.bounds
