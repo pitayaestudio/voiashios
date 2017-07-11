@@ -130,32 +130,43 @@ class VOSignInVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
     }
     
     @IBAction func signInBtnPressed(_ sender: AnyObject) {
-        if let email = tfEmail.text, let pass = tfPassword.text , (email.characters.count > 0 && pass.characters.count > 5){
-            self.btnLogin.showSpinner()
-            VOFBAuthService.shared.loginWithEmail(email, password: pass, onComplete: { (errMsg, data) in
-                if let error = errMsg {
-                    self.btnLogin.hideSpinner()
-                    if error == NSLocalizedString("errorEmailWithoutConfirmation", comment: "") {
-                        let vc = self.storyboard?.instantiateViewController(withIdentifier: "VOConfirmEmailVC") as! VOConfirmEmailVC
-                        vc.cameFromSignIn = true
-                        self.navigationController?.pushViewController(vc, animated: true)
-                    }else{
-                        self.showMessagePrompt(error)
-                    }
-                    return
-                }else{
-                    VOFBDataService.shared.getUser(uid: data!.uid, onComplete: { (fbUser) in
-                        self.btnLogin.hideSpinner()
-                        if let fbUser = fbUser {
-                            VOFBDataService.shared.myUser = fbUser
-                        }
-                        appDel.setTabBarRoot()
-                    })
-                }
-            })
-        }else{
-            self.showMessagePrompt("You must enter both an email and a password (6 characters)")
+        if !tfEmail.text!.isEmail {
+            self.showAlert(typeAlert:.error, message:NSLocalizedString("errorInvalidEmail", comment: ""))
+            return
         }
+        
+        if !tfPassword.text!.isValidPassword {
+            self.showAlert(typeAlert:.error, message:NSLocalizedString("errorWrongPassword", comment: ""))
+            return
+        }
+        
+        let email = tfEmail.text!
+        let pass = tfPassword.text!
+        self.btnLogin.showSpinner()
+        
+        VOFBAuthService.shared.loginWithEmail(email, password: pass, onComplete: { (errMsg, data) in
+            if let error = errMsg {
+                self.btnLogin.hideSpinner()
+                if error == NSLocalizedString("errorEmailWithoutConfirmation", comment: "") {
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "VOConfirmEmailVC") as! VOConfirmEmailVC
+                    vc.cameFromSignIn = true
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }else{
+                    self.showAlert(typeAlert:.error, message:error)
+                }
+                return
+            }else{
+                VOFBDataService.shared.getUser(uid: data!.uid, onComplete: { (fbUser) in
+                    self.btnLogin.hideSpinner()
+                    if let fbUser = fbUser {
+                        VOFBDataService.shared.myUser = fbUser
+                    }
+                    appDel.setTabBarRoot()
+                })
+            }
+        })
+       
+        
     }
     
     func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {
@@ -175,7 +186,7 @@ class VOSignInVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!)
     {
         if let error = error {
-            self.showMessagePrompt(NSLocalizedString("", comment: ""))
+            self.showAlert(typeAlert:.error, message:NSLocalizedString("errorGeneral", comment: ""))
         }
         self.btnGoogle.hideSpinner()
         

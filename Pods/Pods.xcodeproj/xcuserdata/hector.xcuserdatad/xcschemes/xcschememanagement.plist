@@ -74,6 +74,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SpaceView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Spring.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -92,12 +97,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1194E0002CACB334BE98627D3BBD1B5E</key>
+		<key>1496DF287DD1634DDE03AF1FA16588E8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1449B14C2E0988C10771FEB2A7822075</key>
+		<key>2C7DD9C2E487F846B584F05D1CF1E078</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -112,17 +117,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>431FA45D8073A4BA2D0DC2866BA87553</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>44CAD6CE523055ED339E87154473A254</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4ADC3393E097245B9C890D3F11313C5F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -142,7 +137,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>68A382E231A329DB4D36FCCBBF69D6E1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>6D5CEDECD3D8DC52EA507E0431BDA8A0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>810B3E413E6D744339CB9D153E7C4592</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -152,12 +157,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>989E629C7DB7774F65DB2E7A505D47F0</key>
+		<key>B1C4AAFAF49036C7007633DAA3C806AD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B1C4AAFAF49036C7007633DAA3C806AD</key>
+		<key>B6C935C7A1E0B0D6589D48BF168B06A9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -173,6 +178,11 @@
 			<true/>
 		</dict>
 		<key>C235F77E101E742652CCF98FFDFA5182</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C9A48D94F1CED9D0538AA836F22CF1B4</key>
 		<dict>
 			<key>primary</key>
 			<true/>

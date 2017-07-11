@@ -8,22 +8,6 @@
 
 import UIKit
 
-extension UIViewController {
-    
-    func hideBack(){
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
-    }
-    
-    func hideKeyboardWhenTappedAround() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboardView))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
-    }
-    
-    func dismissKeyboardView() {
-        view.endEditing(true)
-    }
-}
 
 extension UINavigationController {
     
@@ -116,6 +100,10 @@ extension String {
 extension Date {
     var age: Int {
         return Calendar.current.dateComponents([.year], from: self, to: Date()).year!
+    }
+    
+    var isValidAge: Bool {
+        return self.age >= 18 ? true : false
     }
 }
 

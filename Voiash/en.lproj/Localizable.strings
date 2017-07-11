@@ -15,11 +15,17 @@
 "errorEmailWithoutConfirmation" = "Error you need to confirm your email";
 "errorTitle" = "Error";
 
+//ALERTS
+"successTitle" = "Success";
+"warningTitle" = "Warning";
+"warningCamera" = "You don't have camera";
+
 //SIGNUP
 "nameRequired" = "Name is required";
 "lastNameRequired" = "Last name is required";
 "emailRequired" = "Email is required";
 "passRequired" = "Password is required";
+"invalidAge" = "Invalid age, you must have at least 18 years";
 "birthdayRequired" = "Birthday is required";
 "pass2Required" = "Password2 is required";
 "passwordDifferent" = "The confirmation password is not the same";

@@ -38,22 +38,22 @@ class VOForgotPasswordVC: UIViewController {
     @IBAction func resetPassBtnPressed(_ sender: AnyObject) {
         self.btnForgot.showSpinner()
         guard let email = self.tfEmail.text else{
-            self.showMessagePrompt(NSLocalizedString("emailRequired", comment: ""))
+            self.showAlert(typeAlert:.error, message:NSLocalizedString("emailRequired", comment: ""))
             return
         }
         
         if !email.isEmail {
-            self.showMessagePrompt(NSLocalizedString("errorInvalidEmail", comment: ""))
+            self.showAlert(typeAlert:.error, message:NSLocalizedString("errorInvalidEmail", comment: ""))
             return
         }
     
         VOFBAuthService.shared.resetPasswordForEmail(email, onComplete: { (error) in
             self.btnForgot.hideSpinner()
             if let error = error {
-                self.showMessagePrompt(error)
+                self.showAlert(typeAlert:.error, message:error)
             }else{
                 self.backBtnPressed()
-                self.showMessagePrompt(NSLocalizedString("resetPassOK", comment: ""))
+                self.showAlert(typeAlert:.error, message:NSLocalizedString("resetPassOK", comment: ""))
                 
             }
             

@@ -54,6 +54,10 @@ class VOEditProfileVC: VOBaseVC {
             tfEmail.text = user.email
             
             if let age = user.birthday {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "MM/dd/yyyy"
+                self.birthDay = dateFormatter.date(from: age)
+                
                 tfAge.text = age
             }
             if let url = user.urlAvatar {
@@ -88,9 +92,7 @@ class VOEditProfileVC: VOBaseVC {
             imagePicker.allowsEditing = true
             self.present(imagePicker, animated: true, completion: nil)
         } else {
-            let alert  = UIAlertController(title: "Warning", message: "You don't have camera", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            self.showAlert(typeAlert: .warning, message: NSLocalizedString("warningCamera", comment: ""))
         }
     }
     
@@ -100,24 +102,22 @@ class VOEditProfileVC: VOBaseVC {
         self.present(imagePicker, animated: true, completion: nil)
     }
     
-   /* func openFBImages() {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "VOAlbumFacebookVC")
-        self.navigationController?.pushViewController(vc!, animated: true)
-    }*/
-    
     //MARK: - Age
     func datePickerValueChanged(_ sender: UIDatePicker) {
         self.birthDay = sender.date
-        let dateFormatter = DateFormatter()
+       /* let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = DateFormatter.Style.medium
-        dateFormatter.timeStyle = DateFormatter.Style.none
+        dateFormatter.timeStyle = DateFormatter.Style.none*/
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
         tfAge.text = dateFormatter.string(from: sender.date)
     }
     
     //MARK: - IBAction
     @IBAction func ageFieldEditing(sender: UITextField) {
         let datePickerView:UIDatePicker = UIDatePicker()
-        
+        datePickerView.maximumDate = K.ageValidation.maximum
+        datePickerView.minimumDate = K.ageValidation.minimum
         datePickerView.datePickerMode = .date
         sender.inputView = datePickerView
         datePickerView.addTarget(self, action: #selector(self.datePickerValueChanged), for: .valueChanged)
@@ -130,17 +130,21 @@ class VOEditProfileVC: VOBaseVC {
     
     @IBAction func saveBtnPressed(){
         guard  (tfName.text != nil)  && !(tfName.text?.isBlank)! else {
-            self.showMessagePrompt(NSLocalizedString("nameRequired", comment: ""))
+            self.showAlert(typeAlert:.error, message:NSLocalizedString("nameRequired", comment: ""))
             return
         }
         guard (tfLastName.text != nil) && !(tfLastName.text?.isBlank)!  else {
-            self.showMessagePrompt(NSLocalizedString("lastNameRequired", comment: ""))
+            self.showAlert(typeAlert:.error, message:NSLocalizedString("lastNameRequired", comment: ""))
             return
         }
         guard self.birthDay != nil  else {
-            self.showMessagePrompt(NSLocalizedString("birthdayRequired", comment: ""))
+            self.showAlert(typeAlert:.error, message:NSLocalizedString("birthdayRequired", comment: ""))
             return
         }
+       /* if !self.birthDay.isValidAge {
+            self.showAlert(typeAlert:.error, message:NSLocalizedString("invalidAge", comment: ""))
+            return nil
+        }*/
         
         let dateFormatter: DateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yyyy"
@@ -154,7 +158,7 @@ class VOEditProfileVC: VOBaseVC {
                 self.vBlur.isHidden = true
             }
             if let error = error {
-                self.showMessagePrompt(error)
+                self.showAlert(typeAlert:.error, message:error)
             }else{
                 self.navigationController?.popViewController(animated: true)
             }

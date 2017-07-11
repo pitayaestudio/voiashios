@@ -14,10 +14,13 @@ class VOSignUpVC: UIViewController {
 
     @IBOutlet weak var tfName: TextFieldEffects!
     @IBOutlet weak var tfLastName: TextFieldEffects!
+    @IBOutlet weak var tfAge: TextFieldEffects!
     @IBOutlet weak var tfEmail: TextFieldEffects!
     @IBOutlet weak var tfPassword: TextFieldEffects!
     @IBOutlet weak var tfPassword2: TextFieldEffects!
     @IBOutlet weak var btnSingIn: VORoundButton!
+    
+    var birthDay:Date!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +44,26 @@ class VOSignUpVC: UIViewController {
         tfLastName.autocapitalizationType = .words
     }
     
-    // MARK: - IBAction
+    //MARK: - Age
+    func datePickerValueChanged(_ sender: UIDatePicker) {
+        self.birthDay = sender.date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = DateFormatter.Style.medium
+        dateFormatter.timeStyle = DateFormatter.Style.none
+        tfAge.text = dateFormatter.string(from: sender.date)
+    }
+    
+    //MARK: - IBAction
+    @IBAction func ageFieldEditing(sender: UITextField) {
+        let datePickerView:UIDatePicker = UIDatePicker()
+        datePickerView.maximumDate = K.ageValidation.maximum
+        datePickerView.minimumDate = K.ageValidation.minimum
+        datePickerView.datePickerMode = .date
+        sender.inputView = datePickerView
+        datePickerView.addTarget(self, action: #selector(self.datePickerValueChanged), for: .valueChanged)
+        
+    }
+    
     @IBAction func backBtnPressed(_ sender: AnyObject) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -62,7 +84,7 @@ class VOSignUpVC: UIViewController {
             }else if error == NSLocalizedString("errorEmailWithoutConfirmation", comment: "") {
                 self.performSegue(withIdentifier: K.segue.segueEmailConfirmation, sender: nil)
             }else{
-                self.showMessagePrompt(error!)
+                self.showAlert(typeAlert:.error, message:error!)
             }
         }
     }
@@ -70,46 +92,60 @@ class VOSignUpVC: UIViewController {
     // MARK: - Validations
     func validateData()->JSONStandard? {
         guard  (tfName.text != nil)  && !(tfName.text?.isBlank)! else {
-            self.showMessagePrompt(NSLocalizedString("nameRequired", comment: ""))
+            self.showAlert(typeAlert:.error, message:NSLocalizedString("nameRequired", comment: ""))
             return nil
         }
         
         guard (tfLastName.text != nil) && !(tfLastName.text?.isBlank)!  else {
-            self.showMessagePrompt(NSLocalizedString("lastNameRequired", comment: ""))
+            self.showAlert(typeAlert:.error, message:NSLocalizedString("lastNameRequired", comment: ""))
             return nil
         }
         
         guard (tfEmail.text != nil) && !(tfEmail.text?.isBlank)!  else {
-            self.showMessagePrompt(NSLocalizedString("emailRequired", comment: ""))
+            self.showAlert(typeAlert:.error, message:NSLocalizedString("emailRequired", comment: ""))
             return nil
         }
         
         if !tfEmail.text!.isEmail {
-            self.showMessagePrompt(NSLocalizedString("errorInvalidEmail", comment: ""))
+            self.showAlert(typeAlert:.error, message:NSLocalizedString("errorInvalidEmail", comment: ""))
             return nil
         }
         
+        guard self.birthDay != nil  else {
+            self.showAlert(typeAlert:.error, message:NSLocalizedString("birthdayRequired", comment: ""))
+            return nil
+        }
+        
+        /*if !self.birthDay.isValidAge {
+            self.showAlert(typeAlert:.error, message:NSLocalizedString("invalidAge", comment: ""))
+            return nil
+        }*/
+        
         guard (tfPassword.text != nil) && !(tfPassword.text?.isBlank)! else{
-            self.showMessagePrompt(NSLocalizedString("passRequired", comment: ""))
+            self.showAlert(typeAlert:.error, message:NSLocalizedString("passRequired", comment: ""))
             return nil
         }
         
         if !tfPassword.text!.isValidPassword {
-            self.showMessagePrompt(NSLocalizedString("errorWrongPassword", comment: ""))
+            self.showAlert(typeAlert:.error, message:NSLocalizedString("errorWrongPassword", comment: ""))
             return nil
         }
         
         guard (tfPassword2.text != nil) && !(tfPassword2.text?.isBlank)! else{
-            self.showMessagePrompt(NSLocalizedString("pass2Required", comment: ""))
+            self.showAlert(typeAlert:.error, message:NSLocalizedString("pass2Required", comment: ""))
             return nil
         }
         
         if tfPassword2.text != tfPassword.text {
-            self.showMessagePrompt(NSLocalizedString("passwordDifferent", comment: ""))
+            self.showAlert(typeAlert:.error, message:NSLocalizedString("passwordDifferent", comment: ""))
             return nil
         }
         
-        let userData:JSONStandard = [K.FB.user.name:tfName.text!.capitalized as AnyObject, K.FB.user.lastName:tfLastName.text!.capitalized as AnyObject, K.FB.user.provider: K.provider.email as AnyObject, K.FB.user.email: tfEmail.text! as AnyObject]
+        let dateFormatter: DateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        let selectedDate: String = dateFormatter.string(from: self.birthDay)
+        
+        let userData:JSONStandard = [K.FB.user.name:tfName.text!.capitalized as AnyObject, K.FB.user.lastName:tfLastName.text!.capitalized as AnyObject, K.FB.user.provider: K.provider.email as AnyObject, K.FB.user.email: tfEmail.text! as AnyObject, K.FB.user.birthday: selectedDate as AnyObject]
         
         return userData
     }

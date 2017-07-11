@@ -71,7 +71,7 @@ class VOMyProfileVC: VOBaseVC {
         VOFBDataService.shared.deleteMyUser { (error) in
             self.btnDelete.hideSpinner()
             if let error = error {
-                self.showMessagePrompt(error)
+                self.showAlert(typeAlert:.error, message:error)
             }else{
                 keychain.clear()
                 appDel.setInitRoot()

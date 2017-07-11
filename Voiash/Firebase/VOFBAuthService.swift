@@ -18,6 +18,9 @@ class VOFBAuthService: NSObject {
         return _shared
     }
     
+    var currentCredential:AuthCredential?
+    
+    
     /**
      Make a login anonymous.
      */
@@ -44,6 +47,7 @@ class VOFBAuthService: NSObject {
                 self.handleFirebaseError(error! as NSError, onComplete: onComplete)
             } else {
                 print ("BSC:: successfully auth Firebase")
+                self.currentCredential = credential
                 onComplete?(nil,user)
             }
         })
@@ -62,7 +66,8 @@ class VOFBAuthService: NSObject {
                 self.handleFirebaseError(error as NSError, onComplete: onComplete)
             }else{
                 if user!.isEmailVerified {
-                     onComplete?(nil,user)
+                    self.currentCredential = EmailAuthProvider.credential(withEmail: email, password: password)
+                    onComplete?(nil,user)
                 }else{
                     onComplete?(NSLocalizedString("errorEmailWithoutConfirmation", comment: ""),nil)
                 }
@@ -191,6 +196,7 @@ class VOFBAuthService: NSObject {
     func signOut(){
         try! Auth.auth().signOut()
         keychain.clear()
+        self.currentCredential = nil
         VOFBDataService.shared.myUser = nil
     }
 }

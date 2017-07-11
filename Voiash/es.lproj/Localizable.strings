@@ -15,12 +15,18 @@
 "errorEmailWithoutConfirmation" = "Error, necesita confirmar su email.";
 "errorTitle" = "Error";
 
+//ALERTS
+"successTitle" = "Éxito";
+"warningTitle" = "Cuidado";
+"warningCamera" = "No tiene cámara";
+
 //SIGNUP
 "nameRequired" = "Nombre requerdio";
 "lastNameRequired" = "Apellido requerido";
 "emailRequired" = "Email requerido";
 "birthdayRequired" = "Fecha de nacimiento requerida";
 "passRequired" = "Password requerido";
+"invalidAge" = "Fecha de nacimiento inválida, debes de ser mayor de edad";
 "pass2Required" = "Password2 requerido";
 "passwordDifferent" = "La confirmación del password no es la misma";
 "emailNotVerified" = "Lo sentimos, su email no ha sido verificado. ¿Desea que le enviemos otro email a %@?";

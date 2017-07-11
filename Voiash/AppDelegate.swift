@@ -109,7 +109,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // [END_EXCLUDE]
         if let error = error {
             // [START_EXCLUDE]
-            self.currentVC!.showMessagePrompt(error.localizedDescription)
+            self.currentVC!.showAlert(typeAlert:.error, message:error.localizedDescription)
+            //self.currentVC!.showMessagePrompt(error.localizedDescription)
             // [END_EXCLUDE]
             return
         } 
@@ -125,13 +126,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 if let error = error {
                    // controller.hideSpinner({
                         controller.vBlur.isHidden = true
-                        controller.showMessagePrompt(error)
+                        controller.showAlert(typeAlert:.error, message:error)
                    // })
                 }else{
+                    VOFBAuthService.shared.currentCredential = credential
+                    
                     VOFBDataService.shared.getUser(uid: (Auth.auth().currentUser?.uid)!, onComplete: { (user) in
                         if user == nil {
                             if (GIDSignIn.sharedInstance().currentUser != nil) {
-                                let urlAvatar = GIDSignIn.sharedInstance().currentUser.profile.imageURL(withDimension: 400).absoluteString
+                                let urlAvatar = GIDSignIn.sharedInstance().currentUser.profile.imageURL(withDimension: 100).absoluteString
                                 let email = GIDSignIn.sharedInstance().currentUser.profile.email
                                 let name =  GIDSignIn.sharedInstance().currentUser.profile.givenName
                                 let lastName =  GIDSignIn.sharedInstance().currentUser.profile.familyName
@@ -145,7 +148,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                                     }else{
                                         controller.vBlur.isHidden = true
                                         VOFBAuthService.shared.signOut()
-                                        controller.showMessagePrompt(NSLocalizedString("errorGeneral", comment: ""))
+                                        controller.showAlert(typeAlert:.error, message:(NSLocalizedString("errorGeneral", comment: "")))
                                     }
                                 })
                             }

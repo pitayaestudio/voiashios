@@ -51,9 +51,9 @@ class VOConfirmEmailVC: UIViewController {
         VOFBAuthService.shared.sendEmailConfirmation( { (error) in
             self.btnResend.hideSpinner()
             if let error = error {
-                self.showMessagePrompt(error)
+                self.showAlert(typeAlert:.error, message:error)
             }else{
-                self.showMessagePrompt(NSLocalizedString("mesConfirmEmail", comment: ""))
+                self.showAlert(typeAlert:.error, message:NSLocalizedString("mesConfirmEmail", comment: ""))
             }
         })
     }

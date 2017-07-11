@@ -15,6 +15,7 @@
 		C403DD7D1F0FCC2500B70F04 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C403DD7B1F0FC9F400B70F04 /* UIButton+Extension.swift */; };
 		C465181E1F13BD50000E7C03 /* VOEditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C465181D1F13BD50000E7C03 /* VOEditProfileVC.swift */; };
 		C46518211F1526B7000E7C03 /* VOBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46518201F1526B7000E7C03 /* VOBaseVC.swift */; };
+		C47E1ECE1F153FEA003975C1 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47E1ECD1F153FEA003975C1 /* UIViewController+Extension.swift */; };
 		C4AC16D21F0AE054007ECB38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AC16D11F0AE054007ECB38 /* AppDelegate.swift */; };
 		C4AC16D71F0AE054007ECB38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4AC16D51F0AE054007ECB38 /* Main.storyboard */; };
 		C4AC16D91F0AE054007ECB38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4AC16D81F0AE054007ECB38 /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		C403DD7B1F0FC9F400B70F04 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton+Extension.swift"; path = "Utils/UIButton+Extension.swift"; sourceTree = "<group>"; };
 		C465181D1F13BD50000E7C03 /* VOEditProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOEditProfileVC.swift; path = Controller/VOEditProfileVC.swift; sourceTree = "<group>"; };
 		C46518201F1526B7000E7C03 /* VOBaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOBaseVC.swift; path = Controller/VOBaseVC.swift; sourceTree = "<group>"; };
+		C47E1ECD1F153FEA003975C1 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Extension.swift"; path = "Utils/UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		C4AC16CE1F0AE054007ECB38 /* Voiash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Voiash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4AC16D11F0AE054007ECB38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4AC16D61F0AE054007ECB38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			children = (
 				C4EEE17D1F0C1BDC00B1177B /* Extensions.swift */,
 				C403DD7B1F0FC9F400B70F04 /* UIButton+Extension.swift */,
+				C47E1ECD1F153FEA003975C1 /* UIViewController+Extension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -330,7 +333,7 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = KYGAYFGEX5;
 						LastSwiftMigration = 0830;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -426,6 +429,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C47E1ECE1F153FEA003975C1 /* UIViewController+Extension.swift in Sources */,
 				4B9304951F0B14AE00721977 /* VOFBAuthService.swift in Sources */,
 				C465181E1F13BD50000E7C03 /* VOEditProfileVC.swift in Sources */,
 				C403DD7D1F0FCC2500B70F04 /* UIButton+Extension.swift in Sources */,
@@ -587,11 +591,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = KYGAYFGEX5;
 				INFOPLIST_FILE = Voiash/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pitaya.Voiash;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "4d73d208-2f9b-44d3-85cc-410168353471";
+				PROVISIONING_PROFILE_SPECIFIER = "XC iOS Ad Hoc: com.*";
 				SWIFT_OBJC_BRIDGING_HEADER = "Voiash/Voiash-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -604,11 +611,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = KYGAYFGEX5;
 				INFOPLIST_FILE = Voiash/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pitaya.Voiash;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "4d73d208-2f9b-44d3-85cc-410168353471";
+				PROVISIONING_PROFILE_SPECIFIER = "XC iOS Ad Hoc: com.*";
 				SWIFT_OBJC_BRIDGING_HEADER = "Voiash/Voiash-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};

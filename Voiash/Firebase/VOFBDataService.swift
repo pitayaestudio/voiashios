@@ -77,26 +77,30 @@ class VOFBDataService {
         
         let userId = self.myUser!.userKey!
         if let data = data {
-            
-            let storage = mainStorageRef.child(userId)
-            let snapName = "\(NSUUID().uuidString).jpg"
+            let storage = imagesStorageRef.child(userId).child(K.FB.urlProfile)
+            let snapName = "\(K.FB.user.nameProfilePicture).jpg"
             
             let ref = storage.child(snapName)
-            _ = ref.putData(data, metadata: nil, completion: { (meta, err) in
-                
-                if err != nil {
-                    onComplete(err?.localizedDescription)
-                }else{
-                    let downloadURL = meta!.downloadURL()?.absoluteString
-                    newData[K.FB.user.urlAvatar] = downloadURL!
-                    
-                    self.usersRef.child(userId).updateChildValues(newData)
-                    self.myUser!.birthday = age
-                    self.myUser!.name = name
-                    self.myUser!.lastName = lastName
-                    self.myUser!.urlAvatar = meta!.downloadURL()!
-                    onComplete(nil)
+            
+            ref.delete(completion: { (error) in
+                if error != nil {
+                    print("======> error delete \(userId)/\(K.FB.user.nameProfilePicture):: \(error.debugDescription)")
                 }
+                _ = ref.putData(data, metadata: nil, completion: { (meta, err) in
+                    if err != nil {
+                        onComplete(err?.localizedDescription)
+                    }else{
+                        let downloadURL = meta!.downloadURL()?.absoluteString
+                        newData[K.FB.user.urlAvatar] = downloadURL!
+                        
+                        self.usersRef.child(userId).updateChildValues(newData)
+                        self.myUser!.birthday = age
+                        self.myUser!.name = name
+                        self.myUser!.lastName = lastName
+                        self.myUser!.urlAvatar = meta!.downloadURL()!
+                        onComplete(nil)
+                    }
+                })
             })
         }else{
             self.usersRef.child(userId).updateChildValues(newData)
@@ -120,14 +124,27 @@ class VOFBDataService {
                     if error != nil {
                         print(error.debugDescription)
                     }
-                    Auth.auth().currentUser?.delete { error in
-                        if error != nil {
-                            onComplete(error.debugDescription)
-                        } else {
+                    
+                    let user = Auth.auth().currentUser
+                    user?.reauthenticate(with: VOFBAuthService.shared.currentCredential!) { error in
+                        if let error = error {
+                            print("========> error reauth")
                             self.myUser = nil
                             onComplete(nil)
+                        } else {
+                            Auth.auth().currentUser?.delete { error in
+                                if error != nil {
+                                    onComplete(error.debugDescription)
+                                } else {
+                                    self.myUser = nil
+                                    VOFBAuthService.shared.currentCredential = nil
+                                    onComplete(nil)
+                                }
+                            }
                         }
                     }
+                    
+                    
                 })
             }
         }

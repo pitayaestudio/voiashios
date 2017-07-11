@@ -33,7 +33,7 @@ class VOFBUser: NSObject {
     var age:String? {
         if self.birthday != "" {
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "mm/dd/yyyy"
+            dateFormatter.dateFormat = "MM/dd/yyyy"
             let date = dateFormatter.date(from: self.birthday!)
             
             return "\(date!.age) \(NSLocalizedString("yearsAge", comment: ""))"

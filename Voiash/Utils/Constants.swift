@@ -19,7 +19,7 @@ var nodeLanguage = ""
 struct K {
     struct FB {
         static let urlStorage = "gs://voiash-794d0.appspot.com"
-        
+        static let urlProfile = "profile"
         static let kindDB = "devDB"
         
         struct user {
@@ -33,6 +33,7 @@ struct K {
             static let birthday = "birthday"
             static let urlAvatar = "profilePicture"
             static let pushToken = "pushToken"
+            static let nameProfilePicture = "profile_picture"
         }
     }
     
@@ -53,6 +54,10 @@ struct K {
     }
     struct notifications {
         static let reloadEmail = "reloadEmailConfirmation"
+    }
+    struct ageValidation {
+        static let maximum: Date = Calendar.current.date(byAdding: .year, value: -18, to: Date())!;
+        static let minimum: Date = Calendar.current.date(byAdding: .year, value: -100, to: Date())!;
     }
     
 }
