@@ -68,9 +68,9 @@ class VOSignInVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
                 print("BSC:: User cancelled facebook auth" )
             } else {
                 print("BSC:: Successfully auth FaceBook")
-                let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+                let fbCredential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
                 appDel.isFBActive = true
-                VOFBAuthService.shared.loginWithCredential(credential, onComplete: { (errMsg, data) in
+                VOFBAuthService.shared.loginWithCredential(fbCredential , onComplete: { (errMsg, data) in
                     if errMsg == nil {
                         if((FBSDKAccessToken.current()) != nil) {
                             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email, birthday"]).start(completionHandler: { (connection, result, error) -> Void in

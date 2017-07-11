@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VODiscoverListVC: UIViewController {
+class VODiscoverListVC: VOBaseVC {
 
     @IBOutlet weak var tableView:UITableView!
     

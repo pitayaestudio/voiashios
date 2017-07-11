@@ -77,11 +77,13 @@ class VOFBDataService {
         
         let userId = self.myUser!.userKey!
         if let data = data {
+            
             let storage = mainStorageRef.child(userId)
             let snapName = "\(NSUUID().uuidString).jpg"
             
             let ref = storage.child(snapName)
             _ = ref.putData(data, metadata: nil, completion: { (meta, err) in
+                
                 if err != nil {
                     onComplete(err?.localizedDescription)
                 }else{
@@ -118,7 +120,6 @@ class VOFBDataService {
                     if error != nil {
                         print(error.debugDescription)
                     }
-                    
                     Auth.auth().currentUser?.delete { error in
                         if error != nil {
                             onComplete(error.debugDescription)

@@ -10,7 +10,7 @@ import UIKit
 import Kingfisher
 import QuartzCore
 
-class VOMyProfileVC: UIViewController {
+class VOMyProfileVC: VOBaseVC {
 
     @IBOutlet weak var lblName:UILabel!
     @IBOutlet weak var lblAge:UILabel!
@@ -42,8 +42,10 @@ class VOMyProfileVC: UIViewController {
             lblAge.text = user.age
             
             if let url = user.urlAvatar {
-                imgAvatar.kf.setImage(with: url)
-                imgBackground.kf.setImage(with: url)
+                DispatchQueue.main.async() {
+                    self.imgAvatar.kf.setImage(with: url)
+                    self.imgBackground.kf.setImage(with: url)
+                }
             }
             btnDelete.isHidden = false
         }else{
@@ -65,6 +67,7 @@ class VOMyProfileVC: UIViewController {
     
     @IBAction func deleteBtnPressed(){
         btnDelete.showSpinner()
+        
         VOFBDataService.shared.deleteMyUser { (error) in
             self.btnDelete.hideSpinner()
             if let error = error {
@@ -74,7 +77,6 @@ class VOMyProfileVC: UIViewController {
                 appDel.setInitRoot()
             }
         }
-        
     }
 
     @IBAction func imageTapped(_ sender: UITapGestureRecognizer) {

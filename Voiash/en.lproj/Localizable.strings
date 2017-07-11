@@ -20,6 +20,7 @@
 "lastNameRequired" = "Last name is required";
 "emailRequired" = "Email is required";
 "passRequired" = "Password is required";
+"birthdayRequired" = "Birthday is required";
 "pass2Required" = "Password2 is required";
 "passwordDifferent" = "The confirmation password is not the same";
 "emailNotVerified" = "Sorry. Your email address has not yet been verified. Do you want us to send another verification email to %@?";

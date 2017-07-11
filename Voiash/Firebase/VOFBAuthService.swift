@@ -62,7 +62,7 @@ class VOFBAuthService: NSObject {
                 self.handleFirebaseError(error as NSError, onComplete: onComplete)
             }else{
                 if user!.isEmailVerified {
-                    onComplete?(nil,user)
+                     onComplete?(nil,user)
                 }else{
                     onComplete?(NSLocalizedString("errorEmailWithoutConfirmation", comment: ""),nil)
                 }

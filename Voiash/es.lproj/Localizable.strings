@@ -19,6 +19,7 @@
 "nameRequired" = "Nombre requerdio";
 "lastNameRequired" = "Apellido requerido";
 "emailRequired" = "Email requerido";
+"birthdayRequired" = "Fecha de nacimiento requerida";
 "passRequired" = "Password requerido";
 "pass2Required" = "Password2 requerido";
 "passwordDifferent" = "La confirmación del password no es la misma";

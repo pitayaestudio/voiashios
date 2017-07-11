@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VOProfileVC: UIViewController {
+class VOProfileVC: VOBaseVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
