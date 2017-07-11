@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '1194E0002CACB334BE98627D3BBD1B5E'
-               BlueprintName = 'SwiftyJSON'
+               BlueprintIdentifier = '57E38E67ECA53FCCDD5621A83F4C6496'
+               BlueprintName = 'GBHFacebookImagePicker'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SwiftyJSON.framework'>
+               BuildableName = 'GBHFacebookImagePicker.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

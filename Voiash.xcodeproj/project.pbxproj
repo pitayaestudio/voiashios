@@ -8,14 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		4B2513C91F11CB9E00C8F2BC /* FlightCloudsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2513C81F11CB9E00C8F2BC /* FlightCloudsView.swift */; };
-		4B2513CB1F1477DB00C8F2BC /* VOAlbumFacebookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2513CA1F1477DB00C8F2BC /* VOAlbumFacebookVC.swift */; };
-		4B2513CE1F147A1000C8F2BC /* VOFacebookPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2513CD1F147A1000C8F2BC /* VOFacebookPhotoCell.swift */; };
 		4B9304951F0B14AE00721977 /* VOFBAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9304941F0B14AE00721977 /* VOFBAuthService.swift */; };
 		4B9304981F0B39C800721977 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9304971F0B39C800721977 /* Constants.swift */; };
 		4B93049B1F0B3CB200721977 /* VOFBDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B93049A1F0B3CB200721977 /* VOFBDataService.swift */; };
 		4B93049D1F0B425A00721977 /* VOSignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B93049C1F0B425A00721977 /* VOSignInVC.swift */; };
 		C403DD7D1F0FCC2500B70F04 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C403DD7B1F0FC9F400B70F04 /* UIButton+Extension.swift */; };
 		C465181E1F13BD50000E7C03 /* VOEditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C465181D1F13BD50000E7C03 /* VOEditProfileVC.swift */; };
+		C46518211F1526B7000E7C03 /* VOBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46518201F1526B7000E7C03 /* VOBaseVC.swift */; };
 		C4AC16D21F0AE054007ECB38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AC16D11F0AE054007ECB38 /* AppDelegate.swift */; };
 		C4AC16D71F0AE054007ECB38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4AC16D51F0AE054007ECB38 /* Main.storyboard */; };
 		C4AC16D91F0AE054007ECB38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4AC16D81F0AE054007ECB38 /* Assets.xcassets */; };
@@ -46,8 +45,6 @@
 
 /* Begin PBXFileReference section */
 		4B2513C81F11CB9E00C8F2BC /* FlightCloudsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlightCloudsView.swift; path = Animations/FlightCloudsView.swift; sourceTree = "<group>"; };
-		4B2513CA1F1477DB00C8F2BC /* VOAlbumFacebookVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOAlbumFacebookVC.swift; path = Controller/VOAlbumFacebookVC.swift; sourceTree = "<group>"; };
-		4B2513CD1F147A1000C8F2BC /* VOFacebookPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOFacebookPhotoCell.swift; path = View/VOFacebookPhotoCell.swift; sourceTree = "<group>"; };
 		4B2513CF1F14879400C8F2BC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		4B2513D01F14879400C8F2BC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		4B2513D11F14879400C8F2BC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -60,6 +57,7 @@
 		C341E08A4A594C5BF0E74433 /* Pods-Voiash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voiash.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Voiash/Pods-Voiash.debug.xcconfig"; sourceTree = "<group>"; };
 		C403DD7B1F0FC9F400B70F04 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton+Extension.swift"; path = "Utils/UIButton+Extension.swift"; sourceTree = "<group>"; };
 		C465181D1F13BD50000E7C03 /* VOEditProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOEditProfileVC.swift; path = Controller/VOEditProfileVC.swift; sourceTree = "<group>"; };
+		C46518201F1526B7000E7C03 /* VOBaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOBaseVC.swift; path = Controller/VOBaseVC.swift; sourceTree = "<group>"; };
 		C4AC16CE1F0AE054007ECB38 /* Voiash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Voiash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4AC16D11F0AE054007ECB38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4AC16D61F0AE054007ECB38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -121,14 +119,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4B2513CC1F14794100C8F2BC /* Album Cell */ = {
-			isa = PBXGroup;
-			children = (
-				4B2513CD1F147A1000C8F2BC /* VOFacebookPhotoCell.swift */,
-			);
-			name = "Album Cell";
-			sourceTree = "<group>";
-		};
 		4B9304961F0B14B200721977 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +139,7 @@
 		4B93049E1F0B425F00721977 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C465181F1F152699000E7C03 /* BaseVC */,
 				C4ED03271F0EDE8B00ADD0A6 /* Profile */,
 				C4EEE1991F0D6E8300B1177B /* Discover */,
 				C4CFD0051F0C0EF20086D498 /* Welcome SignIn */,
@@ -163,6 +154,14 @@
 				C403DD7B1F0FC9F400B70F04 /* UIButton+Extension.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		C465181F1F152699000E7C03 /* BaseVC */ = {
+			isa = PBXGroup;
+			children = (
+				C46518201F1526B7000E7C03 /* VOBaseVC.swift */,
+			);
+			name = BaseVC;
 			sourceTree = "<group>";
 		};
 		C4AC16C51F0AE054007ECB38 = {
@@ -206,7 +205,6 @@
 		C4CFCFFE1F0BC9E90086D498 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4B2513CC1F14794100C8F2BC /* Album Cell */,
 				C4CFCFFC1F0BC9E50086D498 /* VORoundButton.swift */,
 				C4EEE18A1F0C3B7600B1177B /* UIViewController+Alerts.h */,
 				C4EEE18B1F0C3B7600B1177B /* UIViewController+Alerts.m */,
@@ -251,7 +249,6 @@
 				C4ED03281F0EDEB400ADD0A6 /* VOProfileVC.swift */,
 				C4ED032A1F0EDED800ADD0A6 /* VOMyProfileVC.swift */,
 				C465181D1F13BD50000E7C03 /* VOEditProfileVC.swift */,
-				4B2513CA1F1477DB00C8F2BC /* VOAlbumFacebookVC.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -430,7 +427,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B9304951F0B14AE00721977 /* VOFBAuthService.swift in Sources */,
-				4B2513CB1F1477DB00C8F2BC /* VOAlbumFacebookVC.swift in Sources */,
 				C465181E1F13BD50000E7C03 /* VOEditProfileVC.swift in Sources */,
 				C403DD7D1F0FCC2500B70F04 /* UIButton+Extension.swift in Sources */,
 				C4EEE19D1F0D726000B1177B /* VODiscoverTypeCell.swift in Sources */,
@@ -438,6 +434,7 @@
 				C4ED03291F0EDEB400ADD0A6 /* VOProfileVC.swift in Sources */,
 				C4DD28111F10174100F9AAF2 /* QCMethod.swift in Sources */,
 				C4CFD0071F0C12F30086D498 /* VOConfirmEmailVC.swift in Sources */,
+				C46518211F1526B7000E7C03 /* VOBaseVC.swift in Sources */,
 				C4EEE19B1F0D71DC00B1177B /* VODiscoverListVC.swift in Sources */,
 				C4ED03261F0E94E000ADD0A6 /* VOFBUser.swift in Sources */,
 				4B2513C91F11CB9E00C8F2BC /* FlightCloudsView.swift in Sources */,
@@ -450,7 +447,6 @@
 				C4ED032B1F0EDED800ADD0A6 /* VOMyProfileVC.swift in Sources */,
 				C4EEE1801F0C1F1300B1177B /* VOSignUpVC.swift in Sources */,
 				C4CFD0041F0C0EE40086D498 /* VOForgotPasswordVC.swift in Sources */,
-				4B2513CE1F147A1000C8F2BC /* VOFacebookPhotoCell.swift in Sources */,
 				4B93049B1F0B3CB200721977 /* VOFBDataService.swift in Sources */,
 				C4CFD0001F0BFA8A0086D498 /* VOInitialVC.swift in Sources */,
 			);
