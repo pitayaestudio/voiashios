@@ -92,6 +92,9 @@
 /* Class = "UITextField"; placeholder = "Apellido"; ObjectID = "eY7-Un-7wz"; */
 "eY7-Un-7wz.placeholder" = "Last Name";
 
+/* Class = "UITextField"; placeholder = "Fecha de Nacimiento"; ObjectID = "Ttf-X3-3B9"; */
+"Ttf-X3-3B9.placeholder" = "Birthday";
+
 /* Class = "UIViewController"; title = "Crear cuenta"; ObjectID = "fGi-18-7Kb"; */
 "fGi-18-7Kb.title" = "Create account";
 
@@ -108,10 +111,10 @@
 "ksN-w3-Ne4.normalTitle" = "Did you forget your password?";
 
 /* Class = "UIButton"; normalTitle = "Cancelar"; ObjectID = "kw1-dw-0hx"; */
-"kw1-dw-0hx.normalTitle" = "Cancela";
+"kw1-dw-0hx.normalTitle" = "Cancel";
 
 /* Class = "UITextField"; placeholder = "Fecha de Nacimiento"; ObjectID = "mlk-Np-NGJ"; */
-"mlk-Np-NGJ.placeholder" = "Birthdate";
+"mlk-Np-NGJ.placeholder" = "Birthday";
 
 /* Class = "UIButton"; normalTitle = "Call"; ObjectID = "n1L-CH-rNy"; */
 "n1L-CH-rNy.normalTitle" = "Call";

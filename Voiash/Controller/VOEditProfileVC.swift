@@ -9,6 +9,7 @@
 import UIKit
 import TextFieldEffects
 import GBHFacebookImagePicker
+import FBSDKLoginKit
 
 class VOEditProfileVC: VOBaseVC {
 
@@ -22,6 +23,7 @@ class VOEditProfileVC: VOBaseVC {
     var birthDay:Date!
     var imagePicker: UIImagePickerController!
     var imgData:Data?
+    var facebookLogin:FBSDKLoginManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +70,7 @@ class VOEditProfileVC: VOBaseVC {
         }
     }
     
-    //MARK: - FBPicker
+    //MARK: - Facebook
     func setFBPicker(){
         // Init picker
         let picker = GBHFacebookImagePicker()
@@ -83,6 +85,27 @@ class VOEditProfileVC: VOBaseVC {
         // Present picker
         picker.presentFacebookAlbumImagePicker(from: self,
                                                delegate: self)
+    }
+    
+    func loginToFacebook(){
+        self.facebookLogin = FBSDKLoginManager()
+        self.vBlur.isHidden = false
+        appDel.isFBActive = true
+        self.facebookLogin?.logIn(withReadPermissions: ["public_profile", "email", "user_birthday", "user_photos"], from: self) { (result, error) in
+            appDel.isFBActive = false
+            self.vBlur.isHidden = true
+            if error != nil {
+                print("BSC:: " + error.debugDescription)
+                self.facebookLogin?.logOut()
+            } else if result?.isCancelled == true {
+                print("BSC:: User cancelled facebook auth" )
+                self.facebookLogin?.logOut()
+            } else {
+                print("BSC:: Successfully auth FaceBook")
+                self.setFBPicker()
+                //FBSDKAccessToken.current().tokenString
+            }
+        }
     }
     
     //MARK: - Image
@@ -174,12 +197,15 @@ class VOEditProfileVC: VOBaseVC {
         alert.addAction(UIAlertAction(title: NSLocalizedString("titGallery", comment: ""), style: .default, handler: { _ in
             self.openGallary()
         }))
-        
-        if VOFBDataService.shared.myUser!.provider == K.provider.fb {
-            alert.addAction(UIAlertAction(title: NSLocalizedString("titFacebook", comment: ""), style: .default, handler: { _ in
+      
+        alert.addAction(UIAlertAction(title: NSLocalizedString("titFacebook", comment: ""), style: .default, handler: { _ in
+           // if VOFBDataService.shared.myUser!.provider == K.provider.fb || FBSDKAccessToken.current() != nil{
+            if FBSDKAccessToken.current() != nil {
                 self.setFBPicker()
-            }))
-        }
+            }else{
+                self.loginToFacebook()
+            }
+        }))
         
         alert.addAction(UIAlertAction.init(title: NSLocalizedString("actCancel", comment: ""), style: .cancel, handler: nil))
         

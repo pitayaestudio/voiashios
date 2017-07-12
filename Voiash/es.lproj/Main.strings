@@ -62,6 +62,9 @@
 /* Class = "UITextField"; placeholder = "Apellido"; ObjectID = "PCY-Jd-Sbn"; */
 "PCY-Jd-Sbn.placeholder" = "Apellido";
 
+/* Class = "UITextField"; placeholder = "Fecha de Nacimiento"; ObjectID = "Ttf-X3-3B9"; */
+"Ttf-X3-3B9.placeholder" = "Fecha de Nacimiento";
+
 /* Class = "UITextField"; placeholder = "Email"; ObjectID = "QGE-hD-5oC"; */
 "QGE-hD-5oC.placeholder" = "Email";
 

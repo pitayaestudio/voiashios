@@ -57,6 +57,7 @@
 		6117376A61DC3EE56084EA46 /* Pods_Voiash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Voiash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C341E08A4A594C5BF0E74433 /* Pods-Voiash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voiash.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Voiash/Pods-Voiash.debug.xcconfig"; sourceTree = "<group>"; };
 		C403DD7B1F0FC9F400B70F04 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton+Extension.swift"; path = "Utils/UIButton+Extension.swift"; sourceTree = "<group>"; };
+		C4313AA61F167DA00092D156 /* Voiash.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Voiash.entitlements; sourceTree = "<group>"; };
 		C465181D1F13BD50000E7C03 /* VOEditProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOEditProfileVC.swift; path = Controller/VOEditProfileVC.swift; sourceTree = "<group>"; };
 		C46518201F1526B7000E7C03 /* VOBaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOBaseVC.swift; path = Controller/VOBaseVC.swift; sourceTree = "<group>"; };
 		C47E1ECD1F153FEA003975C1 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Extension.swift"; path = "Utils/UIViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -188,6 +189,7 @@
 		C4AC16D01F0AE054007ECB38 /* Voiash */ = {
 			isa = PBXGroup;
 			children = (
+				C4313AA61F167DA00092D156 /* Voiash.entitlements */,
 				C4DD280D1F10170F00F9AAF2 /* Animations */,
 				C403DD7A1F0FC9DF00B70F04 /* Extensions */,
 				C4ED03241F0E94C100ADD0A6 /* Model */,
@@ -334,6 +336,11 @@
 						DevelopmentTeam = KYGAYFGEX5;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -591,6 +598,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Voiash/Voiash.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = KYGAYFGEX5;
 				INFOPLIST_FILE = Voiash/Info.plist;
@@ -611,6 +619,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Voiash/Voiash.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = KYGAYFGEX5;
 				INFOPLIST_FILE = Voiash/Info.plist;

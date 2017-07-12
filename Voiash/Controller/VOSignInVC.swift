@@ -55,7 +55,7 @@ class VOSignInVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
         let facebookLogin = FBSDKLoginManager()
         self.vBlur.isHidden = false
         
-        facebookLogin.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
+        facebookLogin.logIn(withReadPermissions: ["public_profile", "email", "user_birthday", "user_photos"], from: self) { (result, error) in
             if error != nil {
                 self.vBlur.isHidden = true
                 appDel.isFBActive = true

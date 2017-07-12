@@ -34,7 +34,8 @@ class VOFBDataService {
     }
     
     var imagesStorageRef: StorageReference {
-        return mainStorageRef.child(K.FB.user.ref)
+        let folder = "\(K.FB.prefixStorage)\(K.FB.user.ref)"
+        return mainStorageRef.child(folder)
     }
     
     //MARK: - User

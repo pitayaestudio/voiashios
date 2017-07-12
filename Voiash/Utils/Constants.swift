@@ -21,6 +21,7 @@ struct K {
         static let urlStorage = "gs://voiash-794d0.appspot.com"
         static let urlProfile = "profile"
         static let kindDB = "devDB"
+        static let prefixStorage = "dev_"
         
         struct user {
             static let ref = "users"
@@ -33,6 +34,7 @@ struct K {
             static let birthday = "birthday"
             static let urlAvatar = "profilePicture"
             static let pushToken = "pushToken"
+            static let fbToken = "fbToken"
             static let nameProfilePicture = "profile_picture"
         }
     }
