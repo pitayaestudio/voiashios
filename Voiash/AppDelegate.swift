@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     var currentVC: VOSignInVC?
     var reloadUser = false
     var isFBActive = false
+    var isAnonymous = false
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()

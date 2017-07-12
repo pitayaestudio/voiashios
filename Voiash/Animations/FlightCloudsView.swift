@@ -1,7 +1,7 @@
 //
 //  FlightCloudsView.swift
 //
-//  Code generated using QuartzCode 1.57.0 on 07/07/17.
+//  Code generated using QuartzCode 1.57.0 on 7/12/17.
 //  www.quartzcodeapp.com
 //
 
@@ -32,18 +32,18 @@ class FlightCloudsView: UIView, CAAnimationDelegate {
         setupLayers()
     }
     
-    var flightCloudsAnimProgress: CGFloat = 0{
+    var flightCloudsAllScreenAnimProgress: CGFloat = 0{
         didSet{
             if(!self.animationAdded){
                 removeAllAnimations()
-                addFlightCloudsAnimation()
+                addFlightCloudsAllScreenAnimation()
                 self.animationAdded = true
                 layer.speed = 0
                 layer.timeOffset = 0
             }
             else{
                 let totalDuration : CGFloat = 60
-                let offset = flightCloudsAnimProgress * totalDuration
+                let offset = flightCloudsAllScreenAnimProgress * totalDuration
                 layer.timeOffset = CFTimeInterval(offset)
             }
         }
@@ -66,6 +66,8 @@ class FlightCloudsView: UIView, CAAnimationDelegate {
     }
     
     func setupLayers(){
+        self.backgroundColor = UIColor(red:0.129, green: 0.129, blue:0.129, alpha:0)
+        
         let Group3 = CALayer()
         self.layer.addSublayer(Group3)
         
@@ -75,10 +77,10 @@ class FlightCloudsView: UIView, CAAnimationDelegate {
         Group.setValue(-360 * CGFloat.pi/180, forKeyPath:"transform.rotation")
         
         layers["Group"] = Group
-        let nube1 = CALayer()
-        Group.addSublayer(nube1)
-        nube1.contents = UIImage(named:"nube1")?.cgImage
-        layers["nube1"] = nube1
+        let nube = CALayer()
+        Group.addSublayer(nube)
+        nube.contents = UIImage(named:"nube1")?.cgImage
+        layers["nube"] = nube
         let nube2 = CALayer()
         Group.addSublayer(nube2)
         nube2.contents = UIImage(named:"nube2")?.cgImage
@@ -145,6 +147,16 @@ class FlightCloudsView: UIView, CAAnimationDelegate {
         self.layer.addSublayer(login_bg_avion)
         login_bg_avion.contents = UIImage(named:"login_bg_avion")?.cgImage
         layers["login_bg_avion"] = login_bg_avion
+        
+        let logo_Voiash_sin_fondo_baja = CALayer()
+        self.layer.addSublayer(logo_Voiash_sin_fondo_baja)
+        logo_Voiash_sin_fondo_baja.contents = UIImage(named:"logo_Voiash_sin_fondo_baja")?.cgImage
+        layers["logo_Voiash_sin_fondo_baja"] = logo_Voiash_sin_fondo_baja
+        
+        let path2 = CAShapeLayer()
+        self.layer.addSublayer(path2)
+        path2.fillColor = nil
+        layers["path2"] = path2
         setupLayerFrames()
     }
     
@@ -153,7 +165,7 @@ class FlightCloudsView: UIView, CAAnimationDelegate {
         CATransaction.setDisableActions(true)
         
         if let Group3 : CALayer = layers["Group3"] as? CALayer{
-            Group3.frame = CGRect(x: -1.782 * Group3.superlayer!.bounds.width, y: -0.11957 * Group3.superlayer!.bounds.height, width: 2.86725 * Group3.superlayer!.bounds.width, height: 1.11957 * Group3.superlayer!.bounds.height)
+            Group3.frame = CGRect(x: -1.782 * Group3.superlayer!.bounds.width, y: 0.51415 * Group3.superlayer!.bounds.height, width: 2.86725 * Group3.superlayer!.bounds.width, height: 0.48585 * Group3.superlayer!.bounds.height)
         }
         
         if let Group : CALayer = layers["Group"] as? CALayer{
@@ -162,8 +174,8 @@ class FlightCloudsView: UIView, CAAnimationDelegate {
             Group.setValue(-360 * CGFloat.pi/180, forKeyPath:"transform.rotation")
         }
         
-        if let nube1 : CALayer = layers["nube1"] as? CALayer{
-            nube1.frame = CGRect(x: 0.16764 * nube1.superlayer!.bounds.width, y: 0.18641 * nube1.superlayer!.bounds.height, width: 0.39286 * nube1.superlayer!.bounds.width, height: 0.74175 * nube1.superlayer!.bounds.height)
+        if let nube : CALayer = layers["nube"] as? CALayer{
+            nube.frame = CGRect(x: 0.16764 * nube.superlayer!.bounds.width, y: 0.18641 * nube.superlayer!.bounds.height, width: 0.39286 * nube.superlayer!.bounds.width, height: 0.74175 * nube.superlayer!.bounds.height)
         }
         
         if let nube2 : CALayer = layers["nube2"] as? CALayer{
@@ -223,12 +235,21 @@ class FlightCloudsView: UIView, CAAnimationDelegate {
         }
         
         if let path : CAShapeLayer = layers["path"] as? CAShapeLayer{
-            path.frame = CGRect(x: -0.068 * path.superlayer!.bounds.width, y: 0.06919 * path.superlayer!.bounds.height, width: 1.13769 * path.superlayer!.bounds.width, height: 0.74373 * path.superlayer!.bounds.height)
+            path.frame = CGRect(x: -0.068 * path.superlayer!.bounds.width, y: 0.59607 * path.superlayer!.bounds.height, width: 1.13769 * path.superlayer!.bounds.width, height: 0.32275 * path.superlayer!.bounds.height)
             path.path  = pathPath(bounds: (layers["path"] as! CAShapeLayer).bounds).cgPath
         }
         
         if let login_bg_avion : CALayer = layers["login_bg_avion"] as? CALayer{
-            login_bg_avion.frame = CGRect(x: -0.12 * login_bg_avion.superlayer!.bounds.width, y: 0.72218 * login_bg_avion.superlayer!.bounds.height, width: 0.074 * login_bg_avion.superlayer!.bounds.width, height: 0.13913 * login_bg_avion.superlayer!.bounds.height)
+            login_bg_avion.frame = CGRect(x: -0.12 * login_bg_avion.superlayer!.bounds.width, y: 0.87944 * login_bg_avion.superlayer!.bounds.height, width: 0.074 * login_bg_avion.superlayer!.bounds.width, height: 0.06038 * login_bg_avion.superlayer!.bounds.height)
+        }
+        
+        if let logo_Voiash_sin_fondo_baja : CALayer = layers["logo_Voiash_sin_fondo_baja"] as? CALayer{
+            logo_Voiash_sin_fondo_baja.frame = CGRect(x: 0.27685 * logo_Voiash_sin_fondo_baja.superlayer!.bounds.width, y: 0.23774 * logo_Voiash_sin_fondo_baja.superlayer!.bounds.height, width: 0.448 * logo_Voiash_sin_fondo_baja.superlayer!.bounds.width, height: 0.13962 * logo_Voiash_sin_fondo_baja.superlayer!.bounds.height)
+        }
+        
+        if let path2 : CAShapeLayer = layers["path2"] as? CAShapeLayer{
+            path2.frame = CGRect(x: -0.16477 * path2.superlayer!.bounds.width, y: -0.33626 * path2.superlayer!.bounds.height, width: 0.95599 * path2.superlayer!.bounds.width, height: 1.2074 * path2.superlayer!.bounds.height)
+            path2.path  = path2Path(bounds: (layers["path2"] as! CAShapeLayer).bounds).cgPath
         }
         
         CATransaction.commit()
@@ -254,17 +275,17 @@ class FlightCloudsView: UIView, CAAnimationDelegate {
         
         let fillMode : String = kCAFillModeForwards
         
-        let nube1 = layers["nube1"] as! CALayer
+        let nube = layers["nube"] as! CALayer
         
-        ////Nube1 animation
-        let nube1PositionAnim          = CAKeyframeAnimation(keyPath:"position")
-        nube1PositionAnim.duration     = 6.02
-        nube1PositionAnim.repeatCount  = Float.infinity
-        nube1PositionAnim.autoreverses = true
+        ////Nube animation
+        let nubePositionAnim          = CAKeyframeAnimation(keyPath:"position")
+        nubePositionAnim.duration     = 6.02
+        nubePositionAnim.repeatCount  = Float.infinity
+        nubePositionAnim.autoreverses = true
         
-        let nube1PlaneAnim : CAAnimationGroup = QCMethod.group(animations: [nube1PositionAnim], fillMode:fillMode)
-        nube1PlaneAnim.repeatCount = 10
-        nube1.add(nube1PlaneAnim, forKey:"nube1PlaneAnim")
+        let nubePlaneAnim : CAAnimationGroup = QCMethod.group(animations: [nubePositionAnim], fillMode:fillMode)
+        nubePlaneAnim.repeatCount = 10
+        nube.add(nubePlaneAnim, forKey:"nubePlaneAnim")
         
         let nube5 = layers["nube5"] as! CALayer
         
@@ -329,7 +350,7 @@ class FlightCloudsView: UIView, CAAnimationDelegate {
         
         ////Group3 animation
         let Group3PositionAnim         = CAKeyframeAnimation(keyPath:"position")
-        Group3PositionAnim.values      = [NSValue(cgPoint: CGPoint(x: -0.34837 * Group3.superlayer!.bounds.width, y: 0.44022 * Group3.superlayer!.bounds.height)), NSValue(cgPoint: CGPoint(x: 1.29162 * Group3.superlayer!.bounds.width, y: 0.44022 * Group3.superlayer!.bounds.height))]
+        Group3PositionAnim.values      = [NSValue(cgPoint: CGPoint(x: -0.34837 * Group3.superlayer!.bounds.width, y: 0.75708 * Group3.superlayer!.bounds.height)), NSValue(cgPoint: CGPoint(x: 1.29162 * Group3.superlayer!.bounds.width, y: 0.75708 * Group3.superlayer!.bounds.height))]
         Group3PositionAnim.keyTimes    = [0, 1]
         Group3PositionAnim.duration    = 6.97
         Group3PositionAnim.repeatCount = Float.infinity
@@ -362,7 +383,7 @@ class FlightCloudsView: UIView, CAAnimationDelegate {
         
         ////Group3 animation
         let Group3PositionAnim         = CAKeyframeAnimation(keyPath:"position")
-        Group3PositionAnim.values      = [NSValue(cgPoint: CGPoint(x: -0.34837 * Group3.superlayer!.bounds.width, y: 0.44022 * Group3.superlayer!.bounds.height)), NSValue(cgPoint: CGPoint(x: 1.29162 * Group3.superlayer!.bounds.width, y: 0.44022 * Group3.superlayer!.bounds.height))]
+        Group3PositionAnim.values      = [NSValue(cgPoint: CGPoint(x: -0.34837 * Group3.superlayer!.bounds.width, y: 0.75708 * Group3.superlayer!.bounds.height)), NSValue(cgPoint: CGPoint(x: 1.29162 * Group3.superlayer!.bounds.width, y: 0.75708 * Group3.superlayer!.bounds.height))]
         Group3PositionAnim.keyTimes    = [0, 1]
         Group3PositionAnim.duration    = 60
         Group3PositionAnim.repeatCount = Float.infinity
@@ -376,11 +397,44 @@ class FlightCloudsView: UIView, CAAnimationDelegate {
         let login_bg_avionPositionAnim       = CAKeyframeAnimation(keyPath:"position")
         login_bg_avionPositionAnim.path      = pathPath(bounds: (layers["path"]?.superlayer??.convert((layers["path"] as! CAShapeLayer).frame, to:layers["login_bg_avion"]?.superlayer))!).cgPath
         login_bg_avionPositionAnim.rotationMode = kCAAnimationRotateAuto
-        login_bg_avionPositionAnim.duration  = 10.98
-        login_bg_avionPositionAnim.beginTime = 2.02
+        login_bg_avionPositionAnim.duration  = 15
+        login_bg_avionPositionAnim.beginTime = 3.02
         
         let login_bg_avionFlightCloudsAnim : CAAnimationGroup = QCMethod.group(animations: [login_bg_avionPositionAnim], fillMode:fillMode)
         login_bg_avion.add(login_bg_avionFlightCloudsAnim, forKey:"login_bg_avionFlightCloudsAnim")
+    }
+    
+    func addFlightCloudsAllScreenAnimation(){
+        self.layer.speed = 1
+        self.animationAdded = false
+        
+        let fillMode : String = kCAFillModeForwards
+        
+        ////An infinity animation
+        
+        let Group3 = layers["Group3"] as! CALayer
+        
+        ////Group3 animation
+        let Group3PositionAnim         = CAKeyframeAnimation(keyPath:"position")
+        Group3PositionAnim.values      = [NSValue(cgPoint: CGPoint(x: -0.34837 * Group3.superlayer!.bounds.width, y: 0.75708 * Group3.superlayer!.bounds.height)), NSValue(cgPoint: CGPoint(x: 1.29162 * Group3.superlayer!.bounds.width, y: 0.75708 * Group3.superlayer!.bounds.height))]
+        Group3PositionAnim.keyTimes    = [0, 1]
+        Group3PositionAnim.duration    = 60
+        Group3PositionAnim.repeatCount = Float.infinity
+        
+        let Group3FlightCloudsAllScreenAnim : CAAnimationGroup = QCMethod.group(animations: [Group3PositionAnim], fillMode:fillMode)
+        Group3.add(Group3FlightCloudsAllScreenAnim, forKey:"Group3FlightCloudsAllScreenAnim")
+        
+        let login_bg_avion = layers["login_bg_avion"] as! CALayer
+        
+        ////Login_bg_avion animation
+        let login_bg_avionPositionAnim       = CAKeyframeAnimation(keyPath:"position")
+        login_bg_avionPositionAnim.path      = path2Path(bounds: (layers["path2"]?.superlayer??.convert((layers["path2"] as! CAShapeLayer).frame, to:layers["login_bg_avion"]?.superlayer))!).cgPath
+        login_bg_avionPositionAnim.rotationMode = kCAAnimationRotateAuto
+        login_bg_avionPositionAnim.duration  = 8
+        login_bg_avionPositionAnim.beginTime = 1.47
+        
+        let login_bg_avionFlightCloudsAllScreenAnim : CAAnimationGroup = QCMethod.group(animations: [login_bg_avionPositionAnim], fillMode:fillMode)
+        login_bg_avion.add(login_bg_avionFlightCloudsAllScreenAnim, forKey:"login_bg_avionFlightCloudsAllScreenAnim")
     }
     
     //MARK: - Animation Cleanup
@@ -398,7 +452,7 @@ class FlightCloudsView: UIView, CAAnimationDelegate {
     
     func updateLayerValues(forAnimationId identifier: String){
         if identifier == "Plane"{
-            QCMethod.updateValueFromPresentationLayer(forAnimation: (layers["nube1"] as! CALayer).animation(forKey: "nube1PlaneAnim"), theLayer:(layers["nube1"] as! CALayer))
+            QCMethod.updateValueFromPresentationLayer(forAnimation: (layers["nube"] as! CALayer).animation(forKey: "nubePlaneAnim"), theLayer:(layers["nube"] as! CALayer))
             QCMethod.updateValueFromPresentationLayer(forAnimation: (layers["nube5"] as! CALayer).animation(forKey: "nube5PlaneAnim"), theLayer:(layers["nube5"] as! CALayer))
             QCMethod.updateValueFromPresentationLayer(forAnimation: (layers["nube8"] as! CALayer).animation(forKey: "nube8PlaneAnim"), theLayer:(layers["nube8"] as! CALayer))
             QCMethod.updateValueFromPresentationLayer(forAnimation: (layers["nube12"] as! CALayer).animation(forKey: "nube12PlaneAnim"), theLayer:(layers["nube12"] as! CALayer))
@@ -412,11 +466,15 @@ class FlightCloudsView: UIView, CAAnimationDelegate {
             QCMethod.updateValueFromPresentationLayer(forAnimation: (layers["Group3"] as! CALayer).animation(forKey: "Group3FlightCloudsAnim"), theLayer:(layers["Group3"] as! CALayer))
             QCMethod.updateValueFromPresentationLayer(forAnimation: (layers["login_bg_avion"] as! CALayer).animation(forKey: "login_bg_avionFlightCloudsAnim"), theLayer:(layers["login_bg_avion"] as! CALayer))
         }
+        else if identifier == "FlightCloudsAllScreen"{
+            QCMethod.updateValueFromPresentationLayer(forAnimation: (layers["Group3"] as! CALayer).animation(forKey: "Group3FlightCloudsAllScreenAnim"), theLayer:(layers["Group3"] as! CALayer))
+            QCMethod.updateValueFromPresentationLayer(forAnimation: (layers["login_bg_avion"] as! CALayer).animation(forKey: "login_bg_avionFlightCloudsAllScreenAnim"), theLayer:(layers["login_bg_avion"] as! CALayer))
+        }
     }
     
     func removeAnimations(forAnimationId identifier: String){
         if identifier == "Plane"{
-            (layers["nube1"] as! CALayer).removeAnimation(forKey: "nube1PlaneAnim")
+            (layers["nube"] as! CALayer).removeAnimation(forKey: "nubePlaneAnim")
             (layers["nube5"] as! CALayer).removeAnimation(forKey: "nube5PlaneAnim")
             (layers["nube8"] as! CALayer).removeAnimation(forKey: "nube8PlaneAnim")
             (layers["nube12"] as! CALayer).removeAnimation(forKey: "nube12PlaneAnim")
@@ -429,6 +487,10 @@ class FlightCloudsView: UIView, CAAnimationDelegate {
         else if identifier == "FlightClouds"{
             (layers["Group3"] as! CALayer).removeAnimation(forKey: "Group3FlightCloudsAnim")
             (layers["login_bg_avion"] as! CALayer).removeAnimation(forKey: "login_bg_avionFlightCloudsAnim")
+        }
+        else if identifier == "FlightCloudsAllScreen"{
+            (layers["Group3"] as! CALayer).removeAnimation(forKey: "Group3FlightCloudsAllScreenAnim")
+            (layers["login_bg_avion"] as! CALayer).removeAnimation(forKey: "login_bg_avionFlightCloudsAllScreenAnim")
         }
         self.layer.speed = 1
     }
@@ -461,5 +523,16 @@ class FlightCloudsView: UIView, CAAnimationDelegate {
         return pathPath
     }
     
-    
+    func path2Path(bounds: CGRect) -> UIBezierPath{
+        let path2Path = UIBezierPath()
+        let minX = CGFloat(bounds.minX), minY = bounds.minY, w = bounds.width, h = bounds.height;
+        
+        path2Path.move(to: CGPoint(x:minX, y: minY + 0.96865 * h))
+        path2Path.addCurve(to: CGPoint(x:minX + 0.10632 * w, y: minY + 0.96865 * h), controlPoint1:CGPoint(x:minX + 0.03544 * w, y: minY + 0.96865 * h), controlPoint2:CGPoint(x:minX + 0.07106 * w, y: minY + 0.966 * h))
+        path2Path.addCurve(to: CGPoint(x:minX + 0.54307 * w, y: minY + 0.98586 * h), controlPoint1:CGPoint(x:minX + 0.23087 * w, y: minY + 0.97802 * h), controlPoint2:CGPoint(x:minX + 0.41339 * w, y: minY + 1.02224 * h))
+        path2Path.addCurve(to: CGPoint(x:minX + 0.99731 * w, y: minY + 0.4675 * h), controlPoint1:CGPoint(x:minX + 0.78405 * w, y: minY + 0.91826 * h), controlPoint2:CGPoint(x:minX + 1.02841 * w, y: minY + 0.65865 * h))
+        path2Path.addCurve(to: CGPoint(x:minX + 0.71529 * w, y: minY), controlPoint1:CGPoint(x:minX + 0.97464 * w, y: minY + 0.32812 * h), controlPoint2:CGPoint(x:minX + 0.79092 * w, y: minY + 0.10577 * h))
+        
+        return path2Path
+    }
 }

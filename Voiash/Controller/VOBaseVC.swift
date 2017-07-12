@@ -21,6 +21,9 @@ class VOBaseVC: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        if appDel.isAnonymous {
+            return
+        }
         handle = Auth.auth().addStateDidChangeListener() { (auth, user) in
             print(auth)
             if let user = user {
@@ -33,6 +36,9 @@ class VOBaseVC: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        if appDel.isAnonymous || handle == nil{
+            return
+        }
         Auth.auth().removeStateDidChangeListener(handle!)
     }
 

@@ -22,19 +22,20 @@ class VOInitialVC: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
         self.navigationItem.title = " "
         self.isActive = true
-        vFlightClouds.addFlightCloudsAnimation()
+        vFlightClouds.addFlightCloudsAllScreenAnimation()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
         vFlightClouds.removeAllAnimations()
         self.navigationController?.isNavigationBarHidden = true
         self.isActive = false
+        super.viewWillDisappear(animated)
     }
     
     // MARK: - IBAction
     @IBAction func loginAnonymousBtnPressed(){
-        appDel.setTabBarRoot()
         VOFBAuthService.shared.loginAnonymous()
+        appDel.isAnonymous = true
+        appDel.setTabBarRoot()
     }
 }
