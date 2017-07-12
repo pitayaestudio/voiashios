@@ -197,9 +197,6 @@ class VOFBAuthService: NSObject {
     
     func signOut(){
         try! Auth.auth().signOut()
-        keychain.clear()
-        appDel.isAnonymous = false
-        self.currentCredential = nil
-        VOFBDataService.shared.myUser = nil
+        appDel.clearConstants()
     }
 }

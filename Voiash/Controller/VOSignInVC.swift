@@ -52,10 +52,14 @@ class VOSignInVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
     @IBAction func facebookBtnPressed(_ sender: VORoundButton) {
         sender.showSpinner()
         appDel.isFBActive = true
-        let facebookLogin = FBSDKLoginManager()
+        
+        if appDel.facebookLogin == nil {
+            appDel.facebookLogin = FBSDKLoginManager()
+        }
+        
         self.vBlur.isHidden = false
         
-        facebookLogin.logIn(withReadPermissions: ["public_profile", "email", "user_birthday", "user_photos"], from: self) { (result, error) in
+        appDel.facebookLogin!.logIn(withReadPermissions: ["public_profile", "email", "user_birthday", "user_photos"], from: self) { (result, error) in
             if error != nil {
                 self.vBlur.isHidden = true
                 appDel.isFBActive = true

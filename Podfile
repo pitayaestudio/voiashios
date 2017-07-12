@@ -21,6 +21,5 @@ target 'Voiash' do
   pod 'TextFieldEffects'
   pod 'GoogleSignIn'
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
-  pod 'GBHFacebookImagePicker'
   pod 'SpaceView'
 end

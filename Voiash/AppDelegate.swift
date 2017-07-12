@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import GoogleSignIn
 import FBSDKCoreKit
+import FBSDKLoginKit
 import IQKeyboardManagerSwift
 
 @UIApplicationMain
@@ -20,6 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     var reloadUser = false
     var isFBActive = false
     var isAnonymous = false
+    
+    var facebookLogin:FBSDKLoginManager?
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
@@ -47,6 +51,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     }
     
     //MARK: - Functions
+    func clearConstants(){
+        keychain.clear()
+        if self.facebookLogin != nil {
+            self.facebookLogin!.logOut()
+        }
+        do{
+           FBSDKLoginManager().logOut()
+        } catch {
+            print("error logout")
+        }
+        
+        self.isAnonymous = false
+        VOFBAuthService.shared.currentCredential = nil
+        VOFBDataService.shared.myUser = nil
+    }
+    
     func setTabBarRoot(){
         let tabBar = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
         tabBar.selectedIndex = 4
@@ -146,6 +166,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                                     if success {
                                         appDel.setTabBarRoot()
                                         controller.vBlur.isHidden = true
+                                        GIDSignIn.sharedInstance().signOut()
                                     }else{
                                         controller.vBlur.isHidden = true
                                         VOFBAuthService.shared.signOut()

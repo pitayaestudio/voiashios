@@ -8,7 +8,6 @@
 
 import UIKit
 import TextFieldEffects
-import GBHFacebookImagePicker
 import FBSDKLoginKit
 
 class VOEditProfileVC: VOBaseVC {
@@ -23,7 +22,7 @@ class VOEditProfileVC: VOBaseVC {
     var birthDay:Date!
     var imagePicker: UIImagePickerController!
     var imgData:Data?
-    var facebookLogin:FBSDKLoginManager?
+    var picker:GBHFacebookImagePicker?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,37 +72,39 @@ class VOEditProfileVC: VOBaseVC {
     //MARK: - Facebook
     func setFBPicker(){
         // Init picker
-        let picker = GBHFacebookImagePicker()
+        self.picker = GBHFacebookImagePicker()
         
-        // Allow multiple selection (false by default)
-        //GBHFacebookImagePicker.pickerConfig.allowMultipleSelection = false
-        //GBHFacebookImagePicker.pickerConfig.maximumSelectedPictures = 1
+        // Selected border color
+        GBHFacebookImagePicker.pickerConfig.uiConfig.selectedBorderColor = K.color.colorRed
         
-        // Make some customisation
-        // self.someCustomisation()
+        // Selected border width
+        GBHFacebookImagePicker.pickerConfig.uiConfig.selectedBorderWidth = 4.0
         
         // Present picker
-        picker.presentFacebookAlbumImagePicker(from: self,
+        self.picker!.presentFacebookAlbumImagePicker(from: self,
                                                delegate: self)
     }
     
     func loginToFacebook(){
-        self.facebookLogin = FBSDKLoginManager()
+        if appDel.facebookLogin == nil {
+            appDel.facebookLogin = FBSDKLoginManager()
+        }
         self.vBlur.isHidden = false
         appDel.isFBActive = true
-        self.facebookLogin?.logIn(withReadPermissions: ["public_profile", "email", "user_birthday", "user_photos"], from: self) { (result, error) in
+        appDel.facebookLogin!.logIn(withReadPermissions: ["public_profile", "email", "user_birthday", "user_photos"], from: self) { (result, error) in
             appDel.isFBActive = false
             self.vBlur.isHidden = true
             if error != nil {
                 print("BSC:: " + error.debugDescription)
-                self.facebookLogin?.logOut()
+                appDel.facebookLogin!.logOut()
             } else if result?.isCancelled == true {
                 print("BSC:: User cancelled facebook auth" )
-                self.facebookLogin?.logOut()
+                appDel.facebookLogin!.logOut()
             } else {
                 print("BSC:: Successfully auth FaceBook")
                 self.setFBPicker()
-                //FBSDKAccessToken.current().tokenString
+                let newData: Dictionary<String, Any>! = [K.FB.user.fbToken:"\(FBSDKAccessToken.current()!.tokenString!)"]
+                VOFBDataService.shared.updateMyUserWithData(newData: newData)
             }
         }
     }
@@ -123,6 +124,10 @@ class VOEditProfileVC: VOBaseVC {
         imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
         imagePicker.allowsEditing = true
         self.present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func closeScreen(){
+        self.navigationController?.popViewController(animated: true)
     }
     
     //MARK: - Age
@@ -148,7 +153,7 @@ class VOEditProfileVC: VOBaseVC {
     }
     
     @IBAction func cancelBtnPressed(){
-        self.navigationController?.popViewController(animated: true)
+        self.closeScreen()
     }
     
     @IBAction func saveBtnPressed(){
@@ -183,7 +188,7 @@ class VOEditProfileVC: VOBaseVC {
             if let error = error {
                 self.showAlert(typeAlert:.error, message:error)
             }else{
-                self.navigationController?.popViewController(animated: true)
+                self.closeScreen()
             }
         }
     }
@@ -200,7 +205,7 @@ class VOEditProfileVC: VOBaseVC {
       
         alert.addAction(UIAlertAction(title: NSLocalizedString("titFacebook", comment: ""), style: .default, handler: { _ in
            // if VOFBDataService.shared.myUser!.provider == K.provider.fb || FBSDKAccessToken.current() != nil{
-            if FBSDKAccessToken.current() != nil {
+            if FBSDKAccessToken.current() != nil || VOFBDataService.shared.myUser?.fbToken != nil {
                 self.setFBPicker()
             }else{
                 self.loginToFacebook()

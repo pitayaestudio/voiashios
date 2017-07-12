@@ -94,22 +94,38 @@ class VOFBDataService {
                         let downloadURL = meta!.downloadURL()?.absoluteString
                         newData[K.FB.user.urlAvatar] = downloadURL!
                         
-                        self.usersRef.child(userId).updateChildValues(newData)
+                       /* self.usersRef.child(userId).updateChildValues(newData)
                         self.myUser!.birthday = age
                         self.myUser!.name = name
                         self.myUser!.lastName = lastName
                         self.myUser!.urlAvatar = meta!.downloadURL()!
+                         onComplete(nil)*/
+                        self.myUser!.updateData(newData: newData)
+                        self.usersRef.child(userId).updateChildValues(newData)
                         onComplete(nil)
                     }
                 })
             })
         }else{
-            self.usersRef.child(userId).updateChildValues(newData)
+           /* self.usersRef.child(userId).updateChildValues(newData)
             self.myUser!.birthday = age
             self.myUser!.name = name
             self.myUser!.lastName = lastName
+             onComplete(nil)*/
+            self.myUser!.updateData(newData: newData)
+            self.usersRef.child(userId).updateChildValues(newData)
             onComplete(nil)
         }
+    }
+    
+    func updateMyUserWithData(newData:Dictionary<String, Any>){
+        self.myUser!.userRef!.updateChildValues(newData, withCompletionBlock: { (err, ref) in
+            if err == nil {
+                self.myUser!.updateData(newData: newData)
+            }else{
+                print("======> Error Update:: \(err!.localizedDescription)")
+            }
+        })
     }
     
     /*
@@ -128,17 +144,16 @@ class VOFBDataService {
                     
                     let user = Auth.auth().currentUser
                     user?.reauthenticate(with: VOFBAuthService.shared.currentCredential!) { error in
-                        if let error = error {
+                        if let _ = error {
                             print("========> error reauth")
-                            self.myUser = nil
+                            appDel.clearConstants()
                             onComplete(nil)
                         } else {
                             Auth.auth().currentUser?.delete { error in
+                                appDel.clearConstants()
                                 if error != nil {
                                     onComplete(error.debugDescription)
                                 } else {
-                                    self.myUser = nil
-                                    VOFBAuthService.shared.currentCredential = nil
                                     onComplete(nil)
                                 }
                             }

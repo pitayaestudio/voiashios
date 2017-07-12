@@ -35,10 +35,12 @@ class GBHFacebookHelper {
         if let afterPath = after {
             path = path.appendingFormat("&after=%@", afterPath)
         }
+        
+        let params:Dictionary? = FBSDKAccessToken.current() != nil ? nil : ["access_token":VOFBDataService.shared.myUser?.fbToken!]
 
         // Build Facebook's request
         let graphRequest = FBSDKGraphRequest(graphPath: path,
-                                             parameters: nil)
+                                             parameters: params)
 
         // Start Facebook Request
         _ = graphRequest?.start { _, result, error in
@@ -86,9 +88,10 @@ class GBHFacebookHelper {
                     let albumCount = albumDic["count"] as? Int {
 
                     // Album's cover url
+                    let accessToken = FBSDKAccessToken.current() != nil ? FBSDKAccessToken.current().tokenString : VOFBDataService.shared.myUser?.fbToken!
                     let albumUrlPath = String(format : self.pictureUrl,
                                               albumId,
-                                              FBSDKAccessToken.current().tokenString)
+                                              accessToken!)
 
                     // Build Album model
                     if let coverUrl = URL(string: albumUrlPath) {
@@ -122,9 +125,11 @@ class GBHFacebookHelper {
             path = path.appendingFormat("&after=%@", afterPath)
         }
 
+        let params:Dictionary? = FBSDKAccessToken.current() != nil ? nil : ["access_token":VOFBDataService.shared.myUser?.fbToken!]
+        
         // Build Facebook's request
         let graphRequest = FBSDKGraphRequest(graphPath: path,
-                                             parameters: nil)
+                                             parameters: params)
 
         // Start Facebook's request
         _ = graphRequest?.start { _, result, error in
@@ -202,7 +207,7 @@ class GBHFacebookHelper {
 
         self.albumList = [] // Clear Album
 
-        if FBSDKAccessToken.current() == nil {
+        if FBSDKAccessToken.current() == nil && VOFBDataService.shared.myUser!.fbToken == nil {
             // No token, we need to login
 
             // Start Facebook's login
@@ -247,7 +252,7 @@ class GBHFacebookHelper {
             }
         } else {
             // Already logged in, check User_photos permission
-            if FBSDKAccessToken.current().permissions.contains("user_photos") {
+            if VOFBDataService.shared.myUser?.fbToken != nil || FBSDKAccessToken.current().permissions.contains("user_photos") {
                 // User_photos's permission ok
                 self.fbAlbumRequest()
                 completion(true, nil)

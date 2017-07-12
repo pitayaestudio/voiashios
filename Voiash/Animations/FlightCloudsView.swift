@@ -244,7 +244,7 @@ class FlightCloudsView: UIView, CAAnimationDelegate {
         }
         
         if let logo_Voiash_sin_fondo_baja : CALayer = layers["logo_Voiash_sin_fondo_baja"] as? CALayer{
-            logo_Voiash_sin_fondo_baja.frame = CGRect(x: 0.27685 * logo_Voiash_sin_fondo_baja.superlayer!.bounds.width, y: 0.23774 * logo_Voiash_sin_fondo_baja.superlayer!.bounds.height, width: 0.448 * logo_Voiash_sin_fondo_baja.superlayer!.bounds.width, height: 0.13962 * logo_Voiash_sin_fondo_baja.superlayer!.bounds.height)
+            logo_Voiash_sin_fondo_baja.frame = CGRect(x: 0.256 * logo_Voiash_sin_fondo_baja.superlayer!.bounds.width, y: 0.38302 * logo_Voiash_sin_fondo_baja.superlayer!.bounds.height, width: 0.448 * logo_Voiash_sin_fondo_baja.superlayer!.bounds.width, height: 0.13962 * logo_Voiash_sin_fondo_baja.superlayer!.bounds.height)
         }
         
         if let path2 : CAShapeLayer = layers["path2"] as? CAShapeLayer{
@@ -430,8 +430,8 @@ class FlightCloudsView: UIView, CAAnimationDelegate {
         let login_bg_avionPositionAnim       = CAKeyframeAnimation(keyPath:"position")
         login_bg_avionPositionAnim.path      = path2Path(bounds: (layers["path2"]?.superlayer??.convert((layers["path2"] as! CAShapeLayer).frame, to:layers["login_bg_avion"]?.superlayer))!).cgPath
         login_bg_avionPositionAnim.rotationMode = kCAAnimationRotateAuto
-        login_bg_avionPositionAnim.duration  = 8
-        login_bg_avionPositionAnim.beginTime = 1.47
+        login_bg_avionPositionAnim.duration  = 7
+        login_bg_avionPositionAnim.beginTime = 0.7
         
         let login_bg_avionFlightCloudsAllScreenAnim : CAAnimationGroup = QCMethod.group(animations: [login_bg_avionPositionAnim], fillMode:fillMode)
         login_bg_avion.add(login_bg_avionFlightCloudsAllScreenAnim, forKey:"login_bg_avionFlightCloudsAllScreenAnim")
@@ -535,4 +535,6 @@ class FlightCloudsView: UIView, CAAnimationDelegate {
         
         return path2Path
     }
+    
+    
 }
