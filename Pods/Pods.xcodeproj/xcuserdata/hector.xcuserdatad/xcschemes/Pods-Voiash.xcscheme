@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "966CFCA39F0E0B36858353C3494ADD1D"
+               BlueprintIdentifier = "3C8ABF538A2E47BC1D02933F04038CFB"
                BuildableName = "Pods_Voiash.framework"
                BlueprintName = "Pods-Voiash"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "966CFCA39F0E0B36858353C3494ADD1D"
+            BlueprintIdentifier = "3C8ABF538A2E47BC1D02933F04038CFB"
             BuildableName = "Pods_Voiash.framework"
             BlueprintName = "Pods-Voiash"
             ReferencedContainer = "container:Pods.xcodeproj">

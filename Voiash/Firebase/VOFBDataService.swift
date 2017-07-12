@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import QorumLogs
 
 
 typealias CompletionUser = (_ user:VOFBUser?)-> Void
@@ -85,7 +86,7 @@ class VOFBDataService {
             
             ref.delete(completion: { (error) in
                 if error != nil {
-                    print("======> error delete \(userId)/\(K.FB.user.nameProfilePicture):: \(error.debugDescription)")
+                    QL4("======> error delete \(userId)/\(K.FB.user.nameProfilePicture):: \(error.debugDescription)")
                 }
                 _ = ref.putData(data, metadata: nil, completion: { (meta, err) in
                     if err != nil {
@@ -123,7 +124,7 @@ class VOFBDataService {
             if err == nil {
                 self.myUser!.updateData(newData: newData)
             }else{
-                print("======> Error Update:: \(err!.localizedDescription)")
+                QL4("======> Error Update:: \(err!.localizedDescription)")
             }
         })
     }
@@ -139,13 +140,13 @@ class VOFBDataService {
             }else{
                 self.imagesStorageRef.child(userId!).delete(completion: { (error) in
                     if error != nil {
-                        print(error.debugDescription)
+                        QL4(error.debugDescription)
                     }
                     
                     let user = Auth.auth().currentUser
                     user?.reauthenticate(with: VOFBAuthService.shared.currentCredential!) { error in
                         if let _ = error {
-                            print("========> error reauth")
+                            QL4("========> error reauth")
                             appDel.clearConstants()
                             onComplete(nil)
                         } else {

@@ -88,6 +88,7 @@ PODS:
   - KeychainSwift (8.0.2)
   - Kingfisher (3.10.2)
   - Protobuf (3.3.0)
+  - QorumLogs (0.9)
   - SpaceView (1.0.5)
   - Spring (1.0.3)
   - SwiftyJSON (3.1.4)
@@ -107,6 +108,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - KeychainSwift (~> 8.0)
   - Kingfisher
+  - QorumLogs
   - SpaceView
   - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift3`)
   - SwiftyJSON
@@ -144,11 +146,12 @@ SPEC CHECKSUMS:
   KeychainSwift: 213db04dfe7244988e61f77c72a2afb2f775954a
   Kingfisher: 7297492bf8cec9b2e2dee3519f2219948580d98e
   Protobuf: d582fecf68201eac3d79ed61369ef45734394b9c
+  QorumLogs: 9a484df6973a3697ac79fe2273140fde6b36dccc
   SpaceView: 1619ebbb5162f4f3547a4cb383bea479a54fa76c
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   TextFieldEffects: 8706f53525f1ce51c8921b7af32237caab50c467
 
-PODFILE CHECKSUM: 77256fc4653c29bcb5589afc8b453956c511eafe
+PODFILE CHECKSUM: 93eeb8e3c4c095625cf495f846ab1bf42fa96676
 
 COCOAPODS: 1.2.0

@@ -12,6 +12,7 @@ import GoogleSignIn
 import FBSDKCoreKit
 import FBSDKLoginKit
 import IQKeyboardManagerSwift
+import QorumLogs
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
@@ -41,6 +42,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         reloadRootVC()
         
+        #if DEBUG
+            QorumLogs.colorsForLogLevels[0] = QLColor(r: 255, g: 255, b: 255)
+            QorumLogs.enabled = true
+        #else
+            QorumLogs.enabled = false
+        #endif
+        
         return true
     }
     
@@ -59,7 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         do{
            FBSDKLoginManager().logOut()
         } catch {
-            print("error logout")
+            QL4("error logout")
         }
         
         self.isAnonymous = false

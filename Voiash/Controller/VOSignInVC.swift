@@ -10,6 +10,7 @@ import UIKit
 import FBSDKLoginKit
 import Firebase
 import TextFieldEffects
+import QorumLogs
 
 class VOSignInVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
     
@@ -64,14 +65,14 @@ class VOSignInVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
                 self.vBlur.isHidden = true
                 appDel.isFBActive = true
                 sender.hideSpinner()
-                print("BSC:: " + error.debugDescription)
+                QL4("BSC:: " + error.debugDescription)
             } else if result?.isCancelled == true {
                 self.vBlur.isHidden = true
                 appDel.isFBActive = true
                 sender.hideSpinner()
-                print("BSC:: User cancelled facebook auth" )
+                QL4("BSC:: User cancelled facebook auth" )
             } else {
-                print("BSC:: Successfully auth FaceBook")
+                QL2("BSC:: Successfully auth FaceBook")
                 let fbCredential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
                 appDel.isFBActive = true
                 VOFBAuthService.shared.loginWithCredential(fbCredential , onComplete: { (errMsg, data) in
@@ -116,7 +117,7 @@ class VOSignInVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
                                     }
                                 }else{
                                     self.vBlur.isHidden = true
-                                    print("BSC:: " + error.debugDescription)
+                                    QL4("BSC:: " + error.debugDescription)
                                     sender.hideSpinner()
                                 }
                             })
@@ -177,11 +178,11 @@ class VOSignInVC: UIViewController,GIDSignInUIDelegate, GIDSignInDelegate {
         
         guard error == nil else {
             
-            print("Error while trying to redirect : \(error)")
+            QL4("Error while trying to redirect : \(error)")
             return
         }
         
-        print("Successful Redirection")
+        QL2("Successful Redirection")
     }
     
     

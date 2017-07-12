@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import QorumLogs
 
 class VOBaseVC: UIViewController {
 
@@ -25,10 +26,8 @@ class VOBaseVC: UIViewController {
             return
         }
         handle = Auth.auth().addStateDidChangeListener() { (auth, user) in
-            print(auth)
-            if let user = user {
-                print(user)
-            }else{
+            //QL1(auth)
+            if user == nil {
                 VOFBDataService.shared.myUser = nil
                 appDel.setInitRoot()
             }

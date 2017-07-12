@@ -6,9 +6,9 @@
 //  Copyright © 2017 Pitaya Estudio. All rights reserved.
 //
 
-import UIKit
 import TextFieldEffects
 import FBSDKLoginKit
+import QorumLogs
 
 class VOEditProfileVC: VOBaseVC {
 
@@ -95,13 +95,13 @@ class VOEditProfileVC: VOBaseVC {
             appDel.isFBActive = false
             self.vBlur.isHidden = true
             if error != nil {
-                print("BSC:: " + error.debugDescription)
+                QL4("BSC:: " + error.debugDescription)
                 appDel.facebookLogin!.logOut()
             } else if result?.isCancelled == true {
-                print("BSC:: User cancelled facebook auth" )
+                QL4("BSC:: User cancelled facebook auth" )
                 appDel.facebookLogin!.logOut()
             } else {
-                print("BSC:: Successfully auth FaceBook")
+                QL2("BSC:: Successfully auth FaceBook")
                 self.setFBPicker()
                 let newData: Dictionary<String, Any>! = [K.FB.user.fbToken:"\(FBSDKAccessToken.current()!.tokenString!)"]
                 VOFBDataService.shared.updateMyUserWithData(newData: newData)
@@ -250,17 +250,16 @@ extension VOEditProfileVC: GBHFacebookImagePickerDelegate {
     }
     
     func facebookImagePicker(imagePicker: UIViewController, didFailWithError error: Error?) {
-        print("Cancelled Facebook Album picker with error")
-        print(error.debugDescription)
+        QL3("Cancelled Facebook Album picker with error")
     }
     
     // Optional
     func facebookImagePicker(didCancelled imagePicker: UIViewController) {
-        print("Cancelled Facebook Album picker")
+        QL3("Cancelled Facebook Album picker")
     }
     
     // Optional
     func facebookImagePickerDismissed() {
-        print("Picker dismissed")
+        QL3("Picker dismissed")
     }
 }

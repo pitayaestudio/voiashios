@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import QorumLogs
 
 typealias Completion = (_ errMsg: String?, _ data:AnyObject?)-> Void
 
@@ -27,9 +28,9 @@ class VOFBAuthService: NSObject {
     func loginAnonymous(){
         Auth.auth().signInAnonymously { (user, error) in
             if let error = error {
-                print(error.localizedDescription)
+                QL4(error.localizedDescription)
             }else{
-                print("=======> loginAnonymous")
+                QL2("=======> loginAnonymous")
             }
         }
     }
@@ -43,10 +44,10 @@ class VOFBAuthService: NSObject {
     func loginWithCredential(_ credential: AuthCredential, onComplete:Completion?){
         Auth.auth().signIn(with: credential, completion: { (user, error) in
             if error != nil {
-                print ("loginWithCredential Error:: " + error.debugDescription)
+                QL4 ("loginWithCredential Error:: " + error.debugDescription)
                 self.handleFirebaseError(error! as NSError, onComplete: onComplete)
             } else {
-                print ("BSC:: successfully auth Firebase")
+                QL2 ("BSC:: successfully auth Firebase")
                 self.currentCredential = credential
                 appDel.isAnonymous = false
                 onComplete?(nil,user)
@@ -94,7 +95,7 @@ class VOFBAuthService: NSObject {
             }else{
                 self.sendEmailConfirmation({ (error) in
                     if let error = error {
-                        print(error)
+                        QL4(error)
                     }
                 })
                 VOFBDataService.shared.saveUser(uid: (user?.uid)!, userData: userData, onComplete: {(success) in
@@ -127,7 +128,7 @@ class VOFBAuthService: NSObject {
     func reloadUser(){
         Auth.auth().currentUser!.reload { (error) in
             if error != nil {
-                print("====> error: \(String(describing: error?.localizedDescription))")
+                QL4("====> error: \(String(describing: error?.localizedDescription))")
             }else{
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue:K.notifications.reloadEmail), object: nil)
             }
@@ -196,7 +197,15 @@ class VOFBAuthService: NSObject {
     }
     
     func signOut(){
-        try! Auth.auth().signOut()
+        if (Auth.auth().currentUser?.isAnonymous)! {
+            try! Auth.auth().currentUser?.delete(completion: { (error) in
+                if let error = error {
+                    QL4("====> error delete Anonymous:: \(error.localizedDescription)")
+                }
+            })
+        }else{
+            try! Auth.auth().signOut()
+        }
         appDel.clearConstants()
     }
 }
