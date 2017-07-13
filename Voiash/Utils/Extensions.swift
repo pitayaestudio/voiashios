@@ -97,6 +97,43 @@ extension String {
     }
 }
 
+extension UIImageView{
+    func addBlackGradientLayer(frame: CGRect){
+        let gradient = CAGradientLayer()
+        gradient.frame = frame
+        gradient.colors = [UIColor.black.cgColor, UIColor.clear.cgColor]
+        gradient.locations = [0.0, 0.5]
+        self.layer.addSublayer(gradient)
+    }
+    
+    func imageWithGradient() {
+        
+        UIGraphicsBeginImageContext(self.image!.size)
+        let context = UIGraphicsGetCurrentContext()
+        
+        self.image!.draw(at: CGPoint(x: 0, y: 0))
+        
+        let colorSpace = CGColorSpaceCreateDeviceRGB()
+        let locations:[CGFloat] = [0.0, 1.0]
+        
+        let bottom = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).cgColor
+        let top = UIColor(red: 0, green: 0, blue: 0, alpha: 0).cgColor
+        
+        let colors = [top, bottom] as CFArray
+        
+        let gradient = CGGradient(colorsSpace: colorSpace, colors: colors, locations: locations)
+        
+        let startPoint = CGPoint(x: self.image!.size.width/2, y: 0)
+        let endPoint = CGPoint(x: self.image!.size.width/2, y: self.image!.size.height)
+        
+        context!.drawLinearGradient(gradient!, start: startPoint, end: endPoint, options: CGGradientDrawingOptions(rawValue: UInt32(0)))
+        
+        self.image = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+    }
+}
+
 extension Date {
     var age: Int {
         return Calendar.current.dateComponents([.year], from: self, to: Date()).year!

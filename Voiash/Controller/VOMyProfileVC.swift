@@ -37,6 +37,8 @@ class VOMyProfileVC: VOBaseVC {
         imgAvatar.layer.borderWidth = 3.0
         imgAvatar.layer.borderColor = UIColor.white.cgColor
         imgAvatar.layer.cornerRadius = 42
+        //imgBackground.addBlackGradientLayer(frame: imgBackground.frame)
+        //imgBackground.imageWithGradient()
         
         if let user = VOFBDataService.shared.myUser {
             lblName.text = user.fullName
