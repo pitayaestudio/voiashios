@@ -26,11 +26,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <view opaque="NO" clipsSubviews="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="KeG-vo-2mN" customClass="FlightCloudsView" customModule="Voiash" customModuleProvider="target">
-                                <rect key="frame" x="-90" y="-102" width="500" height="530"/>
+                                <rect key="frame" x="-65" y="-202" width="450" height="630"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="530" id="Ef4-sq-BZr"/>
-                                    <constraint firstAttribute="width" constant="500" id="Jc1-8q-PfX"/>
+                                    <constraint firstAttribute="height" constant="630" id="Ef4-sq-BZr"/>
+                                    <constraint firstAttribute="width" constant="450" id="Jc1-8q-PfX"/>
                                 </constraints>
                             </view>
                             <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_bg_edificios" translatesAutoresizingMaskIntoConstraints="NO" id="pJT-QI-Qqa">
