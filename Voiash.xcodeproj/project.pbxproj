@@ -12,6 +12,9 @@
 		4B9304981F0B39C800721977 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9304971F0B39C800721977 /* Constants.swift */; };
 		4B93049B1F0B3CB200721977 /* VOFBDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B93049A1F0B3CB200721977 /* VOFBDataService.swift */; };
 		4B93049D1F0B425A00721977 /* VOSignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B93049C1F0B425A00721977 /* VOSignInVC.swift */; };
+		4BBC57EC1F1942BC0047C8AD /* LottieLogo1.json in Resources */ = {isa = PBXBuildFile; fileRef = 4BBC57E91F1942BC0047C8AD /* LottieLogo1.json */; };
+		4BBC57ED1F1942BC0047C8AD /* streetby_test_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 4BBC57EA1F1942BC0047C8AD /* streetby_test_loading.json */; };
+		4BBC57EE1F1942BC0047C8AD /* word.json in Resources */ = {isa = PBXBuildFile; fileRef = 4BBC57EB1F1942BC0047C8AD /* word.json */; };
 		C403DD7D1F0FCC2500B70F04 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C403DD7B1F0FC9F400B70F04 /* UIButton+Extension.swift */; };
 		C4313AC01F1680290092D156 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = C4313AA91F1680290092D156 /* .gitkeep */; };
 		C4313AC11F1680290092D156 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = C4313AAB1F1680290092D156 /* .gitkeep */; };
@@ -73,6 +76,9 @@
 		4B9304971F0B39C800721977 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Utils/Constants.swift; sourceTree = "<group>"; };
 		4B93049A1F0B3CB200721977 /* VOFBDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOFBDataService.swift; path = Firebase/VOFBDataService.swift; sourceTree = "<group>"; };
 		4B93049C1F0B425A00721977 /* VOSignInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOSignInVC.swift; path = Controller/VOSignInVC.swift; sourceTree = "<group>"; };
+		4BBC57E91F1942BC0047C8AD /* LottieLogo1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LottieLogo1.json; sourceTree = "<group>"; };
+		4BBC57EA1F1942BC0047C8AD /* streetby_test_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = streetby_test_loading.json; sourceTree = "<group>"; };
+		4BBC57EB1F1942BC0047C8AD /* word.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = word.json; sourceTree = "<group>"; };
 		6117376A61DC3EE56084EA46 /* Pods_Voiash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Voiash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C341E08A4A594C5BF0E74433 /* Pods-Voiash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Voiash.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Voiash/Pods-Voiash.debug.xcconfig"; sourceTree = "<group>"; };
 		C403DD7B1F0FC9F400B70F04 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton+Extension.swift"; path = "Utils/UIButton+Extension.swift"; sourceTree = "<group>"; };
@@ -366,6 +372,9 @@
 		C4EEE18D1F0D67E800B1177B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4BBC57E91F1942BC0047C8AD /* LottieLogo1.json */,
+				4BBC57EA1F1942BC0047C8AD /* streetby_test_loading.json */,
+				4BBC57EB1F1942BC0047C8AD /* word.json */,
 				C4EEE18E1F0D681D00B1177B /* gotham */,
 				C4AC16D51F0AE054007ECB38 /* Main.storyboard */,
 				C4AC16DA1F0AE054007ECB38 /* LaunchScreen.storyboard */,
@@ -479,11 +488,14 @@
 				C4313AC11F1680290092D156 /* .gitkeep in Resources */,
 				C4EEE1851F0C248800B1177B /* Localizable.strings in Resources */,
 				C4EEE1951F0D681D00B1177B /* Gotham-Bold.otf in Resources */,
+				4BBC57EC1F1942BC0047C8AD /* LottieLogo1.json in Resources */,
+				4BBC57EE1F1942BC0047C8AD /* word.json in Resources */,
 				C4EEE1941F0D681D00B1177B /* Gotham-Black.otf in Resources */,
 				C4CFCFF91F0AE5F10086D498 /* GoogleService-Info.plist in Resources */,
 				C4EEE1961F0D681D00B1177B /* Gotham-Light.otf in Resources */,
 				C4AC16DC1F0AE054007ECB38 /* LaunchScreen.storyboard in Resources */,
 				C4AC16D91F0AE054007ECB38 /* Assets.xcassets in Resources */,
+				4BBC57ED1F1942BC0047C8AD /* streetby_test_loading.json in Resources */,
 				C4AC16D71F0AE054007ECB38 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

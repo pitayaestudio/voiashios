@@ -89,15 +89,20 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>lottie-ios.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2E817CCDC537B92EE5AA64F31DE18E53</key>
+		<key>2F0C0F810568D3E82219429D9D870F04</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2F0C0F810568D3E82219429D9D870F04</key>
+		<key>3415A50151A7D8E37C64F3683DF1C0EF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -107,27 +112,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3C8ABF538A2E47BC1D02933F04038CFB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3E87BF52416FAE2FFB71F54A8CF22E04</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>44CAD6CE523055ED339E87154473A254</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>48AC3FBA4D11CCF0252CE15E98256BED</key>
+		<key>46990C474C400A5199B7534C4B7A452F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>61F7F2485E9CF425DC3043A98A5218B5</key>
+		<key>666B5CF5407B4C9E5814C41AC19915C3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -142,17 +137,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6EE0E30C98202D432C931F50F9712C30</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>B1C4AAFAF49036C7007633DAA3C806AD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B5C29066B32BC3DBA7CD2538B4ED3A47</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B8DEB87FED2C19F732D18F02D2665A1C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -167,12 +167,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>BFD020DE7FE26E6AF47AFF9D2EBDED9E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>C235F77E101E742652CCF98FFDFA5182</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E4EB2290FC190902A90F64F06F898F63</key>
+		<key>C450EAD66CF8CB6B057037780F40A63B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FDC661C5EC4A35440821C2DF0FE30E9B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

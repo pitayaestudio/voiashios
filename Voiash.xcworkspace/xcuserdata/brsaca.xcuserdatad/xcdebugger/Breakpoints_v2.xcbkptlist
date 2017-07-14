@@ -15,7 +15,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "74"
             endingLineNumber = "74"
-            landmarkName = "reloadRootVC()"
+            landmarkName = "clearConstants()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -33,6 +33,38 @@
             endingLineNumber = "81"
             landmarkName = "facebookBtnPressed(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Voiash.VOSignInVC.(facebookBtnPressed (Voiash.VORoundButton) -&gt; ()).(closure #1).(closure #1)"
+                  moduleName = "Voiash"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brsaca/Documents/ios/pitaya/voiashios/Voiash/Controller/VOSignInVC.swift"
+                  timestampString = "521749343.225257"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "474">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Voiash.VOSignInVC.(facebookBtnPressed (Voiash.VORoundButton) -&gt; ()).(closure #1).(closure #1).(closure #1)"
+                  moduleName = "Voiash"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brsaca/Documents/ios/pitaya/voiashios/Voiash/Controller/VOSignInVC.swift"
+                  timestampString = "521749343.228366"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "31">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

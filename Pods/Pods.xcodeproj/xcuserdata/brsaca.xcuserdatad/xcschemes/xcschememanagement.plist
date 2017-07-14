@@ -129,6 +129,11 @@
 			<key>orderHint</key>
 			<integer>16</integer>
 		</dict>
+		<key>lottie-ios.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>18</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -162,6 +167,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>3415A50151A7D8E37C64F3683DF1C0EF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>38ACA430605AFB4229712A18BDDF5086</key>
 		<dict>
 			<key>primary</key>
@@ -187,6 +197,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>46990C474C400A5199B7534C4B7A452F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>48AC3FBA4D11CCF0252CE15E98256BED</key>
 		<dict>
 			<key>primary</key>
@@ -208,6 +223,11 @@
 			<true/>
 		</dict>
 		<key>61F7F2485E9CF425DC3043A98A5218B5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>666B5CF5407B4C9E5814C41AC19915C3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -252,7 +272,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>B5C29066B32BC3DBA7CD2538B4ED3A47</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>B6C935C7A1E0B0D6589D48BF168B06A9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B8DEB87FED2C19F732D18F02D2665A1C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -267,7 +297,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>BFD020DE7FE26E6AF47AFF9D2EBDED9E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>C235F77E101E742652CCF98FFDFA5182</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C450EAD66CF8CB6B057037780F40A63B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -278,6 +318,11 @@
 			<true/>
 		</dict>
 		<key>E4EB2290FC190902A90F64F06F898F63</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FDC661C5EC4A35440821C2DF0FE30E9B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
