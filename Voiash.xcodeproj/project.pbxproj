@@ -32,6 +32,9 @@
 		C4313AD01F1680290092D156 /* GBHImageViewAsynchLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4313ABD1F1680290092D156 /* GBHImageViewAsynchLoading.swift */; };
 		C4313AD11F1680290092D156 /* GBHPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4313ABE1F1680290092D156 /* GBHPhotoCollectionViewCell.swift */; };
 		C4313AD21F1680290092D156 /* GBHSelectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4313ABF1F1680290092D156 /* GBHSelectedView.swift */; };
+		C463B0DD1F17E6C80012BBAA /* word.json in Resources */ = {isa = PBXBuildFile; fileRef = C463B0DC1F17E6C80012BBAA /* word.json */; };
+		C463B0DF1F17EC9A0012BBAA /* streetby_test_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = C463B0DE1F17EC9A0012BBAA /* streetby_test_loading.json */; };
+		C463B0E11F17F12C0012BBAA /* LottieLogo1.json in Resources */ = {isa = PBXBuildFile; fileRef = C463B0E01F17F12C0012BBAA /* LottieLogo1.json */; };
 		C465181E1F13BD50000E7C03 /* VOEditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C465181D1F13BD50000E7C03 /* VOEditProfileVC.swift */; };
 		C46518211F1526B7000E7C03 /* VOBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46518201F1526B7000E7C03 /* VOBaseVC.swift */; };
 		C47E1ECE1F153FEA003975C1 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47E1ECD1F153FEA003975C1 /* UIViewController+Extension.swift */; };
@@ -96,6 +99,9 @@
 		C4313ABD1F1680290092D156 /* GBHImageViewAsynchLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GBHImageViewAsynchLoading.swift; sourceTree = "<group>"; };
 		C4313ABE1F1680290092D156 /* GBHPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GBHPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		C4313ABF1F1680290092D156 /* GBHSelectedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GBHSelectedView.swift; sourceTree = "<group>"; };
+		C463B0DC1F17E6C80012BBAA /* word.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = word.json; sourceTree = "<group>"; };
+		C463B0DE1F17EC9A0012BBAA /* streetby_test_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = streetby_test_loading.json; sourceTree = "<group>"; };
+		C463B0E01F17F12C0012BBAA /* LottieLogo1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LottieLogo1.json; sourceTree = "<group>"; };
 		C465181D1F13BD50000E7C03 /* VOEditProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOEditProfileVC.swift; path = Controller/VOEditProfileVC.swift; sourceTree = "<group>"; };
 		C46518201F1526B7000E7C03 /* VOBaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VOBaseVC.swift; path = Controller/VOBaseVC.swift; sourceTree = "<group>"; };
 		C47E1ECD1F153FEA003975C1 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Extension.swift"; path = "Utils/UIViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -370,6 +376,9 @@
 				C4AC16D51F0AE054007ECB38 /* Main.storyboard */,
 				C4AC16DA1F0AE054007ECB38 /* LaunchScreen.storyboard */,
 				C4EEE1831F0C248800B1177B /* Localizable.strings */,
+				C463B0E01F17F12C0012BBAA /* LottieLogo1.json */,
+				C463B0DE1F17EC9A0012BBAA /* streetby_test_loading.json */,
+				C463B0DC1F17E6C80012BBAA /* word.json */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -485,6 +494,9 @@
 				C4AC16DC1F0AE054007ECB38 /* LaunchScreen.storyboard in Resources */,
 				C4AC16D91F0AE054007ECB38 /* Assets.xcassets in Resources */,
 				C4AC16D71F0AE054007ECB38 /* Main.storyboard in Resources */,
+				C463B0DF1F17EC9A0012BBAA /* streetby_test_loading.json in Resources */,
+				C463B0E11F17F12C0012BBAA /* LottieLogo1.json in Resources */,
+				C463B0DD1F17E6C80012BBAA /* word.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

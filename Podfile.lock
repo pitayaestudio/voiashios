@@ -87,6 +87,7 @@ PODS:
   - IQKeyboardManagerSwift (4.0.10)
   - KeychainSwift (8.0.2)
   - Kingfisher (3.10.2)
+  - lottie-ios (1.5.2)
   - Protobuf (3.3.0)
   - QorumLogs (0.9)
   - SpaceView (1.0.5)
@@ -108,6 +109,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - KeychainSwift (~> 8.0)
   - Kingfisher
+  - lottie-ios
   - QorumLogs
   - SpaceView
   - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift3`)
@@ -145,6 +147,7 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 75ba21a23794a1e6b6fe6d9a267ea17f80e06771
   KeychainSwift: 213db04dfe7244988e61f77c72a2afb2f775954a
   Kingfisher: 7297492bf8cec9b2e2dee3519f2219948580d98e
+  lottie-ios: 255a0e95973a5c4424e809d7a5c19f7384c73e84
   Protobuf: d582fecf68201eac3d79ed61369ef45734394b9c
   QorumLogs: 9a484df6973a3697ac79fe2273140fde6b36dccc
   SpaceView: 1619ebbb5162f4f3547a4cb383bea479a54fa76c
@@ -152,6 +155,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   TextFieldEffects: 8706f53525f1ce51c8921b7af32237caab50c467
 
-PODFILE CHECKSUM: 93eeb8e3c4c095625cf495f846ab1bf42fa96676
+PODFILE CHECKSUM: 675df9018800c3d8a550c9e5b3f63461aca6a3f6
 
 COCOAPODS: 1.2.0
